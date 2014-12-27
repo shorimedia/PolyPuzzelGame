@@ -1,0 +1,5 @@
+<linker>
+	<assembly fullname="UnityEngine">
+		<type fullname="UnityEngine.WWW" preserve="all" />
+	</assembly>
+</linker>
