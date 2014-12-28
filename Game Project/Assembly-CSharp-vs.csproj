@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{FADE6896-39B5-E00A-CB0B-59DF97FBCA52}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Demo\Scripts\AchievementsDemo.cs" />
+     <Compile Include="Assets\Demo\Scripts\CloudDataDemo.cs" />
+     <Compile Include="Assets\Demo\Scripts\HomeDemo.cs" />
+     <Compile Include="Assets\Demo\Scripts\LeaderboardsDemo.cs" />
+     <Compile Include="Assets\Demo\Scripts\LoginDemo.cs" />
+     <Compile Include="Assets\Demo\Scripts\StoreDemo.cs" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+     <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_store_category.xml" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+     <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_cancel_button.xml" />
+     <None Include="Assets\Demo\SwarmUnityDemoOverview.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\popup_background_rect.xml" />
+     <None Include="Assets\Plugins\Android\unityads\build.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\green_button.xml" />
+     <None Include="Assets\Plugins\SwarmUnityPluginStructure.txt" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_friends.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_featured_app_row.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_inbox_row.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\popup_header_background.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\offline_error_background.xml" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_lost_password.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_app_row.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\header_background.xml" />
+     <None Include="Assets\Plugins\Android\res\values\colors.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_header.xml" />
+     <None Include="Assets\Plugins\Android\res\values\strings.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\swarm_background.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\sub_header_button.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_friends_row.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_leaderboard_row.xml" />
+     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_header_external.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_inventory.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_thread_row_self.xml" />
+     <None Include="Assets\Plugins\SwarmUnityREADME.txt" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_list.xml" />
+     <None Include="Assets\link.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\row_background.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_thread_row_other.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_get_coins.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_list_section_header.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\contextual_grey_background.xml" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
+     <None Include="Assets\Plugins\Android\unityads\res\values\strings.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_store_row.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\blue_button.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_buy_button.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_header.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_upgrade_guest.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_store_category_row.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_purchase_popup.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_login.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_webview.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\coin_provider_button.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\message_speech_bubble_background.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\footer_background.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_loading_popup.xml" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_load_more.xml" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
+     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_dashboard_row.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\grey_button.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_settings.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_leaderboard_list.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_featured_app_popup.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_create_account.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_thread.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_store.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_tophalf.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\footer_button_background.xml" />
+     <None Include="Assets\Plugins\Android\unityads\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\swarm_achievement_row.xml" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{808094AF-09AB-9CA6-B1E2-81C7D6CC423B}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
