@@ -31,10 +31,11 @@ public class HexBlock : MonoBehaviour {
 
 	public bool isJumpable = false;
 	public bool moveIn  = false;  // if a block is empty and block can move into there set true 
+	public int tokenIndex;      //indcate what side the sending  neighbor is on.
 
 	// Use this for initialization
 	void Start () {
-	
+		ChangeBlockType();
 	}
 
 	void CheckNeighbor(){
@@ -52,10 +53,10 @@ public class HexBlock : MonoBehaviour {
 					neighborHEX[c] = hit.collider.gameObject.GetComponent<HexBlock>();
 
 					if (neighborHEX[c].blockType != BlockType.Empty ){
-
-						SecondNeighborCheck(c);
-
 						Debug.Log (" check next");
+						neighborHEX[c].SecondNeighborCheck(c);
+
+
 					}
 				}
 
@@ -67,14 +68,17 @@ public class HexBlock : MonoBehaviour {
 
 	void OnMouseOver() {
 
-		if(blockState != BlockState.Active){
+		if(blockState != BlockState.Active && blockType != BlockType.Empty ){
 		blockState = BlockState.Hover;
 		ChangeBlockState();
+		}else if (moveIn == true && blockType == BlockType.Empty){
+			blockState = BlockState.Hover;
+			ChangeBlockState();
 		}
 	}
 
 	void OnMouseExit() {
-		if(blockState != BlockState.Active){
+		if(blockState != BlockState.Active ){
 		blockState = BlockState.Normal;
 			ChangeBlockState();
 		}
@@ -95,49 +99,96 @@ public class HexBlock : MonoBehaviour {
 	void OnMouseDown() {
 	
 
-		if(blockState != BlockState.Active && GameManger.ACTIVE == false){
+		if(blockState != BlockState.Active && GameManger.ACTIVE == false && blockType != BlockType.Empty){
 			blockState = BlockState.Active;
-			ChangeBlockState();
+
 		}else if(blockState == BlockState.Active){
 			GameManger.ACTIVE = false;
 			blockState = BlockState.Normal;
-			ChangeBlockState();
-			}
+			}else if( GameManger.ACTIVE == true && blockType == BlockType.Empty && moveIn == true){
+			blockState = BlockState.Move;
+			GameManger.ACTIVE = false;
+
+		}
 
 
-		Debug.Log("Drag ended!");
+
+		ChangeBlockState();
+		//Debug.Log("Click!");
 	}
 
 
-	void ChangeBlockState(){
+	public void ChangeBlockState(){
 
 		switch (blockState){
-		case BlockState.EmptyState : break;
+		case BlockState.EmptyState :
+			if (moveIn == true){
+				// block type = moved block
+				blockState = BlockState.Move;
+			}
+
+			break;
 		case BlockState.Active :
 			GameManger.ACTIVE = true;
+			GameManger.CURRENTACTIVEBLOCK = this.GetComponent<HexBlock>();
 
 			CheckNeighbor();
 			renderer.material.color = new Color(0, 1, 1);
 			break;
 		case BlockState.Normal : 
-			renderer.material.color = new Color(1, 1, 1);
+			ChangeBlockType();
 			break;
-		case BlockState.Dissolve : break;
+		case BlockState.Dissolve : 
+			blockState = BlockState.Normal;
+			break;
 		case BlockState.Hover	:
-			renderer.material.color = new Color(0.1F, 0, 0);
+			renderer.material.color = new Color(0, 30, 1);
 			break;
 		case BlockState.Selected : break;
-		case BlockState.Move : break;
+		case BlockState.Move :
+			if(GameManger.CURRENTACTIVEBLOCK != null){
+				blockType = GameManger.CURRENTACTIVEBLOCK.blockType; 
+
+				RaycastHit hit;
+				Ray ray = new Ray (checkPoints[tokenIndex].position,  checkPoints[tokenIndex].forward);
+				
+				if (Physics.Raycast(ray , out hit,1)){
+					if (hit.collider != null){ 
+						neighborHEX[tokenIndex] = hit.collider.gameObject.GetComponent<HexBlock>();
+						neighborHEX[tokenIndex].blockState = BlockState.Dissolve;
+						neighborHEX[tokenIndex].blockType = BlockType.Empty;
+						neighborHEX[tokenIndex].ChangeBlockType();
+						neighborHEX[tokenIndex].ChangeBlockState();
+					}}
+
+				GameManger.CURRENTACTIVEBLOCK.blockState = BlockState.Dissolve;
+				GameManger.CURRENTACTIVEBLOCK.blockType  = BlockType.Empty;
+				GameManger.CURRENTACTIVEBLOCK.ChangeBlockType();
+				GameManger.CURRENTACTIVEBLOCK.ChangeBlockState();
+				GameManger.CURRENTACTIVEBLOCK  = null;
+
+			}
+			break;
 
 		}
 	}
 
-	void ChangeBlockType(BlockType type){
-		switch (type){
-		case BlockType.Blue : break;
-		case BlockType.Red : break;
-		case BlockType.Green	 : break;
-		case BlockType.Empty : break;
+	public void ChangeBlockType(){
+		switch (blockType){
+		case BlockType.Blue :
+				renderer.material.color = new Color(0, 0.23F, 1);
+				break;
+		case BlockType.Red : 
+			renderer.material.color = new Color(1, 0, 0.23f);
+			break;
+		case BlockType.Green	 :
+			renderer.material.color = new Color(0, 1,0.23f);
+			break;
+
+		case BlockType.Empty : 
+			renderer.material.color = new Color(1, 1, 1, 0.6f);
+
+			break;
 
 		}
 
@@ -163,29 +214,31 @@ public class HexBlock : MonoBehaviour {
 
 
 
+	// If block is a middle block. check next if its empty type
 
 	void SecondNeighborCheck(int index){
 		RaycastHit hit;
 
-		Ray ray = new Ray (checkPoints[PointIndex(index)].position,  checkPoints[PointIndex(index)].forward);
+		Ray ray = new Ray (checkPoints[index].position,  checkPoints[index].forward);
 		
 		if (Physics.Raycast(ray , out hit,1)){
 			if (hit.collider != null){ 
-				Debug.Log ("Hit object at check point " + (PointIndex(index) + 1 ) + " "+ hit.collider.name );
-				neighborHEX[PointIndex(index)] = hit.collider.gameObject.GetComponent<HexBlock>();
+				Debug.Log ("Hit object at check point " + (index + 1 ) + " "+ hit.collider.name );
+				neighborHEX[index] = hit.collider.gameObject.GetComponent<HexBlock>();
 
-				if (neighborHEX[PointIndex(index)].blockType == BlockType.Empty ){
+				if (neighborHEX[index].blockType == BlockType.Empty ){
 
 					// if block one and to are compatible
 					isJumpable = true;
-					neighborHEX[PointIndex(index)].moveIn = true;
+					neighborHEX[index].moveIn = true;
+					neighborHEX[index].tokenIndex = PointIndex(index);
 					Debug.Log (" check two! done");
 				}
 
 			}
 			
 		}
-		Debug.Log ("Index # " + PointIndex(index));
+		Debug.Log ("Index # " + index);
 
 	}
 

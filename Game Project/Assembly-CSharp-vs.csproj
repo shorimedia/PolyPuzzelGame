@@ -52,6 +52,8 @@
      <Compile Include="Assets\Demo\Scripts\LeaderboardsDemo.cs" />
      <Compile Include="Assets\Demo\Scripts\LoginDemo.cs" />
      <Compile Include="Assets\Demo\Scripts\StoreDemo.cs" />
+     <Compile Include="Assets\Messenger\Callback.cs" />
+     <Compile Include="Assets\Messenger\Messenger.cs" />
      <Compile Include="Assets\Scripts\GameManger.cs" />
      <Compile Include="Assets\Scripts\HexBlock.cs" />
      <Compile Include="Assets\Scripts\board.cs" />
