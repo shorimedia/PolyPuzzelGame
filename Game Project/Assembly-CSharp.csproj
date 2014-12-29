@@ -52,6 +52,9 @@
      <Compile Include="Assets\Demo\Scripts\LeaderboardsDemo.cs" />
      <Compile Include="Assets\Demo\Scripts\LoginDemo.cs" />
      <Compile Include="Assets\Demo\Scripts\StoreDemo.cs" />
+     <Compile Include="Assets\Scripts\GameManger.cs" />
+     <Compile Include="Assets\Scripts\HexBlock.cs" />
+     <Compile Include="Assets\Scripts\board.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
