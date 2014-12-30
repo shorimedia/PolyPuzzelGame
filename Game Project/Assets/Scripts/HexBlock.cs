@@ -31,16 +31,30 @@ public class HexBlock : MonoBehaviour {
 
 	public bool isJumpable = false;
 	public bool moveIn  = false;  // if a block is empty and block can move into there set true 
-	public int tokenIndex;      //indcate what side the sending  neighbor is on.
+	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
 
+	public int possibleMoves = 0; // holds the number of possible moves
+	public int ping = 0;
+	public int nullPing = 0;
+
+
+
+
+
+	void Awake(){
+		
+		Messenger.AddListener( "Check Neighbor", CheckNeighbor );
+
+	}
+	
 	// Use this for initialization
 	void Start () {
 		ChangeBlockType();
 	}
 
-	void CheckNeighbor(){
+	public void CheckNeighbor(){
 		// check block neighbors
-
+	
 		RaycastHit hit;
 
 		for(int c = 0; c < checkPoints.Length; c++){
@@ -49,21 +63,30 @@ public class HexBlock : MonoBehaviour {
 
 		if (Physics.Raycast(ray , out hit,1)){
 				if (hit.collider != null){ 
-					Debug.Log ("Hit object at check point " + (c + 1 ) + " "+ hit.collider.name );
+
+
+					//Debug.Log ("Hit object at check point " + (c + 1 ) + " "+ hit.collider.name );
+					if(neighborHEX[c] == null){
 					neighborHEX[c] = hit.collider.gameObject.GetComponent<HexBlock>();
-
-					if (neighborHEX[c].blockType != BlockType.Empty ){
-						Debug.Log (" check next");
-						neighborHEX[c].SecondNeighborCheck(c);
-
-
 					}
-				}
+					if(blockType != BlockType.Empty){
+					if (neighborHEX[c].blockType != BlockType.Empty ){
+						//Debug.Log (" check next");
+						neighborHEX[c].SecondNeighborCheck(c); }
+					}else{
 
-			}
-		}
+						if (neighborHEX[c].blockType != BlockType.Empty ){
+
+						}
+
+					}}
+		}}
 
 	}
+
+
+
+
 
 
 	void OnMouseOver() {
@@ -130,24 +153,29 @@ public class HexBlock : MonoBehaviour {
 			break;
 		case BlockState.Active :
 			GameManger.ACTIVE = true;
-			GameManger.CURRENTACTIVEBLOCK = this.GetComponent<HexBlock>();
-
+			GameManger.CURRENT_ACTIVE_BLOCK = this.GetComponent<HexBlock>();
 			CheckNeighbor();
 			renderer.material.color = new Color(0, 1, 1);
+
 			break;
 		case BlockState.Normal : 
 			ChangeBlockType();
 			break;
 		case BlockState.Dissolve : 
 			blockState = BlockState.Normal;
+			EmptyPing();
+			UpdateNeighbor();
+			if(isJumpable == true){
+				isJumpable = false;
+			}
 			break;
 		case BlockState.Hover	:
 			renderer.material.color = new Color(0, 30, 1);
 			break;
 		case BlockState.Selected : break;
 		case BlockState.Move :
-			if(GameManger.CURRENTACTIVEBLOCK != null){
-				blockType = GameManger.CURRENTACTIVEBLOCK.blockType; 
+			if(GameManger.CURRENT_ACTIVE_BLOCK != null){
+				blockType = GameManger.CURRENT_ACTIVE_BLOCK.blockType; 
 
 				RaycastHit hit;
 				Ray ray = new Ray (checkPoints[tokenIndex].position,  checkPoints[tokenIndex].forward);
@@ -161,12 +189,18 @@ public class HexBlock : MonoBehaviour {
 						neighborHEX[tokenIndex].ChangeBlockState();
 					}}
 
-				GameManger.CURRENTACTIVEBLOCK.blockState = BlockState.Dissolve;
-				GameManger.CURRENTACTIVEBLOCK.blockType  = BlockType.Empty;
-				GameManger.CURRENTACTIVEBLOCK.ChangeBlockType();
-				GameManger.CURRENTACTIVEBLOCK.ChangeBlockState();
-				GameManger.CURRENTACTIVEBLOCK  = null;
+				GameManger.CURRENT_ACTIVE_BLOCK.blockState = BlockState.Dissolve;
+				GameManger.CURRENT_ACTIVE_BLOCK.blockType  = BlockType.Empty;
+				GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockType();
+				GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockState();
+				GameManger.CURRENT_ACTIVE_BLOCK  = null;
 
+				GameManger.TOTAL_PINGS -= ping;
+				ping = 0;
+				GameManger.TOTAL_NULL_PINGS -= nullPing ;
+				nullPing = 0;
+				UpdateNeighbor();
+				Messenger.Broadcast("Check for Empties");
 			}
 			break;
 
@@ -233,15 +267,76 @@ public class HexBlock : MonoBehaviour {
 					neighborHEX[index].moveIn = true;
 					neighborHEX[index].tokenIndex = PointIndex(index);
 					Debug.Log (" check two! done");
+
 				}
 
 			}
 			
 		}
 		Debug.Log ("Index # " + index);
+	}
+
+
+	public void EmptyPing(){
+
+		RaycastHit hit;
+		
+		for(int c = 0; c < checkPoints.Length; c++){
+			
+			Ray ray = new Ray (checkPoints[c].position,  checkPoints[c].forward);
+			
+			if (Physics.Raycast(ray , out hit,1)){
+				if (hit.collider != null){ 
+						//Debug.Log ("Hit object at check point " + (c + 1 ) + " "+ hit.collider.name );
+						if(neighborHEX[c] == null){
+							neighborHEX[c] = hit.collider.gameObject.GetComponent<HexBlock>();
+						}
+
+						if (neighborHEX[c].blockType != BlockType.Empty && neighborHEX[c].blockType != null  ){
+							ping++;
+							GameManger.TOTAL_PINGS ++;
+						}
+				}}
+
+				if(neighborHEX[c] == null){
+					nullPing ++;
+					GameManger.TOTAL_NULL_PINGS ++;     
+				}
+			
+		
+
+		}
 
 	}
 
 
+	public void UpdateNeighbor(){
+		// check block neighbors
+		
+		RaycastHit hit;
+		
+		for(int c = 0; c < checkPoints.Length; c++){
+			
+			Ray ray = new Ray (checkPoints[c].position,  checkPoints[c].forward);
+			
+			if (Physics.Raycast(ray , out hit,1)){
+				if (hit.collider != null){ 
+		
+					if (neighborHEX[c].blockType == BlockType.Empty ){
+						GameManger.TOTAL_PINGS -= neighborHEX[c].ping ;
+						neighborHEX[c].ping = 0;
+						GameManger.TOTAL_NULL_PINGS -= neighborHEX[c].nullPing ;
+						neighborHEX[c].nullPing = 0;
+						neighborHEX[c].EmptyPing();
+						}
+				}
+			}}
+	}
 
+
+	void OnDisable(){
+		
+		Messenger.RemoveListener( "Check Neighbor", CheckNeighbor  );
+
+	}
 }

@@ -10,6 +10,15 @@ public class board : MonoBehaviour {
 	public List<HexBlock> TokenData = new List<HexBlock>();
 
 
+	void Awake(){
+		
+		Messenger.AddListener( "Check for Empties", EmptyCheck );
+		
+		//Messenger.AddListener( "Clear Level", Clear );
+	}
+
+
+
 	// Use this for initialization
 	void Start () {
 		StartGame(1);
@@ -63,24 +72,52 @@ public class board : MonoBehaviour {
 			if(i == 0){
 				TokenData[i].blockType = HexBlock.BlockType.Empty;
 				TokenData[i].ChangeBlockType();
+
 			}
 		}
 
 
+		EmptyCheck();
+		CheckMoves();
+		TokenData[0].EmptyPing();
 	}
 
 	public void EmptyCheck(){
+		GameManger.CURRENT_NUM_EMPTY = 0;
 
 		for(int i = 0; i < TokenData.Count; i++){
 
 			if (TokenData[i].blockType == HexBlock.BlockType.Empty){
-				GameManger.CURRENTNUMEMPTY++;
+				GameManger.CURRENT_NUM_EMPTY++;
 			}
 		}
+
+
 	} 
+
+	public void CheckMoves(){
+
+		for(int i = 0; i < TokenData.Count; i++){
+			
+			if (TokenData[i].blockType != HexBlock.BlockType.Empty){
+				TokenData[i].CheckNeighbor();
+			}
+		}
+	}
 
 
 	void RandomType(){
 
 	}
+
+
+
+	void OnDisable(){
+
+
+		Messenger.RemoveListener( "Check for Empties", EmptyCheck );
+		
+		//Messenger.RemoveListener( "Clear Level", Clear );
+	}
+		
 }
