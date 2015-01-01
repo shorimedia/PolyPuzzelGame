@@ -32,6 +32,7 @@ public class board : MonoBehaviour {
 		switch(LvNum){
 		case 1: 
 			Generator(61);
+
 			break;
 		case 2: 
 			Generator(91);

@@ -33,9 +33,12 @@ public class HexBlock : MonoBehaviour {
 	public bool moveIn  = false;  // if a block is empty and block can move into there set true 
 	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
 
-	public int possibleMoves = 0; // holds the number of possible moves
-	public int ping = 0;
-	public int nullPing = 0;
+	private int possibleMoves = 0; // remove this
+	private int _ping = 0;
+	private int _nullPing = 0;
+
+
+	public HexType hexType;
 
 
 
@@ -44,6 +47,7 @@ public class HexBlock : MonoBehaviour {
 	void Awake(){
 		
 		Messenger.AddListener( "Check Neighbor", CheckNeighbor );
+		hexType = new HexType(HexType.BlockType.Fire);
 
 	}
 	
@@ -161,16 +165,26 @@ public class HexBlock : MonoBehaviour {
 		case BlockState.Normal : 
 			ChangeBlockType();
 			break;
-		case BlockState.Dissolve : 
-			blockState = BlockState.Normal;
-			EmptyPing();
-			UpdateNeighbor();
+
+		case BlockState.Dissolve :
 			if(isJumpable == true){
+				GameManger.TOTAL_POINTS_COUNT += hexType.points; 
 				isJumpable = false;
 			}
+
+			blockType = BlockType.Empty;
+			//ChangeBlockType();
+
+			blockState = BlockState.Normal;
+
+			EmptyPing();
+			UpdateNeighbor();
+			ChangeBlockState();
 			break;
 		case BlockState.Hover	:
+			ChangeBlockType();
 			renderer.material.color = new Color(0, 30, 1);
+
 			break;
 		case BlockState.Selected : break;
 		case BlockState.Move :
@@ -184,8 +198,8 @@ public class HexBlock : MonoBehaviour {
 					if (hit.collider != null){ 
 						neighborHEX[tokenIndex] = hit.collider.gameObject.GetComponent<HexBlock>();
 						neighborHEX[tokenIndex].blockState = BlockState.Dissolve;
-						neighborHEX[tokenIndex].blockType = BlockType.Empty;
-						neighborHEX[tokenIndex].ChangeBlockType();
+						//neighborHEX[tokenIndex].blockType = BlockType.Empty;
+						//neighborHEX[tokenIndex].ChangeBlockType();
 						neighborHEX[tokenIndex].ChangeBlockState();
 					}}
 
@@ -195,10 +209,10 @@ public class HexBlock : MonoBehaviour {
 				GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockState();
 				GameManger.CURRENT_ACTIVE_BLOCK  = null;
 
-				GameManger.TOTAL_PINGS -= ping;
-				ping = 0;
-				GameManger.TOTAL_NULL_PINGS -= nullPing ;
-				nullPing = 0;
+				GameManger.TOTAL_PINGS -= _ping;
+				_ping = 0;
+				GameManger.TOTAL_NULL_PINGS -= _nullPing ;
+				_nullPing = 0;
 				UpdateNeighbor();
 				Messenger.Broadcast("Check for Empties");
 			}
@@ -210,7 +224,8 @@ public class HexBlock : MonoBehaviour {
 	public void ChangeBlockType(){
 		switch (blockType){
 		case BlockType.Blue :
-				renderer.material.color = new Color(0, 0.23F, 1);
+			hexType.ChangeHexType(HexType.BlockType.Fire);
+			renderer.material = hexType.blockMaterial;
 				break;
 		case BlockType.Red : 
 			renderer.material.color = new Color(1, 0, 0.23f);
@@ -220,7 +235,8 @@ public class HexBlock : MonoBehaviour {
 			break;
 
 		case BlockType.Empty : 
-			renderer.material.color = new Color(1, 1, 1, 0.6f);
+			hexType.ChangeHexType(HexType.BlockType.Empty);
+			renderer.material = hexType.blockMaterial;
 
 			break;
 
@@ -293,13 +309,13 @@ public class HexBlock : MonoBehaviour {
 						}
 
 						if (neighborHEX[c].blockType != BlockType.Empty && neighborHEX[c].blockType != null  ){
-							ping++;
+							_ping++;
 							GameManger.TOTAL_PINGS ++;
 						}
 				}}
 
 				if(neighborHEX[c] == null){
-					nullPing ++;
+					_nullPing ++;
 					GameManger.TOTAL_NULL_PINGS ++;     
 				}
 			
@@ -307,7 +323,7 @@ public class HexBlock : MonoBehaviour {
 
 		}
 
-	}
+	}  
 
 
 	public void UpdateNeighbor(){
@@ -323,10 +339,10 @@ public class HexBlock : MonoBehaviour {
 				if (hit.collider != null){ 
 		
 					if (neighborHEX[c].blockType == BlockType.Empty ){
-						GameManger.TOTAL_PINGS -= neighborHEX[c].ping ;
-						neighborHEX[c].ping = 0;
-						GameManger.TOTAL_NULL_PINGS -= neighborHEX[c].nullPing ;
-						neighborHEX[c].nullPing = 0;
+						GameManger.TOTAL_PINGS -= neighborHEX[c]._ping ;
+						neighborHEX[c]._ping = 0;
+						GameManger.TOTAL_NULL_PINGS -= neighborHEX[c]._nullPing ;
+						neighborHEX[c]._nullPing = 0;
 						neighborHEX[c].EmptyPing();
 						}
 				}

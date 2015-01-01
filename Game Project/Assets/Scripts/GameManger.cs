@@ -18,6 +18,9 @@ public class GameManger : MonoBehaviour {
 	public int countTwo;
 	public int countThree;
 
+	public static int TOTAL_POINTS_COUNT = 0;
+	public  int totalPoint;
+
 
 	public static int LEVEL_NUM = 1;
 
@@ -32,6 +35,8 @@ public class GameManger : MonoBehaviour {
 		count = CURRENT_NUM_EMPTY;
 		countTwo = TOTAL_PINGS;
 		countThree = TOTAL_NULL_PINGS;
+
+		totalPoint = TOTAL_POINTS_COUNT;
 
 		CalculateMoves();
 	}
