@@ -68,11 +68,11 @@ public class HexType  {
 		case BlockType.Sword : 
 
 			blockMaterial   = Resources.Load<Material>("Materials/Sword_blockMaterial" );
-			points = 30;
+			points = 40;
 			break;
 		case BlockType.Spear : 
 			blockMaterial   = Resources.Load<Material>("Materials/Spear_blockMaterial" );
-			points = 30;
+			points = 40;
 			break;
 		case BlockType.Wealth : 
 			blockMaterial   = Resources.Load<Material>("Materials/Wealth_blockMaterial" );

@@ -2,18 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\board.cs">
     <Files>
-      <File FileName="Assets\Scripts\board.cs" Line="39" Column="10" />
-      <File FileName="Assets\Scripts\HexBlock.cs" Line="180" Column="4" />
+      <File FileName="Assets\Scripts\board.cs" Line="8" Column="2" />
+      <File FileName="Assets\Scripts\HexBlock.cs" Line="201" Column="25" />
       <File FileName="Assets\Scripts\GameManger.cs" Line="25" Column="34" />
-      <File FileName="Assets\Scripts\HexType.cs" Line="29" Column="3" />
+      <File FileName="Assets\Scripts\HexType.cs" Line="43" Column="1" />
       <File FileName="..\..\..\..\Google Drive\Game Projects\Heroes of Olympus\Assets\Scripts\Level\Level Genatorion\RoomTheme.cs" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="196" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="168" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

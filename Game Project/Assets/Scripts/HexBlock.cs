@@ -4,14 +4,27 @@ using System.Collections;
 public class HexBlock : MonoBehaviour {
 	public Transform[] checkPoints = new Transform[6]; 
 
+
+
 	public enum BlockType {
-		Red,
-		Blue,
-		Green,
+		Flow,
+		Stone,
+		Fire,
+		Lite,
+		Shield,
+		Sword,
+		Spear,
+		Wealth,
+		Wisdom,
+		TimeType,
+		Destruction,
+		Darkness,
 		Empty
 	}
+	
 
-	public BlockType blockType = BlockType.Blue;
+
+	public BlockType blockType = BlockType.Flow;
 
 
 	public enum BlockState{
@@ -102,6 +115,8 @@ public class HexBlock : MonoBehaviour {
 			blockState = BlockState.Hover;
 			ChangeBlockState();
 		}
+
+
 	}
 
 	void OnMouseExit() {
@@ -110,11 +125,10 @@ public class HexBlock : MonoBehaviour {
 			ChangeBlockState();
 		}
 
-
 		//if active set empty blocks back fasle
-		if(GameManger.ACTIVE == false){
-			moveIn = false;
-		}
+//		if(GameManger.ACTIVE == false){
+//			moveIn = false;
+//		}
 
 	}
 
@@ -125,13 +139,17 @@ public class HexBlock : MonoBehaviour {
 
 	void OnMouseDown() {
 	
-
+		//if a block is full, when click on check if there are any other active blocks. if not set to active
 		if(blockState != BlockState.Active && GameManger.ACTIVE == false && blockType != BlockType.Empty){
 			blockState = BlockState.Active;
+			GameManger.CURRENT_OPEN_BLOCK.moveIn = false;
 
 		}else if(blockState == BlockState.Active){
+			// if this block is active when clicked on de-activeate it
 			GameManger.ACTIVE = false;
+			GameManger.CURRENT_OPEN_BLOCK.moveIn = false;
 			blockState = BlockState.Normal;
+			//if this block a empty block and another  block is  active, check  if this block can be moved into
 			}else if( GameManger.ACTIVE == true && blockType == BlockType.Empty && moveIn == true){
 			blockState = BlockState.Move;
 			GameManger.ACTIVE = false;
@@ -174,9 +192,7 @@ public class HexBlock : MonoBehaviour {
 
 			blockType = BlockType.Empty;
 			//ChangeBlockType();
-
 			blockState = BlockState.Normal;
-
 			EmptyPing();
 			UpdateNeighbor();
 			ChangeBlockState();
@@ -198,8 +214,6 @@ public class HexBlock : MonoBehaviour {
 					if (hit.collider != null){ 
 						neighborHEX[tokenIndex] = hit.collider.gameObject.GetComponent<HexBlock>();
 						neighborHEX[tokenIndex].blockState = BlockState.Dissolve;
-						//neighborHEX[tokenIndex].blockType = BlockType.Empty;
-						//neighborHEX[tokenIndex].ChangeBlockType();
 						neighborHEX[tokenIndex].ChangeBlockState();
 					}}
 
@@ -222,26 +236,78 @@ public class HexBlock : MonoBehaviour {
 	}
 
 	public void ChangeBlockType(){
-		switch (blockType){
-		case BlockType.Blue :
+
+		switch(blockType){
+		case BlockType.Flow : 
+			hexType.ChangeHexType(HexType.BlockType.Flow);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.Stone : 
+			hexType.ChangeHexType(HexType.BlockType.Stone);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.Fire : 
 			hexType.ChangeHexType(HexType.BlockType.Fire);
 			renderer.material = hexType.blockMaterial;
-				break;
-		case BlockType.Red : 
-			renderer.material.color = new Color(1, 0, 0.23f);
 			break;
-		case BlockType.Green	 :
-			renderer.material.color = new Color(0, 1,0.23f);
+		case BlockType.Lite : 
+			
+			hexType.ChangeHexType(HexType.BlockType.Lite);
+			renderer.material = hexType.blockMaterial;
 			break;
-
+		case BlockType.Shield : 
+			
+			hexType.ChangeHexType(HexType.BlockType.Shield);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.Sword : 
+			
+			hexType.ChangeHexType(HexType.BlockType.Sword);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.Spear : 
+			hexType.ChangeHexType(HexType.BlockType.Spear);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.Wealth : 
+			hexType.ChangeHexType(HexType.BlockType.Wealth);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.Wisdom : 
+			
+			hexType.ChangeHexType(HexType.BlockType.Wisdom);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.TimeType : 
+			hexType.ChangeHexType(HexType.BlockType.TimeType);
+			renderer.material = hexType.blockMaterial;
+			break;
+			
+		case BlockType.Destruction : 
+			
+			hexType.ChangeHexType(HexType.BlockType.Destruction);
+			renderer.material = hexType.blockMaterial;
+			break;
+		case BlockType.Darkness : 
+			
+			hexType.ChangeHexType(HexType.BlockType.Darkness);
+			renderer.material = hexType.blockMaterial;
+			break;
+			
 		case BlockType.Empty : 
+			
 			hexType.ChangeHexType(HexType.BlockType.Empty);
 			renderer.material = hexType.blockMaterial;
-
 			break;
-
+			
+		default:
+			hexType.ChangeHexType(HexType.BlockType.Fire);
+			renderer.material = hexType.blockMaterial;
+			break;
+			
 		}
 
+	
 	}
 
 	int PointIndex(int num){
@@ -282,6 +348,7 @@ public class HexBlock : MonoBehaviour {
 					isJumpable = true;
 					neighborHEX[index].moveIn = true;
 					neighborHEX[index].tokenIndex = PointIndex(index);
+					GameManger.CURRENT_OPEN_BLOCK = neighborHEX[index];
 					Debug.Log (" check two! done");
 
 				}

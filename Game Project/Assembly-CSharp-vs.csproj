@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\GameManger.cs" />
      <Compile Include="Assets\Scripts\HexBlock.cs" />
      <Compile Include="Assets\Scripts\HexType.cs" />
+     <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\board.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
