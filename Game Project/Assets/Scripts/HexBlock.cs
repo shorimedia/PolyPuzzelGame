@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HexBlock : MonoBehaviour {
 	public Transform[] checkPoints = new Transform[6]; 
@@ -28,7 +29,7 @@ public class HexBlock : MonoBehaviour {
 
 
 	public enum BlockState{
-		EmptyState,
+		Uncapable,
 		Active,
 		Normal,
 		Dissolve,
@@ -46,7 +47,7 @@ public class HexBlock : MonoBehaviour {
 	public bool moveIn  = false;  // if a block is empty and block can move into there set true 
 	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
 
-	private int possibleMoves = 0; // remove this
+
 	private int _ping = 0;
 	private int _nullPing = 0;
 
@@ -108,19 +109,20 @@ public class HexBlock : MonoBehaviour {
 
 	void OnMouseOver() {
 
-		if(blockState != BlockState.Active && blockType != BlockType.Empty ){
+		if(blockState != BlockState.Active && blockType != BlockType.Empty && blockState != BlockState.Uncapable ){
 		blockState = BlockState.Hover;
 		ChangeBlockState();
-		}else if (moveIn == true && blockType == BlockType.Empty){
+		}else
+
+		if (moveIn == true && blockType == BlockType.Empty){
 			blockState = BlockState.Hover;
 			ChangeBlockState();
 		}
 
-
 	}
 
 	void OnMouseExit() {
-		if(blockState != BlockState.Active ){
+		if(blockState != BlockState.Active && blockState != BlockState.Uncapable ){
 		blockState = BlockState.Normal;
 			ChangeBlockState();
 		}
@@ -166,11 +168,8 @@ public class HexBlock : MonoBehaviour {
 	public void ChangeBlockState(){
 
 		switch (blockState){
-		case BlockState.EmptyState :
-			if (moveIn == true){
-				// block type = moved block
-				blockState = BlockState.Move;
-			}
+		case BlockState.Uncapable :
+			renderer.material.color = new Color(0, 0.5f, 0.3f);
 
 			break;
 		case BlockState.Active :
@@ -345,10 +344,23 @@ public class HexBlock : MonoBehaviour {
 				if (neighborHEX[index].blockType == BlockType.Empty ){
 
 					// if block one and to are compatible
+
+
+					// check avctived neighbor via revase index direction and check if the type is jumpable
+					if(CompareType(neighborHEX[PointIndex(index)].blockType ) == true){
 					isJumpable = true;
-					neighborHEX[index].moveIn = true;
-					neighborHEX[index].tokenIndex = PointIndex(index);
-					GameManger.CURRENT_OPEN_BLOCK = neighborHEX[index];
+						neighborHEX[index].moveIn = true;
+						neighborHEX[index].tokenIndex = PointIndex(index);
+						GameManger.CURRENT_OPEN_BLOCK = neighborHEX[index];
+					}else{   
+						isJumpable = false;
+						blockState = BlockState.Uncapable;
+						ChangeBlockState();
+						neighborHEX[index].moveIn = false;
+						neighborHEX[index].tokenIndex = PointIndex(index);
+					}
+				
+
 					Debug.Log (" check two! done");
 
 				}
@@ -414,6 +426,78 @@ public class HexBlock : MonoBehaviour {
 						}
 				}
 			}}
+	}
+
+
+
+	public  bool CompareType( BlockType hex){
+		
+		switch(hex){
+			
+		case BlockType.Flow : 
+			
+			if( hexType.Flow == true){ return true; } else {return false;}
+			
+			break;
+			
+		case BlockType.Stone : 
+			if( hexType.Stone == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Fire : 
+			if( hexType.Fire == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Lite : 
+			if( hexType.Lite == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Shield : 
+			
+			if( hexType.Shield == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Sword : 
+		      if( hexType.Sword == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Spear : 
+			if( hexType.Spear == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Wealth : 
+			if( hexType.Wealth == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Wisdom : 
+			if( hexType.Wisdom == true){ return true; } else {return false;}
+			
+			break;
+		case BlockType.TimeType : 
+			
+			if( hexType.TimeType == true){ return true; } else {return false;}
+			break;
+
+		case BlockType.Destruction : 
+			
+			if( hexType.Destruction == true){ return true; } else {return false;}
+			break;
+			
+		case BlockType.Darkness : 
+			if( hexType.Darkness == true){ return true; } else {return false;}
+			
+			break;
+			
+		case BlockType.Empty : 
+			
+			if( hexType.Flow == true){ return true; } else {return false;}
+			break;
+			
+		default : if( hexType.Flow == true){ return true; } else {return false;}
+			break;
+		}
+		
+		
 	}
 
 

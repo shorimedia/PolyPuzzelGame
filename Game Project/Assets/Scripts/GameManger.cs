@@ -5,7 +5,8 @@ using System.Collections;
 
 public class GameManger : MonoBehaviour {
 
-	public enum GameState{
+	public enum GameState
+	{
 		Win,
 		Lose,
 		EndGame,
@@ -37,6 +38,8 @@ public class GameManger : MonoBehaviour {
 	public static int TOTAL_POINTS_COUNT = 0;
 	public  int totalPoint;
 
+	public static int TOTAL_SCORE = 0;
+
 
 	public static int LEVEL_NUM = 1;
 	public static int STAGE_NUM = 1;
@@ -60,11 +63,26 @@ public class GameManger : MonoBehaviour {
 
 
 	int NumberOfPlayableBlocks(){
-		return 61 - CURRENT_NUM_EMPTY;
+	
+			switch(STAGE_NUM){
+		case 1 : return 61 - CURRENT_NUM_EMPTY; break;
+		case 2: return 91 - CURRENT_NUM_EMPTY; break;
+		case 3 : return 127 - CURRENT_NUM_EMPTY; break;
+		case 4 : return 169 - CURRENT_NUM_EMPTY; break;
+		default: return 61 - CURRENT_NUM_EMPTY; break;
+		}
 	}
 
 	int TotalNulls(){
-		return 54 - TOTAL_NULL_PINGS;
+
+		switch(STAGE_NUM){
+		case 1 : return 54 - TOTAL_NULL_PINGS; break;
+		case 2: return  66 - TOTAL_NULL_PINGS;  break;
+		case 3 : return  78 - TOTAL_NULL_PINGS;  break;
+		case 4 : return  90 - TOTAL_NULL_PINGS;  break;
+		default: return  54 - TOTAL_NULL_PINGS;  break;
+		}
+
 	}
 	
 
@@ -76,22 +94,60 @@ public class GameManger : MonoBehaviour {
 		int CurrentSpace = TOTAL_PINGS + TotalNulls();
 
 		if(CurrentSpace == MaxSpace){
-			Debug.LogError("End Of Game!!!!!!!!");
+			gameState = GameState.EndGame;
+			ChangeGameState();
+			Debug.LogError("End Of Game!!!!!!!!    Score: " + TOTAL_SCORE);
 		}
 
 	}
 
 
-	public void LoseGame(){
-
+	public int ScoreCalculator(){
+		return (TOTAL_POINTS_COUNT * 6 / GameTime.TIME_IN_SECONDS ) + (TOTAL_POINTS_COUNT - (NumberOfPlayableBlocks() * 100)) + TOTAL_POINTS_COUNT;
 	}
 
-	public void WinGame(){
 
-	}
+	
+	public void ChangeGameState(){
+		switch(gameState){
+		case GameState.Win: break;
+			// show win screen with score, points and time
+			Debug.LogError("Winner!!!!!!");
+		case GameState.Lose: 
+			// show loser screen
+			Debug.LogError("Loser!!!!!!");
+			break;
+		case GameState.EndGame: 
+			TOTAL_SCORE = ScoreCalculator();
 
-	public void CheckMoves(){
+			if(NumberOfPlayableBlocks() > 5){
+				gameState = GameState.Lose;
+			} 
+			break;
+		case GameState.Restart: 
+			// reset level
+			//save level number and stage number
+			//set reset to true
+			Application.LoadLevel(Application.loadedLevel);
 
+			break;
+		case GameState.SaveGame: 
+			// score, unlock, acheveiments,time, 
+			break;
+		case GameState.NextLevel:
+			if( LEVEL_NUM <= 30){
+				LEVEL_NUM ++;
+			}
+			break;
+		case GameState.Game: 
+			// do somthing
+			break;
+		case GameState.Pause: 
+			// freeze time
+			Time.timeScale = 0;
+			//show pause screen
+			break;
+		}
 	}
 
 

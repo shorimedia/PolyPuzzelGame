@@ -57,6 +57,7 @@
      <Compile Include="Assets\Messenger\Callback.cs" />
      <Compile Include="Assets\Messenger\Messenger.cs" />
      <Compile Include="Assets\Scripts\GameManger.cs" />
+     <Compile Include="Assets\Scripts\GameTime.cs" />
      <Compile Include="Assets\Scripts\HexBlock.cs" />
      <Compile Include="Assets\Scripts\HexType.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />

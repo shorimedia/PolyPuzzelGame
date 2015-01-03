@@ -1,16 +1,23 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\board.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManger.cs">
     <Files>
-      <File FileName="Assets\Scripts\board.cs" Line="8" Column="2" />
-      <File FileName="Assets\Scripts\HexBlock.cs" Line="201" Column="25" />
-      <File FileName="Assets\Scripts\GameManger.cs" Line="25" Column="34" />
-      <File FileName="Assets\Scripts\HexType.cs" Line="43" Column="1" />
-      <File FileName="..\..\..\..\Google Drive\Game Projects\Heroes of Olympus\Assets\Scripts\Level\Level Genatorion\RoomTheme.cs" Line="4" Column="1" />
+      <File FileName="Assets\Scripts\HexBlock.cs" Line="147" Column="1" />
+      <File FileName="Assets\Scripts\GameManger.cs" Line="126" Column="6" />
+      <File FileName="Assets\Scripts\HexType.cs" Line="63" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="64" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexType.cs" line="154" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="350" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="349" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="170" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="171" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="142" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="110" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
