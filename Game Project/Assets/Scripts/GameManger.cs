@@ -2,6 +2,7 @@
 // Controls a games states
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour {
 
@@ -31,18 +32,27 @@ public class GameManger : MonoBehaviour {
 
 	public static int BLOCK_COUNT;
 
+
+
 //	public int count;
 //	public int countTwo;
 //	public int countThree;
 
-	public static int TOTAL_POINTS_COUNT = 0;
-	public  int totalPoint;
-
+	public static int TOTAL_POINTS_COUNT;
 	public static int TOTAL_SCORE = 0;
 
-
+	// Set up the level varibles
 	public static int LEVEL_NUM = 1;
 	public static int STAGE_NUM = 1;
+	public Text pointText;
+
+
+	void Awake()
+	{
+
+
+		TOTAL_POINTS_COUNT = 0;
+	}
 
 
 	// Use this for initialization
@@ -51,14 +61,18 @@ public class GameManger : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	 void Update () 
+	{
 //		count = CURRENT_NUM_EMPTY;
 //		countTwo = TOTAL_PINGS;
 //		countThree = TOTAL_NULL_PINGS;
 
-		totalPoint = TOTAL_POINTS_COUNT;
-
+		ChangeGameState();
 		CalculateMoves();
+
+		//only working the Gametime script
+		//pointText.text = TOTAL_POINTS_COUNT.ToString();
+
 	}
 
 
@@ -94,9 +108,10 @@ public class GameManger : MonoBehaviour {
 		int CurrentSpace = TOTAL_PINGS + TotalNulls();
 
 		if(CurrentSpace == MaxSpace){
+
+			Debug.Log("End Of Game!!!!!!!!    Score: " + TOTAL_SCORE);
 			gameState = GameState.EndGame;
 			ChangeGameState();
-			Debug.LogError("End Of Game!!!!!!!!    Score: " + TOTAL_SCORE);
 		}
 
 	}
@@ -112,7 +127,13 @@ public class GameManger : MonoBehaviour {
 		switch(gameState){
 		case GameState.Win: break;
 			// show win screen with score, points and time
-			Debug.LogError("Winner!!!!!!");
+			Debug.Log("Winner!!!!!!");
+
+			if( TOTAL_SCORE > PlayerPrefs.GetInt("Level " + GameManger.LEVEL_NUM + "_Score") && GameTime.TIME_IN_SECONDS > PlayerPrefs.GetInt("Level " + GameManger.LEVEL_NUM + "_Time_in_seconds")){
+
+				SendMessage("SaveData");
+			}
+		
 		case GameState.Lose: 
 			// show loser screen
 			Debug.LogError("Loser!!!!!!");
@@ -122,7 +143,7 @@ public class GameManger : MonoBehaviour {
 
 			if(NumberOfPlayableBlocks() > 5){
 				gameState = GameState.Lose;
-			} 
+			}else{ gameState = GameState.Win;} 
 			break;
 		case GameState.Restart: 
 			// reset level

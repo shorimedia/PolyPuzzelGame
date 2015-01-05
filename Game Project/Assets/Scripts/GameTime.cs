@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameTime : MonoBehaviour {
 	public static int TIME_IN_SECONDS;
@@ -12,11 +13,14 @@ public class GameTime : MonoBehaviour {
 
 	private int restSeconds;
 
-	public string textTime;
+	public static string TEXT_TIME;
+
+	public Text text;
+	public Text pointText;
 	
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	public void FixedUpdate () {
 
 		var guitime = Time.time;
 
@@ -26,7 +30,11 @@ public class GameTime : MonoBehaviour {
 		seconds = restSeconds % 60;
 		minutes = restSeconds / 60;
 
-		textTime = string.Format("{0:00}:{1:00}", minutes, seconds);
+		TEXT_TIME = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+		text.text = TEXT_TIME;
+
+		pointText.text = GameManger.TOTAL_POINTS_COUNT.ToString();
 	}
 
 
