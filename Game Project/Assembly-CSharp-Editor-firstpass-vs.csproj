@@ -142,6 +142,7 @@
      <None Include="Assets\Plugins\Android\res\layout\swarm_create_account.xml" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Textures\MaCrea\MaCrea.txt" />
      <None Include="Assets\Plugins\Android\res\layout\swarm_thread.xml" />
+     <None Include="Assets\codeandweb.com\Readme.txt" />
      <None Include="Assets\Plugins\Android\res\layout\swarm_store.xml" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Textures\BenSimonds\_Textures Readme.txt" />
      <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_tophalf.xml" />

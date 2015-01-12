@@ -17,6 +17,7 @@ using UnityEngine;
 
 public class TexturePackerImporter : AssetPostprocessor
 {
+	const string IMPORTER_VERSION = "3.5.0";
 
 	static string[] textureExtensions = {
 		".png",
@@ -26,6 +27,20 @@ public class TexturePackerImporter : AssetPostprocessor
 		".tga",
 		".bmp"
 	};
+
+	static bool importPivotPoints = EditorPrefs.GetBool("TPImporter.ImportPivotPoints", true);
+
+	/*
+	 *  Pivot point import can be disabled in the Preferences dialog (menu item Unity->Preferences, TexturePacker sheet)
+	 */
+	[PreferenceItem("TexturePacker")]
+	static void PreferencesGUI()
+	{
+		importPivotPoints = EditorGUILayout.Toggle("Always import pivot points", importPivotPoints);
+		if (GUI.changed)
+			EditorPrefs.SetBool("TPImporter.ImportPivotPoints", importPivotPoints);
+	}
+
 
 	/*
 	 *  Trigger a texture file re-import each time the .tpsheet file changes (or is manually re-imported)
@@ -61,17 +76,39 @@ public class TexturePackerImporter : AssetPostprocessor
 
 	static void updateSpriteMetaData (TextureImporter importer, string pathToData)
 	{
-		importer.textureType = TextureImporterType.Sprite;
+		if (importer.textureType != TextureImporterType.Advanced) {
+			importer.textureType = TextureImporterType.Sprite;
+		}
 		importer.maxTextureSize = 4096;
 		importer.spriteImportMode = SpriteImportMode.Multiple;
 
+		string[] dataFileContent = File.ReadAllLines(pathToData);
+		int format = 30302;
+
+		foreach (string row in dataFileContent)
+		{
+			if (row.StartsWith(":format=")) {
+				format = int.Parse(row.Remove(0,8));
+			}
+		}
+		if (format != 30302) {
+			EditorUtility.DisplayDialog("Please update TexturePacker Importer", "Your TexturePacker Importer is too old, \nplease load a new version from the asset store!", "Ok");
+			return;
+		}
+
+		Dictionary<string, SpriteMetaData> existingSprites = new Dictionary<string, SpriteMetaData>();
+		foreach (SpriteMetaData sprite in importer.spritesheet)
+		{
+			existingSprites.Add(sprite.name, sprite);
+		}
+
 		List<SpriteMetaData> metaData = new List<SpriteMetaData> ();
-		foreach (string row in File.ReadAllLines(pathToData)) {
-			if (string.IsNullOrEmpty (row) || row.StartsWith ("#"))
-				continue; // comment lines start with #
+		foreach (string row in dataFileContent) {
+			if (string.IsNullOrEmpty (row) || row.StartsWith ("#") || row.StartsWith (":"))
+				continue; // comment lines start with #, additional atlas properties with :
 
 			string [] cols = row.Split (';');
-			if (cols.Length != 7)
+			if (cols.Length < 7)
 				return; // format error
 
 			SpriteMetaData smd = new SpriteMetaData ();
@@ -84,80 +121,43 @@ public class TexturePackerImporter : AssetPostprocessor
 			float py = float.Parse (cols [6]);
 
 			smd.rect = new UnityEngine.Rect (x, y, w, h);
-			smd.pivot = new UnityEngine.Vector2 (px, py);
 
-			if (px == 0 && py == 0)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.BottomLeft;
-			else if (px == 0.5 && py == 0)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.BottomCenter;
-			else if (px == 1 && py == 0)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.BottomRight;
-			else if (px == 0 && py == 0.5)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.LeftCenter;
-			else if (px == 0.5 && py == 0.5)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.Center;
-			else if (px == 1 && py == 0.5)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.RightCenter;
-			else if (px == 0 && py == 1)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.TopLeft;
-			else if (px == 0.5 && py == 1)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.TopCenter;
-			else if (px == 1 && py == 1)
-				smd.alignment = (int)UnityEngine.SpriteAlignment.TopRight;
-			else
-				smd.alignment = (int)UnityEngine.SpriteAlignment.Custom;
+			if (existingSprites.ContainsKey(smd.name))
+			{
+				SpriteMetaData sprite = existingSprites[smd.name];
+				smd.pivot = sprite.pivot;
+				smd.alignment = sprite.alignment;
+				smd.border = sprite.border;
+			}
 
+			if (importPivotPoints || !existingSprites.ContainsKey(smd.name))
+			{
+				smd.pivot = new UnityEngine.Vector2 (px, py);
+
+				if (px == 0 && py == 0)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.BottomLeft;
+				else if (px == 0.5 && py == 0)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.BottomCenter;
+				else if (px == 1 && py == 0)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.BottomRight;
+				else if (px == 0 && py == 0.5)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.LeftCenter;
+				else if (px == 0.5 && py == 0.5)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.Center;
+				else if (px == 1 && py == 0.5)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.RightCenter;
+				else if (px == 0 && py == 1)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.TopLeft;
+				else if (px == 0.5 && py == 1)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.TopCenter;
+				else if (px == 1 && py == 1)
+					smd.alignment = (int)UnityEngine.SpriteAlignment.TopRight;
+				else
+					smd.alignment = (int)UnityEngine.SpriteAlignment.Custom;
+			}
 			metaData.Add (smd);
 		}
 
-		if (metaData.Count == 0)
-			return;
-
-		if (importer.spritesheet == null || importer.spritesheet.Length == 0) {
-			// replace a blank spritesheet
-			importer.spritesheet = metaData.ToArray ();
-		} else {
-			// merge into an existing spritesheet
-			Dictionary<string,SpriteMetaData> importedSprites = new Dictionary<string, SpriteMetaData> ();
-			foreach (var smd in metaData) {
-				importedSprites [smd.name] = smd;
-			}
-
-			// track what has been merged
-			HashSet<string> merged = new HashSet<string> ();
-
-			List<SpriteMetaData> existingSprites = new List<SpriteMetaData> (importer.spritesheet);
-
-			// default struct to replace deleted sprites
-			SpriteMetaData deletedSMD = new SpriteMetaData ();
-			deletedSMD.rect = new UnityEngine.Rect (0, 0, 1, 1);
-
-			// maintain indices
-			for (int i = 0; i < existingSprites.Count; ++i) {
-				string oldNameWithoutSlashes = existingSprites [i].name.Replace ("/", "-");
-				if (importedSprites.ContainsKey (existingSprites [i].name) ||
-				    importedSprites.ContainsKey (oldNameWithoutSlashes)) {
-					existingSprites [i] = importedSprites [oldNameWithoutSlashes];
-					merged.Add (existingSprites [i].name);
-				} else if (existingSprites [i].name.StartsWith ("DELETED_")) {
-					string origName = existingSprites [i].name.Remove (0, 8);
-					if (importedSprites.ContainsKey (origName)) {
-						existingSprites [i] = importedSprites [origName];
-						merged.Add (origName);
-					}
-				} else {
-					deletedSMD.name = "DELETED_" + existingSprites [i].name;
-					existingSprites [i] = deletedSMD;
-				}
-			}
-
-			// anything not merged is appended
-			foreach (var smd in metaData) {
-				if (!merged.Contains (smd.name)) {
-					existingSprites.Add (smd);
-				}
-			}
-			importer.spritesheet = existingSprites.ToArray ();
-		}
+		importer.spritesheet = metaData.ToArray();
 	}
 }

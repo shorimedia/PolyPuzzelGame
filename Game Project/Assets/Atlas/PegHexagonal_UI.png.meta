@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 818400fd3791c2f489eda238b3098ac1
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UI_Icon
+    21300002: UI_Icon2
+    21300004: button_bg
+    21300006: Hex_button_Whitebg
+    21300008: Hex_button_bg
+    21300010: UI_Box
+    21300012: UI_panel_hex
+    21300014: Ui_elements_white
+    21300016: exit_button
+    21300018: options_button
+    21300020: play_button
+    21300022: signleplay_button
+    21300024: stats_button
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Hex_button_Whitebg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1793
+        width: 511
+        height: 590
+      alignment: 9
+      pivot: {x: .512720168, y: .496610165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hex_button_bg
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 2993
+        width: 520
+        height: 594
+      alignment: 9
+      pivot: {x: .498076916, y: .498316497}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_Box
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 3538
+        width: 557
+        height: 556
+      alignment: 9
+      pivot: {x: .497307003, y: .494604319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_Icon
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 3589
+        width: 587
+        height: 505
+      alignment: 9
+      pivot: {x: .505962551, y: .500990093}
+      border: {x: 172, y: 70, z: 191, w: 59}
+    - name: UI_Icon2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3574
+        width: 600
+        height: 520
+      alignment: 9
+      pivot: {x: .5, y: .515384614}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_panel_hex
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 3884
+        width: 246
+        height: 210
+      alignment: 9
+      pivot: {x: .5, y: .504761934}
+      border: {x: 73, y: 30, z: 80, w: 24}
+    - name: Ui_elements_white
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2977
+        width: 516
+        height: 595
+      alignment: 9
+      pivot: {x: .492248058, y: .50420171}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: exit_button
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 2946
+        width: 516
+        height: 590
+      alignment: 9
+      pivot: {x: .494186044, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: options_button
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2401
+        width: 516
+        height: 590
+      alignment: 9
+      pivot: {x: .492248058, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: play_button
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2385
+        width: 516
+        height: 590
+      alignment: 9
+      pivot: {x: .492248058, y: .506779671}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: signleplay_button
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 2355
+        width: 516
+        height: 589
+      alignment: 9
+      pivot: {x: .492248058, y: .509337842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stats_button
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1810
+        width: 516
+        height: 589
+      alignment: 9
+      pivot: {x: .492248058, y: .509337842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

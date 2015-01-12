@@ -67,6 +67,8 @@
      <Compile Include="Assets\Scripts\HexBlock.cs" />
      <Compile Include="Assets\Scripts\HexType.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Menu.cs" />
+     <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefs.cs" />
      <Compile Include="Assets\Scripts\board.cs" />
      <Compile Include="Assets\Utils.cs" />
@@ -150,6 +152,7 @@
      <None Include="Assets\Plugins\Android\res\layout\swarm_create_account.xml" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Textures\MaCrea\MaCrea.txt" />
      <None Include="Assets\Plugins\Android\res\layout\swarm_thread.xml" />
+     <None Include="Assets\codeandweb.com\Readme.txt" />
      <None Include="Assets\Plugins\Android\res\layout\swarm_store.xml" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Textures\BenSimonds\_Textures Readme.txt" />
      <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_tophalf.xml" />
