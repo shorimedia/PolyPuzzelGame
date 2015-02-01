@@ -15,15 +15,13 @@ public class MenuManager : MonoBehaviour {
 	public void ShowMenu(Menu menu)
 	{
 		if ( CurrenMenu != null)
-		{
-			CurrenMenu.IsOpen = false;
+			CurrenMenu.IsOpen = false; CurrenMenu.ShowDepends(false);
 		
-		}
-		else
-		{
-			CurrenMenu = menu;
-			CurrenMenu.IsOpen = true;
-		}
+
+		CurrenMenu = menu;
+		CurrenMenu.IsOpen = true;
+		CurrenMenu.ShowDepends(true);
+
 
 	}
 

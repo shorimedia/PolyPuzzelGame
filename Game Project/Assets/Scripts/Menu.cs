@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class Menu : MonoBehaviour {
+	public  MenuDepends[] menuDepends;
 
 	private Animator _animator;
 	private CanvasGroup _canvasGroup;
+
 
 	public bool IsOpen
 	{
@@ -35,4 +37,15 @@ public class Menu : MonoBehaviour {
 			_canvasGroup.blocksRaycasts = _canvasGroup.interactable = true;
 		}
 	}
+
+	public void ShowDepends(bool OpenState)
+	{
+		if(menuDepends.Length != null)
+		for(int d =0; d < menuDepends.Length; d++ )
+		{
+			menuDepends[d].IsOpen = OpenState;
+
+		}
+	}
+
 }

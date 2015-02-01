@@ -44,13 +44,20 @@ public class GameManger : MonoBehaviour {
 	// Set up the level varibles
 	public static int LEVEL_NUM = 1;
 	public static int STAGE_NUM = 1;
+
+	public int level;
+	public int stage;
+	public bool testMode = false;
 	public Text pointText;
 
 
 	void Awake()
+
 	{
-
-
+		if(testMode ==  true){
+			LEVEL_NUM = level;
+			STAGE_NUM = stage;
+		}
 		TOTAL_POINTS_COUNT = 0;
 	}
 
@@ -58,11 +65,14 @@ public class GameManger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
+
 	}
 	
 	// Update is called once per frame
 	 void Update () 
 	{
+
+
 //		count = CURRENT_NUM_EMPTY;
 //		countTwo = TOTAL_PINGS;
 //		countThree = TOTAL_NULL_PINGS;

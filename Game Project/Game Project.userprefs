@@ -1,22 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menu.cs" Line="35" Column="67" />
-      <File FileName="Assets\Scripts\MenuManager.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\MenuDepends.cs" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\Menu.cs" Line="2" Column="26" />
+      <File FileName="Assets\Scripts\MenuManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="64" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexType.cs" line="154" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="350" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="349" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="170" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="171" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="142" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\HexBlock.cs" line="110" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <AuthorInfo Name="Victor Josey" Email="victor.josey@shorimedia" Copyright="Shori Media Games 2015" Company="Shori Media Games" Trademark="Shori Media Games" />

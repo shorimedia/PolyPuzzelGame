@@ -47,6 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\Builder.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\AudioSourceProEditor.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\SMPAutorun.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\SMPMenuItems.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\SMProHierarchyIcon.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\SoundFXManagerEditor.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\SoundManagerEditor.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\SoundManagerEditorTools.cs" />
+     <Compile Include="Assets\SoundManagerPro\Editor\SoundPocketEditor.cs" />
      <Compile Include="Assets\codeandweb.com\Editor\TexturePackerImporter.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
@@ -143,6 +151,9 @@
  </Reference>
  <Reference Include="JMOAssets">
  <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Cloud.Analytics">
+ <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/Plugins/UnityAnalytics/UnityEngine.Cloud.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

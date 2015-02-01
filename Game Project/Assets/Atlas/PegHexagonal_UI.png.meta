@@ -95,7 +95,7 @@ TextureImporter:
         height: 505
       alignment: 9
       pivot: {x: .505962551, y: .500990093}
-      border: {x: 172, y: 70, z: 191, w: 59}
+      border: {x: 172, y: 243, z: 191, w: 230}
     - name: UI_Icon2
       rect:
         serializedVersion: 2
@@ -115,7 +115,7 @@ TextureImporter:
         height: 210
       alignment: 9
       pivot: {x: .5, y: .504761934}
-      border: {x: 73, y: 30, z: 80, w: 24}
+      border: {x: 73, y: 106, z: 80, w: 102}
     - name: Ui_elements_white
       rect:
         serializedVersion: 2

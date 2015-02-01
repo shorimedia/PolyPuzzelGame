@@ -55,6 +55,7 @@ MonoBehaviour:
   minutes: 0
   seconds: 0
   text: {fileID: 0}
+  pointText: {fileID: 0}
 --- !u!114 &11443466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,8 +68,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 6
+  level: 0
+  stage: 0
+  testMode: 0
   pointText: {fileID: 0}
-  totalPoint: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

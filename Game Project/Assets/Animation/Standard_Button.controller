@@ -472,7 +472,7 @@ State:
   m_Motions:
   - {fileID: 7471548}
   m_ParentStateMachine: {fileID: 110771548}
-  m_Position: {x: 200, y: 0, z: 0}
+  m_Position: {x: 216, y: 0, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -487,7 +487,7 @@ State:
   m_Motions:
   - {fileID: 7471550}
   m_ParentStateMachine: {fileID: 110771548}
-  m_Position: {x: 235, y: 65, z: 0}
+  m_Position: {x: 216, y: 72, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -502,7 +502,7 @@ State:
   m_Motions:
   - {fileID: 7471552}
   m_ParentStateMachine: {fileID: 110771548}
-  m_Position: {x: 270, y: 130, z: 0}
+  m_Position: {x: 216, y: 156, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -517,7 +517,7 @@ State:
   m_Motions:
   - {fileID: 7471554}
   m_ParentStateMachine: {fileID: 110771548}
-  m_Position: {x: 305, y: 195, z: 0}
+  m_Position: {x: 216, y: 240, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -538,24 +538,24 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110271554}
-      second: []
-    data:
-      first: {fileID: 110271552}
-      second: []
-    data:
-      first: {fileID: 110271550}
-      second: []
-    data:
-      first: {fileID: 110271548}
-      second: []
-    data:
       first: {fileID: 0}
       second:
       - {fileID: 110171548}
       - {fileID: 110171550}
       - {fileID: 110171552}
       - {fileID: 110171554}
+    data:
+      first: {fileID: 110271548}
+      second: []
+    data:
+      first: {fileID: 110271550}
+      second: []
+    data:
+      first: {fileID: 110271552}
+      second: []
+    data:
+      first: {fileID: 110271554}
+      second: []
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_AnyStatePosition: {x: -48, y: 72, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

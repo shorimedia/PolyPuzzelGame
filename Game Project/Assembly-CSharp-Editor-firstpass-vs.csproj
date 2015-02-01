@@ -162,6 +162,9 @@
  <Reference Include="JMOAssets">
  <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Cloud.Analytics">
+ <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/Plugins/UnityAnalytics/UnityEngine.Cloud.Analytics.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
