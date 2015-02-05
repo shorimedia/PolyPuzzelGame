@@ -3,6 +3,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using PlayerPrefs = PreviewLabs.PlayerPrefs;
 
 public class GameManger : MonoBehaviour {
 
@@ -53,11 +54,21 @@ public class GameManger : MonoBehaviour {
 
 	void Awake()
 
-	{
+	{	// test any level for debug only
 		if(testMode ==  true){
 			LEVEL_NUM = level;
 			STAGE_NUM = stage;
+		}else
+		{
+			//load Game stage and level
+			LEVEL_NUM = PlayerPrefs.GetInt("Game Level");
+			STAGE_NUM = PlayerPrefs.GetInt("Game Stage");
+
+			// the values to show in inspector
+			stage = STAGE_NUM;
+			level = LEVEL_NUM;
 		}
+
 		TOTAL_POINTS_COUNT = 0;
 	}
 

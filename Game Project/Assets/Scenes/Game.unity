@@ -12199,7 +12199,7 @@ Prefab:
       objectReference: {fileID: 1695533514}
     - target: {fileID: 11443466, guid: 8cc0d808f9c68d249b0a3995c76d2ec2, type: 2}
       propertyPath: testMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11443466, guid: 8cc0d808f9c68d249b0a3995c76d2ec2, type: 2}
       propertyPath: stage
@@ -14126,7 +14126,7 @@ MonoBehaviour:
   gameState: 6
   level: 12
   stage: 1
-  testMode: 1
+  testMode: 0
   pointText: {fileID: 1695533514}
 --- !u!114 &2031550861
 MonoBehaviour:

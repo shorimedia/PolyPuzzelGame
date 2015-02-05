@@ -142,7 +142,8 @@ public class HexBlock : MonoBehaviour {
 	void OnMouseDown() {
 	
 		//if a block is full, when click on check if there are any other active blocks. if not set to active
-		if(blockState != BlockState.Active && GameManger.ACTIVE == false && blockType != BlockType.Empty){
+		if(blockState != BlockState.Active && GameManger.ACTIVE == false && blockType != BlockType.Empty)
+		{
 			blockState = BlockState.Active;
 			GameManger.CURRENT_OPEN_BLOCK.moveIn = false;
 
