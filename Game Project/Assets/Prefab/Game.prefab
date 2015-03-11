@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 6
-  level: 0
-  stage: 0
+  level: 12
+  stage: 1
   testMode: 0
   pointText: {fileID: 0}
 --- !u!1001 &100100000

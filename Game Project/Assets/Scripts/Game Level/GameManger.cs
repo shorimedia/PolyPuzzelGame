@@ -52,6 +52,8 @@ public class GameManger : MonoBehaviour {
 	public Text pointText;
 
 
+
+
 	void Awake()
 
 	{	// test any level for debug only
@@ -186,9 +188,22 @@ public class GameManger : MonoBehaviour {
 			break;
 		case GameState.Pause: 
 			// freeze time
-			Time.timeScale = 0;
+
+			//Time.timeScale = 0;
 			//show pause screen
 			break;
+		}
+	}
+
+
+	public void SetGameState(string State)
+	{
+		switch(State)
+		{
+		case "Win": gameState = GameState.Win; break;
+		case "Lose": gameState = GameState.Lose; break;
+		case "Pause":   gameState = GameState.Pause; break;
+
 		}
 	}
 

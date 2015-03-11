@@ -1,12 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game Menu\OptionsData.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\INGame Menu\Slot.cs">
     <Files>
-      <File FileName="Assets\Scripts\Game Menu\OptionsData.cs" Line="9" Column="1" />
+      <File FileName="Assets\Scripts\INGame Menu\ItemBar.cs" Line="86" Column="1" />
+      <File FileName="Assets\Scripts\INGame Menu\Slot.cs" Line="128" Column="34" />
+      <File FileName="Assets\Scripts\INGame Menu\Item.cs" Line="32" Column="1" />
+      <File FileName="Assets\Scripts\INGame Menu\ItemSpawner.cs" Line="26" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="179" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\Slot.cs" line="138" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <AuthorInfo Name="Victor Josey" Email="victor.josey@shorimedia" Copyright="Shori Media Games 2015" Company="Shori Media Games" Trademark="Shori Media Games" />

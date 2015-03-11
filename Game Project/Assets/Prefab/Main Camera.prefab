@@ -171,7 +171,13 @@ MonoBehaviour:
   - {fileID: 0}
   offset: 0
   canMove: 0
-  Testnum: 1
+  posIndex: 1
+  PosBtn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11497138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,8 +190,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 6
+  level: 0
+  stage: 0
+  testMode: 0
   pointText: {fileID: 0}
-  totalPoint: 0
 --- !u!124 &12497138
 Behaviour:
   m_ObjectHideFlags: 1

@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour {
 
 		CurrenMenu = menu;
 		CurrenMenu.IsOpen = true;
+		SoundManager.PlaySFX(SoundManager.Load("Transistion_Airwave_05"));
 		CurrenMenu.ShowDepends(true);
 
 

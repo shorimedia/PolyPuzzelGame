@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CameraMechinics : MonoBehaviour {
 
@@ -9,13 +10,31 @@ public class CameraMechinics : MonoBehaviour {
 	public Transform[] CameraLocs = new Transform[5];
 	public float offset;
 	public bool canMove = true;
-	public int Testnum = 1;
+	public int posIndex = 1;
+
+	public Button[] PosBtn = new Button[5];
+
+
+
+
+	
+	public int PositionIndex
+	{
+		get{return posIndex;}
+		set{posIndex = value;}
+	}
+
+	public bool MoveCamera
+	{
+		get{return canMove;}
+		set{canMove = value;}
+	}
 
 	void Update() {
 		transform.LookAt(target);
 
 		if(canMove == true){
-			StartCoroutine(ChangeCamPosition(Testnum));
+			StartCoroutine(ChangeCamPosition(posIndex));
 			canMove = false;
 		}
 	}
@@ -27,7 +46,7 @@ public class CameraMechinics : MonoBehaviour {
 		{
 
 		switch(camPos){
-		case 0:  transform.position = Vector3.Lerp(transform.position, CameraLocs[0].position, smooth * Time.deltaTime); break;
+			case 0:  transform.position = Vector3.Lerp(transform.position, CameraLocs[0].position, smooth * Time.deltaTime); break;
 		case 1: transform.position = Vector3.Lerp(transform.position, CameraLocs[1].position, smooth * Time.deltaTime);  break;
 		case 2: transform.position = Vector3.Lerp(transform.position, CameraLocs[2].position, smooth * Time.deltaTime);  break;
 		case 3: transform.position = Vector3.Lerp(transform.position, CameraLocs[3].position, smooth * Time.deltaTime);  break;

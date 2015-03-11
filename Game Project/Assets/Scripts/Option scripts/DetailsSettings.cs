@@ -6,7 +6,7 @@ using PlayerPrefs = PreviewLabs.PlayerPrefs;
 public class DetailsSettings : MonoBehaviour {
 
 
-	public Toggle LowResTog, MedResTog, HighResTog, AutoResTog;
+	//public Toggle LowResTog, MedResTog, HighResTog, AutoResTog;
 
 
 	private bool LowRes, MedRes, HighRes, AutoRes;
@@ -27,8 +27,7 @@ public class DetailsSettings : MonoBehaviour {
 	public void  Start() {
 		LoadDetail(PlayerPrefs.GetString("Options Detail"));
 	}
-
-
+	
 
 	#region Getting and setter
 	public bool LowResolution
@@ -112,7 +111,7 @@ public class DetailsSettings : MonoBehaviour {
 		case "Low":
 			LowRes = true;
 			SetDetails(DetailSettings.low);
-			LowResTog.isOn = true;
+			//LowResTog.isOn = true;
 			break;
 		case "Med":
 			MedRes = true;
