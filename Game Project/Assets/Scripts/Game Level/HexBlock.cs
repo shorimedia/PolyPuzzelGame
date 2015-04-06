@@ -170,14 +170,14 @@ public class HexBlock : MonoBehaviour {
 
 		switch (blockState){
 		case BlockState.Uncapable :
-			renderer.material.color = new Color(0, 0.5f, 0.3f);
+			GetComponent<Renderer>().material.color = new Color(0, 0.5f, 0.3f);
 
 			break;
 		case BlockState.Active :
 			GameManger.ACTIVE = true;
 			GameManger.CURRENT_ACTIVE_BLOCK = this.GetComponent<HexBlock>();
 			CheckNeighbor();
-			renderer.material.color = new Color(0, 1, 1);
+			GetComponent<Renderer>().material.color = new Color(0, 1, 1);
 
 			break;
 		case BlockState.Normal : 
@@ -199,7 +199,7 @@ public class HexBlock : MonoBehaviour {
 			break;
 		case BlockState.Hover	:
 			ChangeBlockType();
-			renderer.material.color = new Color(0, 30, 1);
+			GetComponent<Renderer>().material.color = new Color(0, 30, 1);
 
 			break;
 		case BlockState.Selected : break;
@@ -240,69 +240,69 @@ public class HexBlock : MonoBehaviour {
 		switch(blockType){
 		case BlockType.Flow : 
 			hexType.ChangeHexType(HexType.BlockType.Flow);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Stone : 
 			hexType.ChangeHexType(HexType.BlockType.Stone);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Fire : 
 			hexType.ChangeHexType(HexType.BlockType.Fire);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Lite : 
 			
 			hexType.ChangeHexType(HexType.BlockType.Lite);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Shield : 
 			
 			hexType.ChangeHexType(HexType.BlockType.Shield);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Sword : 
 			
 			hexType.ChangeHexType(HexType.BlockType.Sword);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Spear : 
 			hexType.ChangeHexType(HexType.BlockType.Spear);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Wealth : 
 			hexType.ChangeHexType(HexType.BlockType.Wealth);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Wisdom : 
 			
 			hexType.ChangeHexType(HexType.BlockType.Wisdom);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.TimeType : 
 			hexType.ChangeHexType(HexType.BlockType.TimeType);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 			
 		case BlockType.Destruction : 
 			
 			hexType.ChangeHexType(HexType.BlockType.Destruction);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Darkness : 
 			
 			hexType.ChangeHexType(HexType.BlockType.Darkness);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 			
 		case BlockType.Empty : 
 			
 			hexType.ChangeHexType(HexType.BlockType.Empty);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 			
 		default:
 			hexType.ChangeHexType(HexType.BlockType.Fire);
-			renderer.material = hexType.blockMaterial;
+			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 			
 		}

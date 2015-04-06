@@ -5,11 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Remote.unity
   - enabled: 1
     path: Assets/Scenes/Game_Menu.unity
   - enabled: 1
     path: Assets/Scenes/Game.unity
   - enabled: 1
     path: Assets/Scenes/Solitaire_Mode.unity
+  - enabled: 1
+    path: Assets/Remote.unity

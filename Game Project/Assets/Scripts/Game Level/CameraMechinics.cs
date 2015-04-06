@@ -8,16 +8,11 @@ public class CameraMechinics : MonoBehaviour {
 	public Transform target;
 
 	public Transform[] CameraLocs = new Transform[5];
+	public Vector3[] CameraRot  = new Vector3[5];
 	public float offset;
 	public bool canMove = true;
 	public int posIndex = 1;
 
-	public Button[] PosBtn = new Button[5];
-
-
-
-
-	
 	public int PositionIndex
 	{
 		get{return posIndex;}
@@ -30,32 +25,72 @@ public class CameraMechinics : MonoBehaviour {
 		set{canMove = value;}
 	}
 
+	public iTween.EaseType ease = iTween.EaseType.easeInBack;
+
+	private string easeType;
+
 	void Update() {
-		transform.LookAt(target);
+
+
 
 		if(canMove == true){
-			StartCoroutine(ChangeCamPosition(posIndex));
-			canMove = false;
+
+			ChangePos();
+
+			//Debug.Log (ease.ToString());
+
 		}
 	}
 
+	
+	void ChangePos()
+	{
 
-	IEnumerator  ChangeCamPosition(int camPos){
+		easeType = ease.ToString();
 
-		while(Vector3.Distance(transform.position,  CameraLocs[camPos].position) > 0.05f)
+			switch(posIndex){
+			case 0: 
+			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
+			iTween.RotateTo(gameObject,iTween.Hash("x", 45,"y", 0,"z", 0,"easeType", easeType,"Time",smooth));
+				canMove = false;
+				break;
+			case 1: 
+			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
+			iTween.RotateTo(gameObject,iTween.Hash("x", 42,"y", 272,"z",0,"easeType", easeType ,"Time",smooth));
+				canMove = false;
+				break;
+			case 2: 
+			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
+			iTween.RotateTo(gameObject,iTween.Hash("x", 66,"y", 250, "z", 0,"easeType", easeType,"Time",smooth));
+				canMove = false;
+				break;
+			case 3: 
+			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
+			iTween.RotateTo(gameObject,iTween.Hash("x", 66,"y", 90,"z", 0,"easeType",easeType,"Time",smooth));
+				canMove = false;
+			break;
+			case 4: 
+			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
+			iTween.RotateTo(gameObject,iTween.Hash("x", 90,"y",180,"z", 0,"easeType", easeType,"Time",smooth));
+				canMove = false;
+			break;
+			}
+	}
+
+
+	public void SetCameraPosition()
+	{
+		posIndex++;
+
+		if ( posIndex >= CameraLocs.Length)
 		{
+			posIndex = 0;
+			canMove = true;
+		}else
+		{
+			canMove = true;
+		}
 
-		switch(camPos){
-			case 0:  transform.position = Vector3.Lerp(transform.position, CameraLocs[0].position, smooth * Time.deltaTime); break;
-		case 1: transform.position = Vector3.Lerp(transform.position, CameraLocs[1].position, smooth * Time.deltaTime);  break;
-		case 2: transform.position = Vector3.Lerp(transform.position, CameraLocs[2].position, smooth * Time.deltaTime);  break;
-		case 3: transform.position = Vector3.Lerp(transform.position, CameraLocs[3].position, smooth * Time.deltaTime);  break;
-		case 4: transform.position = Vector3.Lerp(transform.position, CameraLocs[4].position, smooth * Time.deltaTime);  break;
-		}
-			yield return null;
-		}
-		Debug.Log("Reached the target.");
-		yield return new WaitForSeconds(3f);
 	}
 
 

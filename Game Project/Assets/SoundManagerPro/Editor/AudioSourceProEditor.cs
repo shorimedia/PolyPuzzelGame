@@ -76,7 +76,7 @@ public class AudioSourceProEditor : Editor {
 		{
 			curve = AnimationCurve.Linear(source.minDistance, (1f/(1f+rollOffScale*(source.minDistance-1f))), source.maxDistance, (1f/(1f+rollOffScale*(source.maxDistance-1f))));
 		}
-		panCurve = AnimationCurve.Linear(0f,source.panLevel,0f,source.panLevel);
+		panCurve = AnimationCurve.Linear(0f,source.spatialBlend,0f,source.spatialBlend);
 		spreadCurve = AnimationCurve.Linear(0f,source.spread,0f,source.spread);
 	}
 	
@@ -206,7 +206,7 @@ public class AudioSourceProEditor : Editor {
 					source.minDistance = minD;
 				}
 				EditorGUI.indentLevel--;
-				source.panLevel = EditorGUILayout.Slider("Pan Level",source.panLevel,0f,1f);
+				source.spatialBlend = EditorGUILayout.Slider("Pan Level",source.spatialBlend,0f,1f);
 				source.spread = EditorGUILayout.Slider("Spread",source.spread,0f,360f);
 				
 				float maxD = source.maxDistance;
@@ -248,7 +248,7 @@ public class AudioSourceProEditor : Editor {
 		{
 			EditorGUI.indentLevel++;
 			{
-				source.pan = EditorGUILayout.Slider("Pan 2D",source.pan,-1f,1f);
+				source.panStereo = EditorGUILayout.Slider("Pan 2D",source.panStereo,-1f,1f);
 				EditorGUILayout.Space();
 			}
 			EditorGUI.indentLevel--;

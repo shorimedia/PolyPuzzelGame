@@ -10,9 +10,9 @@ public class MC_SwitchTexture : MonoBehaviour
 	
 	void Update ()
 	{
-		if(guiTexture.GetScreenRect().Contains(Input.mousePosition))
+		if(GetComponent<GUITexture>().GetScreenRect().Contains(Input.mousePosition))
 		{
-			guiTexture.color = new Color(0.65f,0.65f,0.65f,0.5f);
+			GetComponent<GUITexture>().color = new Color(0.65f,0.65f,0.65f,0.5f);
 			
 			if(Input.GetMouseButtonDown(0))
 				NextTexture();
@@ -21,7 +21,7 @@ public class MC_SwitchTexture : MonoBehaviour
 		}
 		else
 		{
-			guiTexture.color = Color.gray;
+			GetComponent<GUITexture>().color = Color.gray;
 		}
 	}
 	
@@ -42,6 +42,6 @@ public class MC_SwitchTexture : MonoBehaviour
 	private void ReloadTexture()
 	{
 		linkedMat.SetTexture("_MatCap", textures[index]);
-		guiTexture.texture = textures[index];
+		GetComponent<GUITexture>().texture = textures[index];
 	}
 }

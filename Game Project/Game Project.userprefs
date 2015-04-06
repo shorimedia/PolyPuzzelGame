@@ -1,17 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\INGame Menu\Slot.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game Level\CameraMechinics.cs">
     <Files>
-      <File FileName="Assets\Scripts\INGame Menu\ItemBar.cs" Line="86" Column="1" />
-      <File FileName="Assets\Scripts\INGame Menu\Slot.cs" Line="128" Column="34" />
-      <File FileName="Assets\Scripts\INGame Menu\Item.cs" Line="32" Column="1" />
-      <File FileName="Assets\Scripts\INGame Menu\ItemSpawner.cs" Line="26" Column="3" />
+      <File FileName="Assets\iTween\Sample\RotateSample.cs" Line="7" Column="105" />
+      <File FileName="Assets\Scripts\Game Level\CameraMechinics.cs" Line="79" Column="2" />
+      <File FileName="Assets\Scripts\Game Level\GameManger.cs" Line="191" Column="4" />
+      <File FileName="Assets\iTween\Plugins\iTween.cs" Line="4303" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="179" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\Slot.cs" line="138" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="191" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\Slot.cs" line="69" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="16" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="14" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -18,7 +18,7 @@ namespace UnityEngine.Advertisements
     [PostProcessBuild(1080)]
     public static void OnPostProcessBuild (BuildTarget target, string path)
     {
-      if (target == BuildTarget.iPhone) {
+      if (target == BuildTarget.iOS) {
         PostProcessBuild_iOS (path);
       }
     }
@@ -26,7 +26,7 @@ namespace UnityEngine.Advertisements
     [PostProcessBuild(-10)]
     public static void OnPostProcessBuildEarly (BuildTarget target, string path)
     {
-      if (target == BuildTarget.iPhone) {
+      if (target == BuildTarget.iOS) {
         FixUnityPlistAppendBug (path);
       }
     }

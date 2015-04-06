@@ -100,15 +100,15 @@ public partial class SoundManager : antilunchbox.Singleton<SoundManager> {
 				foreach(GameObject ownedSFXObject in pair.Value.ownedAudioClipPool)
 				{
 					if(ownedSFXObject != null)
-						if(ownedSFXObject.audio != null && (!isDucking || ownedSFXObject.audio != duckSource))
-							ownedSFXObject.audio.volume = value;
+						if(ownedSFXObject.GetComponent<AudioSource>() != null && (!isDucking || ownedSFXObject.GetComponent<AudioSource>() != duckSource))
+							ownedSFXObject.GetComponent<AudioSource>().volume = value;
 				}
 			}
 			foreach(GameObject unOwnedSFXObject in Instance.unOwnedSFXObjects)
 			{
 				if(unOwnedSFXObject != null)
-					if(unOwnedSFXObject.audio != null && (!isDucking || unOwnedSFXObject.audio != duckSource))
-						unOwnedSFXObject.audio.volume = value;
+					if(unOwnedSFXObject.GetComponent<AudioSource>() != null && (!isDucking || unOwnedSFXObject.GetComponent<AudioSource>() != duckSource))
+						unOwnedSFXObject.GetComponent<AudioSource>().volume = value;
 			}
 			_volumeSFX = value;
 		}
@@ -129,15 +129,15 @@ public partial class SoundManager : antilunchbox.Singleton<SoundManager> {
 				foreach(GameObject ownedSFXObject in pair.Value.ownedAudioClipPool)
 				{
 					if(ownedSFXObject != null)
-						if(ownedSFXObject.audio != null && (!isDucking || ownedSFXObject.audio != duckSource))
-							ownedSFXObject.audio.pitch = value;
+						if(ownedSFXObject.GetComponent<AudioSource>() != null && (!isDucking || ownedSFXObject.GetComponent<AudioSource>() != duckSource))
+							ownedSFXObject.GetComponent<AudioSource>().pitch = value;
 				}
 			}
 			foreach(GameObject unOwnedSFXObject in Instance.unOwnedSFXObjects)
 			{
 				if(unOwnedSFXObject != null)
-					if(unOwnedSFXObject.audio != null && (!isDucking || unOwnedSFXObject.audio != duckSource))
-						unOwnedSFXObject.audio.pitch = value;
+					if(unOwnedSFXObject.GetComponent<AudioSource>() != null && (!isDucking || unOwnedSFXObject.GetComponent<AudioSource>() != duckSource))
+						unOwnedSFXObject.GetComponent<AudioSource>().pitch = value;
 			}
 			_pitchSFX = value;
 		}
@@ -172,23 +172,23 @@ public partial class SoundManager : antilunchbox.Singleton<SoundManager> {
 				foreach(GameObject ownedSFXObject in pair.Value.ownedAudioClipPool)
 				{
 					if(ownedSFXObject != null)
-						if(ownedSFXObject.audio != null)
+						if(ownedSFXObject.GetComponent<AudioSource>() != null)
 							if(value)
-								ownedSFXObject.audio.mute = value;
+								ownedSFXObject.GetComponent<AudioSource>().mute = value;
 							else
 								if(!Instance.offTheSFX)
-									ownedSFXObject.audio.mute = value;
+									ownedSFXObject.GetComponent<AudioSource>().mute = value;
 				}
 			}
 			foreach(GameObject unOwnedSFXObject in Instance.unOwnedSFXObjects)
 			{
 				if(unOwnedSFXObject != null)
-					if(unOwnedSFXObject.audio != null)
+					if(unOwnedSFXObject.GetComponent<AudioSource>() != null)
 						if(value)
-							unOwnedSFXObject.audio.mute = value;
+							unOwnedSFXObject.GetComponent<AudioSource>().mute = value;
 						else
 							if(!Instance.offTheSFX)
-								unOwnedSFXObject.audio.mute = value;
+								unOwnedSFXObject.GetComponent<AudioSource>().mute = value;
 			}
 			_mutedSFX = value;
 		}

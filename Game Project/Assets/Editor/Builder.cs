@@ -11,7 +11,7 @@ public static class Builder
 	[MenuItem("Build/Build iOS")]
 	public static void BuildiOS()
 	{
-		string error = BuildPipeline.BuildPlayer(scenes, "build/UnityRemoteNG-iOS", BuildTarget.iPhone, BuildOptions.None);
+		string error = BuildPipeline.BuildPlayer(scenes, "build/UnityRemoteNG-iOS", BuildTarget.iOS, BuildOptions.None);
 
 		if (error != null && error.Length > 0) {
 			throw new Exception("Build failed: " + error);

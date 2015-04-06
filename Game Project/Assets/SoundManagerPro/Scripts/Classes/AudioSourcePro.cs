@@ -779,9 +779,9 @@ public class AudioSourcePro : MonoBehaviour {
 	/// </value>
 	public float pan {
 		get {
-			return audioSource.pan;
+			return audioSource.panStereo;
 		} set {
-			audioSource.pan = value;
+			audioSource.panStereo = value;
 		}
 	}
 	/// <summary>
@@ -792,9 +792,9 @@ public class AudioSourcePro : MonoBehaviour {
 	/// </value>
 	public float panLevel {
 		get {
-			return audioSource.panLevel;
+			return audioSource.spatialBlend;
 		} set {
-			audioSource.panLevel = value;
+			audioSource.spatialBlend = value;
 		}
 	}
 	/// <summary>
