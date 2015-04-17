@@ -6,8 +6,8 @@ AnimationClip:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: InGameMenu Blank
-  serializedVersion: 4
-  m_AnimationType: 2
+  serializedVersion: 6
+  m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -33,7 +33,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 26
+        value: 1208
         inSlope: -34.6666679
         outSlope: -34.6666679
         tangentMode: 10
@@ -47,7 +47,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 32
+        value: 728
         inSlope: -43.3333321
         outSlope: -43.3333321
         tangentMode: 10
@@ -61,7 +61,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 1
+        value: 0
         inSlope: -1.33333337
         outSlope: -1.33333337
         tangentMode: 10
@@ -75,7 +75,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 1
+        value: 0
         inSlope: -1.33333337
         outSlope: -1.33333337
         tangentMode: 10
@@ -89,7 +89,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 52
+        value: 0
         inSlope: -69.3333359
         outSlope: -69.3333359
         tangentMode: 10
@@ -103,7 +103,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 64
+        value: 0
         inSlope: -84
         outSlope: -84
         tangentMode: 10
@@ -200,7 +200,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 26
+        value: 1208
         inSlope: -34.6666679
         outSlope: -34.6666679
         tangentMode: 10
@@ -214,7 +214,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 32
+        value: 728
         inSlope: -43.3333321
         outSlope: -43.3333321
         tangentMode: 10
@@ -228,7 +228,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 1
+        value: 0
         inSlope: -1.33333337
         outSlope: -1.33333337
         tangentMode: 10
@@ -242,7 +242,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 1
+        value: 0
         inSlope: -1.33333337
         outSlope: -1.33333337
         tangentMode: 10
@@ -256,7 +256,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 52
+        value: 0
         inSlope: -69.3333359
         outSlope: -69.3333359
         tangentMode: 10
@@ -270,7 +270,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 64
+        value: 0
         inSlope: -84
         outSlope: -84
         tangentMode: 10
@@ -281,4 +281,7 @@ AnimationClip:
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
   m_Events: []

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class CameraMechinics : MonoBehaviour {
 
 	public float smooth;
-	public Transform target;
-
+	
 	public Transform[] CameraLocs = new Transform[5];
 	public Vector3[] CameraRot  = new Vector3[5];
-	public float offset;
 	public bool canMove = true;
 	public int posIndex = 1;
+
+	public Text CamPos;
 
 	public int PositionIndex
 	{
@@ -28,6 +28,23 @@ public class CameraMechinics : MonoBehaviour {
 	public iTween.EaseType ease = iTween.EaseType.easeInBack;
 
 	private string easeType;
+
+
+	void Awake()
+	{
+
+		canMove = true;
+		if(canMove == true){
+			
+			ChangePos();
+			
+			//Debug.Log (ease.ToString());
+			
+		}
+
+		CamPos.text = (posIndex + 1).ToString();
+	}
+	
 
 	void Update() {
 
@@ -75,6 +92,8 @@ public class CameraMechinics : MonoBehaviour {
 				canMove = false;
 			break;
 			}
+
+		CamPos.text = (posIndex + 1).ToString();
 	}
 
 

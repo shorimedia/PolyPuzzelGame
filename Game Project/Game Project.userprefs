@@ -1,11 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game Level\CameraMechinics.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Messenger\Messenger.cs">
     <Files>
-      <File FileName="Assets\iTween\Sample\RotateSample.cs" Line="7" Column="105" />
-      <File FileName="Assets\Scripts\Game Level\CameraMechinics.cs" Line="79" Column="2" />
-      <File FileName="Assets\Scripts\Game Level\GameManger.cs" Line="191" Column="4" />
-      <File FileName="Assets\iTween\Plugins\iTween.cs" Line="4303" Column="1" />
+      <File FileName="Assets\iTween\Sample\RotateSample.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game Level\CameraMechinics.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game Level\GameManger.cs" Line="227" Column="21" />
+      <File FileName="Assets\Scripts\Game Menu\FadeScreen.cs" Line="17" Column="2" />
+      <File FileName="Assets\Scripts\Game Level\GameTime.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\INGame Menu\Slot.cs" Line="37" Column="1" />
+      <File FileName="Assets\Messenger\Messenger.cs" Line="126" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -14,6 +17,7 @@
       <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\Slot.cs" line="69" />
       <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="16" />
       <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="14" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\GameManger.cs" line="183" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

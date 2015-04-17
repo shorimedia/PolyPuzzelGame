@@ -33,6 +33,30 @@ public class FadeScreen : MonoBehaviour {
 			inputIndex = 1;
 		}
 	}
+
+
+	public IEnumerator DelayOpen(float seconds)
+	{
+
+		//yield return new WaitForSeconds(seconds);
+		yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(seconds));
+
+		IsOpen = true;
+
+
+	}
+
+	public IEnumerator DelayClose(float seconds)
+	{
+		
+		//yield return new WaitForSeconds(seconds);
+		yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(seconds));
+		
+		IsOpen = false;
+		
+		
+	}
+
 	
 
 }

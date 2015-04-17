@@ -15,6 +15,9 @@ TextureImporter:
     21300020: play_button
     21300022: signleplay_button
     21300024: stats_button
+    21300026: CamIcon
+    21300028: PauseIcon
+    21300030: RefreshIcon
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,6 +63,16 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
+    - name: CamIcon
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 3815
+        width: 118
+        height: 67
+      alignment: 9
+      pivot: {x: .5, y: .373134315}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Hex_button_Whitebg
       rect:
         serializedVersion: 2
@@ -79,6 +92,26 @@ TextureImporter:
         height: 594
       alignment: 9
       pivot: {x: .498076916, y: .498316497}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PauseIcon
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 3453
+        width: 72
+        height: 119
+      alignment: 9
+      pivot: {x: .486111104, y: .49579832}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RefreshIcon
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 3763
+        width: 117
+        height: 119
+      alignment: 9
+      pivot: {x: .504273534, y: .50420171}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: UI_Box
       rect:

@@ -56,6 +56,7 @@ MonoBehaviour:
   seconds: 0
   text: {fileID: 0}
   pointText: {fileID: 0}
+  OnTimer: 1
 --- !u!114 &11443466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,11 +68,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54cac5d328bbe946bf6be38087d923c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 6
-  level: 12
+  gameState: 2
+  level: 1
   stage: 1
-  testMode: 0
+  testMode: 1
   pointText: {fileID: 0}
+  LevelTitle: {fileID: 0}
+  titleTrans: {fileID: 0}
+  imageTrans: {fileID: 0}
+  WinScreen: {fileID: 0}
+  LoseScreen: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -83,4 +90,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 143466}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

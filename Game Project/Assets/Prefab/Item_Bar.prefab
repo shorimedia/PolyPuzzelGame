@@ -47,7 +47,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -57,12 +57,12 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 5
+  m_ChildAlignment: 4
   m_StartCorner: 1
-  m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
-  m_Spacing: {x: 10, y: 0}
-  m_Constraint: 2
+  m_StartAxis: 1
+  m_CellSize: {x: 80, y: 80}
+  m_Spacing: {x: 0, y: 20}
+  m_Constraint: 1
   m_ConstraintCount: 1
 --- !u!114 &11459348
 MonoBehaviour:
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e52f8d0d867a64db871551551aaf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotNum: 11
+  slotNum: 6
   isHolderBar: 0
   slotPrefab: {fileID: 192820, guid: 1457b5f9d2383c84a943da41c1c7d49d, type: 2}
   iconPrefab: {fileID: 176724, guid: a6bade163c0ef924bbf62171dcc829cb, type: 2}
@@ -115,10 +115,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -40, y: 62}
-  m_SizeDelta: {x: -168, y: 53}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -57.75, y: -41}
+  m_SizeDelta: {x: 74.5, y: -154}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:

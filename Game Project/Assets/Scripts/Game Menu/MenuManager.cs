@@ -4,11 +4,18 @@ using System.Collections;
 public class MenuManager : MonoBehaviour {
 
 	public Menu CurrenMenu;
+
+	public bool IsSubMenu = false;
+
 	
 	// Use this for initialization
 	void Start ()
 	{
+
+		if(IsSubMenu == false)
+		{
 		ShowMenu(CurrenMenu);
+		}
 	}
 
 

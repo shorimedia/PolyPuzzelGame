@@ -17,12 +17,26 @@ public class GameTime : MonoBehaviour {
 
 	public Text text;
 	public Text pointText;
+
+	public bool OnTimer = true;
+
+
+
+	public bool ToggleTimer
+	{
+		get{return OnTimer; }
+		set{ OnTimer = value;}
+	}
 	
 
 	// Update is called once per frame
-	public void FixedUpdate () {
+	public void Update () {
 
-		var guitime = Time.time;
+		if(OnTimer)
+		{
+			Time.timeScale = 1.0f ;
+
+			var guitime = Time.timeSinceLevelLoad;
 
 		restSeconds= CountSeconds + (int)guitime;
 
@@ -35,7 +49,13 @@ public class GameTime : MonoBehaviour {
 		text.text = TEXT_TIME;
 
 		pointText.text = GameManger.TOTAL_POINTS_COUNT.ToString();
+		}else
+		{
+			Time.timeScale = 0f;
+		}
 	}
+
+
 
 
 }

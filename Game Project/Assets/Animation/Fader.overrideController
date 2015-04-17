@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Fader
+  m_Controller: {fileID: 9100000, guid: b25f89853b2c0574caa9cc23f6612ceb, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 05d0fd1e2a9921542bf443b726599f85, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 764dc1a44951a0e40a09fbb72cd89833, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7d800b285b2bb244fb285a0ddc277b61, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1fb87f4ed18bd9b4b8ceea814a0a6a3e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5259dc60199f92c41ab5390a7b6e8b56, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 14edae2575480994e8f4312f86b5a5b7, type: 2}

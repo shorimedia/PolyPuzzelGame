@@ -30,8 +30,8 @@ GameObject:
   - 92: {fileID: 9297138}
   - 124: {fileID: 12497138}
   - 81: {fileID: 8197138}
-  - 114: {fileID: 11497138}
   - 114: {fileID: 11497136}
+  - 114: {fileID: 11472780}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -57,8 +57,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197138}
-  m_LocalRotation: {x: .385930002, y: 0, z: 0, w: .922528148}
-  m_LocalPosition: {x: .899999976, y: 10, z: -8.80000019}
+  m_LocalRotation: {x: .273083508, y: -.699640632, z: .159868509, w: .640601635}
+  m_LocalPosition: {x: 18.5, y: 15.3000002, z: 2.9000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 497136}
@@ -84,7 +84,7 @@ Camera:
   far clip plane: 40
   field of view: 81
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -153,6 +153,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197138}
   m_Enabled: 1
+--- !u!114 &11472780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9519408a68f0ac4e827217cf0048d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraZoomIndex: 0
 --- !u!114 &11497136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,8 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336fe9efede3ba34d8c33c2ca19f1dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smooth: .5
-  target: {fileID: 0}
+  smooth: 2
   CameraLocs:
   - {fileID: 0}
   - {fileID: 0}
@@ -178,26 +189,10 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  offset: 0
   canMove: 0
-  posIndex: 1
-  ease: 26
---- !u!114 &11497138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54cac5d328bbe946bf6be38087d923c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameState: 6
-  level: 0
-  stage: 0
-  testMode: 0
-  pointText: {fileID: 0}
+  posIndex: 0
+  CamPos: {fileID: 0}
+  ease: 14
 --- !u!124 &12497138
 Behaviour:
   m_ObjectHideFlags: 1
