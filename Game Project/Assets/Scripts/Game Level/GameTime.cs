@@ -38,7 +38,7 @@ public class GameTime : MonoBehaviour {
 
 			var guitime = Time.timeSinceLevelLoad;
 
-		restSeconds= CountSeconds + (int)guitime;
+		restSeconds = CountSeconds + (int)guitime;
 
 		TIME_IN_SECONDS = restSeconds;
 		seconds = restSeconds % 60;

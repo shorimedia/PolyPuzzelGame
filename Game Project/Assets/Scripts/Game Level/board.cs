@@ -18,7 +18,7 @@ public class board : MonoBehaviour {
 	private int[] mulitRanNum; // holds the random numbers for multi starter block levels
 
 	void Awake(){
-		Messenger.AddListener( "Check for Empties", EmptyCheck );
+		Messenger.AddListener("Check for Empties", EmptyCheck );
 
 	}
 
@@ -152,8 +152,7 @@ public class board : MonoBehaviour {
 
 	void OnDisable(){
 
-
-		Messenger.RemoveListener( "Check for Empties", EmptyCheck );
+		Messenger.RemoveListener("Check for Empties", EmptyCheck );
 	}
 		
 }

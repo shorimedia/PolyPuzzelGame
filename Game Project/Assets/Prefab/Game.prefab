@@ -71,7 +71,7 @@ MonoBehaviour:
   gameState: 2
   level: 1
   stage: 1
-  testMode: 1
+  testMode: 0
   pointText: {fileID: 0}
   LevelTitle: {fileID: 0}
   titleTrans: {fileID: 0}
@@ -79,6 +79,7 @@ MonoBehaviour:
   WinScreen: {fileID: 0}
   LoseScreen: {fileID: 0}
   Background: {fileID: 0}
+  winScript: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

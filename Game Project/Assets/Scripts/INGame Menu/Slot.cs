@@ -72,7 +72,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 		timeBar.value = maxTime;	// set the timebar  value to max
 
 		items = new Stack<Item>();
-		RectTransform slotRec = GetComponent<RectTransform>();
+		//RectTransform slotRec = GetComponent<RectTransform>();
 	}
 	
 	// Update is called once per frame
@@ -83,7 +83,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 			// play sound wait then clear item
 			OutOfTime();
 		
-			Debug.Log ( gameObject.name + "Has clear item due to time");
+			Debug.Log ( gameObject.name + " has clear item due to time");
 			
 		}
 
@@ -98,6 +98,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	 public void AddItem(Item item)
 	{
 		items.Push(item);
+		Debug.Log ("push Item");
 
 		item.itemTime = maxTime;     // When a new item is created set its timer to max
 

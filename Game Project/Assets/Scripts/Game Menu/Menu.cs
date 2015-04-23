@@ -40,7 +40,7 @@ public class Menu : MonoBehaviour {
 
 	public void ShowDepends(bool OpenState)
 	{
-		if(menuDepends.Length != null)
+		if(menuDepends.Length != 0)//null
 		for(int d =0; d < menuDepends.Length; d++ )
 		{
 			menuDepends[d].IsOpen = OpenState;

@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11459346}
   - 114: {fileID: 11459348}
   - 114: {fileID: 11459350}
+  - 114: {fileID: 11495926}
   m_Layer: 5
   m_Name: Item_Bar
   m_TagString: Untagged
@@ -26,7 +27,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -36,7 +37,7 @@ MonoBehaviour:
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
-  m_FillCenter: 1
+  m_FillCenter: 0
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159344}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -57,7 +58,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 1
   m_StartCorner: 1
   m_StartAxis: 1
   m_CellSize: {x: 80, y: 80}
@@ -75,12 +76,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e52f8d0d867a64db871551551aaf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotNum: 6
+  slotNum: 5
   isHolderBar: 0
   slotPrefab: {fileID: 192820, guid: 1457b5f9d2383c84a943da41c1c7d49d, type: 2}
   iconPrefab: {fileID: 176724, guid: a6bade163c0ef924bbf62171dcc829cb, type: 2}
+  PegAttach: {fileID: 0}
   canvas: {fileID: 0}
-  hoverYOffset: 30
+  hoverYOffset: 60
   eventSystem: {fileID: 0}
 --- !u!114 &11459350
 MonoBehaviour:
@@ -93,10 +95,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ec34a485576dc4d81349952d57ad5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11447582, guid: 405cf2457d460984189ba2cde7eaac17, type: 2}
+  itemsCommon: []
+  itemsUncommon: []
+  itemsRare: []
+  itemsVeryRare: []
   itemBar: {fileID: 11459348}
-  spawn: 0
+  spawn: 1
+  TestIndex: 0
+  TestType: Common
+--- !u!114 &11495926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6068bb74c8a913a47affb78792465575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &22259344
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -117,8 +134,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.75, y: -41}
-  m_SizeDelta: {x: 74.5, y: -154}
+  m_AnchoredPosition: {x: -58, y: -63.4360008}
+  m_SizeDelta: {x: 74, y: -167.130005}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:

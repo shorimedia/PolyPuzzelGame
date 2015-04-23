@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11447582}
   m_Layer: 0
   m_Name: TestItem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,6 +41,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteNeutral: {fileID: 21300018, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
   maxSize: 1
+  itemTime: 12.2133579
+  type: Item
+  rarity: 0
+  timeIsActive: 1
+  PegObject: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -52,4 +57,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147582}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

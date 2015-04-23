@@ -23,6 +23,7 @@ public class HexType  {
 	public BlockType hexType = BlockType.Flow;
 
 	public Material blockMaterial;
+
 	public int points;
 
 	public bool Flow, Stone, Fire, Lite, Shield, Sword, Spear, Wealth, Wisdom, TimeType, Destruction, Darkness;

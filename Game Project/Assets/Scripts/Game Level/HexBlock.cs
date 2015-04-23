@@ -47,15 +47,13 @@ public class HexBlock : MonoBehaviour {
 	public bool moveIn  = false;  // if a block is empty and block can move into there set true 
 	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
 
-
 	private int _ping = 0;
 	private int _nullPing = 0;
 
 
 	public HexType hexType;
 
-
-
+	public int bonusPoints = 0;
 
 
 	void Awake(){
@@ -128,9 +126,9 @@ public class HexBlock : MonoBehaviour {
 		}
 
 		//if active set empty blocks back fasle
-//		if(GameManger.ACTIVE == false){
-//			moveIn = false;
-//		}
+		if(GameManger.ACTIVE == false){
+			moveIn = false;
+		}
 
 	}
 
@@ -145,7 +143,7 @@ public class HexBlock : MonoBehaviour {
 		if(blockState != BlockState.Active && GameManger.ACTIVE == false && blockType != BlockType.Empty)
 		{
 			blockState = BlockState.Active;
-			GameManger.CURRENT_OPEN_BLOCK.moveIn = false;
+		//	GameManger.CURRENT_OPEN_BLOCK.moveIn = false;
 
 		}else if(blockState == BlockState.Active){
 			// if this block is active when clicked on de-activeate it
@@ -186,13 +184,32 @@ public class HexBlock : MonoBehaviour {
 
 		case BlockState.Dissolve :
 			if(isJumpable == true){
+
+
+				if(bonusPoints == 0)
+				{
 				GameManger.TOTAL_POINTS_COUNT += hexType.points; 
+
+				}else if(bonusPoints > 0)
+				{
+					GameManger.TOTAL_POINTS_COUNT += bonusPoints; 
+
+				}else if(bonusPoints < 0)
+				
+				{
+
+					//Do Nothing
+
+				}
+
+				bonusPoints = 0;
 				isJumpable = false;
 			}
 
-			blockType = BlockType.Empty;
-			//ChangeBlockType();
+			blockType = BlockType.Empty; // Call change type on normal state
+
 			blockState = BlockState.Normal;
+			//Update the number of empty blocks
 			EmptyPing();
 			UpdateNeighbor();
 			ChangeBlockState();
@@ -339,7 +356,7 @@ public class HexBlock : MonoBehaviour {
 		
 		if (Physics.Raycast(ray , out hit,1)){
 			if (hit.collider != null){ 
-				Debug.Log ("Hit object at check point " + (index + 1 ) + " "+ hit.collider.name );
+	//			Debug.Log ("Hit object at check point " + (index + 1 ) + " "+ hit.collider.name );
 				neighborHEX[index] = hit.collider.gameObject.GetComponent<HexBlock>();
 
 				if (neighborHEX[index].blockType == BlockType.Empty ){
@@ -369,7 +386,7 @@ public class HexBlock : MonoBehaviour {
 			}
 			
 		}
-		Debug.Log ("Index # " + index);
+	//	Debug.Log ("Index # " + index);
 	}
 
 
@@ -388,7 +405,7 @@ public class HexBlock : MonoBehaviour {
 							neighborHEX[c] = hit.collider.gameObject.GetComponent<HexBlock>();
 						}
 
-						if (neighborHEX[c].blockType != BlockType.Empty && neighborHEX[c].blockType != null  ){
+						if (neighborHEX[c].blockType != BlockType.Empty ){
 							_ping++;
 							GameManger.TOTAL_PINGS ++;
 						}

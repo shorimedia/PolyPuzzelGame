@@ -11,6 +11,9 @@ public class ItemBar : MonoBehaviour {
 	public GameObject slotPrefab;
 	public GameObject iconPrefab;
 
+	private RaycastHit hit;
+	public ItemAttachment PegAttach;
+
 	private static GameObject hoverObject;
 	public Canvas canvas;
 	private static Slot from,to;
@@ -19,8 +22,11 @@ public class ItemBar : MonoBehaviour {
 
 	private List<GameObject> slots;
 
+	private float raycastLength = 500f;
+
 	private static int emptySlots;
 	public static int EmptySlots
+
 	{
 		get{ return emptySlots;}
 		set{ emptySlots = value;}
@@ -36,11 +42,32 @@ public class ItemBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+		if (Input.GetMouseButtonDown(0))
+		{
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+
+			if (Physics.Raycast(ray, out hit, raycastLength))
+			{
+			
+				if( hit.collider.tag == "Peg")
+				{
+					PegAttach = hit.collider.gameObject.GetComponent<ItemAttachment>();
+				}
+
+			}
+
+		}
+
+
 		if (Input.GetMouseButtonUp(0))
 		{
+		
+
 			// Remove the seleced item from the inventory
-			if(!eventSystem.IsPointerOverGameObject(-1) && from != null)
+			if(!eventSystem.IsPointerOverGameObject(-1) && from != null && PegAttach == null)
 			   {
+
 				from.GetComponent<Image>().color = Color.white;
 				from.ClearSlot(); // remove item from slot
 				Destroy(GameObject.Find ("Hover")); // remove icon
@@ -50,8 +77,24 @@ public class ItemBar : MonoBehaviour {
 				from = null;
 				hoverObject = null;
 				emptySlots++;
+			}else if (!eventSystem.IsPointerOverGameObject(-1) && from != null && PegAttach != null)
+			{
+
+				PegAttach.ItemAttach(from.Items.Peek());
+
+				from.GetComponent<Image>().color = Color.white;
+				from.ClearSlot(); // remove item from slot
+				Destroy(GameObject.Find ("Hover")); // remove icon
+				
+				//Reset objects
+				to = null;
+				from = null;
+				hoverObject = null;
+				emptySlots++;
+//				Debug.Log("Did not Click on the UI " + eventSystem.name);
 			}
 
+			PegAttach = null;
 
 			Debug.Log (emptySlots);
 		}
@@ -62,7 +105,7 @@ public class ItemBar : MonoBehaviour {
 		{
 			Vector2 position;
 			RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out position);
-			//Adds the offeset to the  position
+			//Adds the offeset to the  position of hover image
 			position.Set(position.x, position.y - hoverYOffset);
 			//Set the hoverObject's psition
 			hoverObject.transform.position = canvas.transform.TransformPoint(position);
@@ -104,6 +147,7 @@ public class ItemBar : MonoBehaviour {
 		if(item.maxSize == 1)
 		{
 			PlaceEmpty(item);
+			Debug.Log ("Place Item");
 			return true;
 		}
 		else
@@ -116,7 +160,6 @@ public class ItemBar : MonoBehaviour {
 				{
 					if(tmp.CurrentItem.type == item.type && tmp.IsAvailable)
 					{
-
 						tmp.AddItem(item);
 						return true;
 					}
@@ -145,6 +188,7 @@ public class ItemBar : MonoBehaviour {
 				if (tmp.IsEmpty)
 				{
 					tmp.AddItem(item);
+					Debug.Log ("Send to lot Item");
 					emptySlots--;
 					return true;
 				}
@@ -186,7 +230,7 @@ public class ItemBar : MonoBehaviour {
 			to = clicked.GetComponent<Slot>();
 			Destroy(GameObject.Find ("Hover"));
 		}
-
+		 
 
 		if( to != null && from != null)
 		{

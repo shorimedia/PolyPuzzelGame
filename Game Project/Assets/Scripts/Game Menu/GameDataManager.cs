@@ -15,7 +15,7 @@ public class GameDataManager : MonoBehaviour {
 
 		//newGame = PlayerPrefs.GetBool("New Game");
 
-		if(newGame == null || newGame == true){
+		if(newGame == true){
 			Debug.Log("Saving to Game");
 			PlayerPrefs.SetBool("New Game", false);
 

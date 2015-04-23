@@ -55,27 +55,35 @@ public class GameManger : MonoBehaviour {
 	public FadeScreen  imageTrans;
 
 	public FadeScreen WinScreen;
+
 	public FadeScreen LoseScreen;
 
 	public FadeScreen Background;
 
+	public WinPopup winScript;
+
 
 	private GameTime timer; 
 
-	void Awake()
+	void OnEnable()
 
 	{	
+		//Messenger.AddListener( "Check Neighbor", CheckNeighbor );
+
 		// test any level for debug only
-		if(testMode ==  true){
+		if(testMode ==  true || PlayerPrefs.GetInt("Game Level") == 0 ) 
+		{
 			LEVEL_NUM = level;
 			STAGE_NUM = stage;
+
+
+
 		}else
 		{
 			//load Game stage and level
 			LEVEL_NUM = PlayerPrefs.GetInt("Game Level");
 			STAGE_NUM = PlayerPrefs.GetInt("Game Stage");
-
-
+			Debug.Log ("Set Level Number " + PlayerPrefs.GetInt("Game Level"));
 
 			// the values to show in inspector
 			stage = STAGE_NUM;
@@ -85,12 +93,14 @@ public class GameManger : MonoBehaviour {
 		TOTAL_POINTS_COUNT = 0;
 
 		timer = this.GetComponent<GameTime>(); 
+		Debug.Log ("Level Number " + PlayerPrefs.GetInt("Game Level"));
 	}
 
 
 	// Use this for initialization
 	void Start () {
-	
+
+
 
 		ChangeGameState();
 
@@ -179,10 +189,31 @@ public class GameManger : MonoBehaviour {
 			// show win screen with score, points and time
 			Debug.Log("Winner!!!!!!");
 
+
+
+			winScript.SetTxt(TOTAL_SCORE.ToString(),TOTAL_SCORE.ToString(),GameTime.TEXT_TIME, GameTime.TEXT_TIME, NumberOfPlayableBlocks().ToString());
+
+
 			if( TOTAL_SCORE > PlayerPrefs.GetInt("Level " + GameManger.LEVEL_NUM + "_Score") && GameTime.TIME_IN_SECONDS > PlayerPrefs.GetInt("Level " + GameManger.LEVEL_NUM + "_Time_in_seconds")){
 
 				SendMessage("SaveData");
 			}
+
+
+
+			// Check leader board data
+
+
+			// Set Win screen mode
+
+//			winScript.winState = WinPopup.WinState.Normal;
+//
+//			winScript.winState = WinPopup.WinState.Best;
+//
+//			winScript.winState = WinPopup.WinState.Leader;
+
+
+
 
 			timer.ToggleTimer = false;
 			Background.IsOpen = true;
@@ -192,7 +223,12 @@ public class GameManger : MonoBehaviour {
 		
 		case GameState.Lose: 
 			// show loser screen
-			Debug.LogError("Loser!!!!!!");
+			Debug.Log("Loser!!!!!!");
+
+
+			timer.ToggleTimer = false;
+			Background.IsOpen = true;
+			LoseScreen.IsOpen = true;
 			break;
 
 		case GameState.OpenGame: 
