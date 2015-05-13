@@ -150,28 +150,28 @@ public class ItemBar : MonoBehaviour {
 			Debug.Log ("Place Item");
 			return true;
 		}
-		else
-		{
-			foreach(GameObject slot in slots)
-			{
-				Slot tmp = slot.GetComponent<Slot>();
-
-				if(!tmp.IsEmpty)
-				{
-					if(tmp.CurrentItem.type == item.type && tmp.IsAvailable)
-					{
-						tmp.AddItem(item);
-						return true;
-					}
-				}
-			}
-
-//			if (emptySlots > 0)
+//		else
+//		{
+//			foreach(GameObject slot in slots)
 //			{
-//				PlaceEmpty(item);
+//				Slot tmp = slot.GetComponent<Slot>();
+//
+//				if(!tmp.IsEmpty)
+//				{
+//					if(tmp.CurrentItem.type == item.type && tmp.IsAvailable)
+//					{
+//						tmp.AddItem(item);
+//						return true;
+//					}
+//				}
 //			}
-
-		}
+//
+////			if (emptySlots > 0)
+////			{
+////				PlaceEmpty(item);
+////			}
+//
+//		}
 
 		return false;
 	}

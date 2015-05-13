@@ -17,7 +17,7 @@ public class GameSave : MonoBehaviour {
 //	// Save all data
 	public void OnApplicationQuit()
 	{
-		PlayerPrefs.Flush();
+		//PlayerPrefs.Flush();
 
 	}
 

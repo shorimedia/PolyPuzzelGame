@@ -117,10 +117,14 @@ GameObject:
   - 23: {fileID: 2341310}
   - 95: {fileID: 9541310}
   - 65: {fileID: 6532972}
+  - 114: {fileID: 11404722}
   - 114: {fileID: 11415458}
+  - 114: {fileID: 11435480}
   - 114: {fileID: 11464940}
+  - 114: {fileID: 11479774}
+  - 114: {fileID: 11477384}
   m_Layer: 0
-  m_Name: Hex
+  m_Name: Peg
   m_TagString: Peg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,8 +142,8 @@ Transform:
   m_Children:
   - {fileID: 415464}
   - {fileID: 415466}
-  - {fileID: 415462}
   - {fileID: 415460}
+  - {fileID: 415462}
   - {fileID: 415468}
   - {fileID: 432972}
   m_Father: {fileID: 441310}
@@ -155,7 +159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 415458}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &415462
 Transform:
   m_ObjectHideFlags: 1
@@ -163,11 +167,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115462}
   m_LocalRotation: {x: 2.46773304e-08, y: .706967711, z: 3.62735397e-09, w: .707245827}
-  m_LocalPosition: {x: .870000005, y: .109999999, z: .0199999996}
+  m_LocalPosition: {x: .875999987, y: .109999999, z: .0199999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 415458}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &415464
 Transform:
   m_ObjectHideFlags: 1
@@ -175,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115464}
   m_LocalRotation: {x: -3.76680509e-09, y: .708895743, z: 2.45382505e-08, w: -.705313325}
-  m_LocalPosition: {x: -.860000014, y: .109999999, z: .00999999978}
+  m_LocalPosition: {x: -.902999997, y: .109999999, z: .00999999978}
   m_LocalScale: {x: 1, y: 1, z: 1.00000012}
   m_Children: []
   m_Father: {fileID: 415458}
@@ -187,7 +191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115466}
   m_LocalRotation: {x: -2.8925129e-09, y: .259714961, z: -2.18923315e-08, w: -.965685368}
-  m_LocalPosition: {x: -.409999996, y: .109999999, z: .75999999}
+  m_LocalPosition: {x: -.425999999, y: .109999999, z: .787999988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 415458}
@@ -199,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115468}
   m_LocalRotation: {x: -1.1266863e-08, y: .965967894, z: 2.86869528e-09, w: .258661985}
-  m_LocalPosition: {x: .460000008, y: .109999999, z: -.74000001}
+  m_LocalPosition: {x: .479999989, y: .109999999, z: -.779999971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 415458}
@@ -211,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132972}
   m_LocalRotation: {x: 2.06102246e-08, y: -.966810405, z: -2.79767653e-09, w: .255495042}
-  m_LocalPosition: {x: -.439999998, y: .109999999, z: -.74000001}
+  m_LocalPosition: {x: -.449999988, y: .109999999, z: -.75999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 415458}
@@ -289,6 +293,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11404722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbc11ad3a4a0954fae54d6ce19ef4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pegState: {fileID: 11415458}
+  PegType: {fileID: 11435480}
 --- !u!114 &11415458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,30 +314,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 141310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e35262fe5eb2ce449719a70fb3199d0, type: 3}
+  m_Script: {fileID: 11500000, guid: b62dce46730e88e419dd0a9a347910df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPoints:
-  - {fileID: 415464}
-  - {fileID: 415466}
-  - {fileID: 415460}
-  - {fileID: 415462}
-  - {fileID: 415468}
-  - {fileID: 432972}
-  blockType: 4
+  AttachedItem: {fileID: 11464940}
+  PegType: {fileID: 11435480}
+  pUpdater: {fileID: 11477384}
+  posStatus: {fileID: 11479774}
   blockState: 2
-  neighborHEX:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   isJumpable: 0
   moveIn: 0
-  tokenIndex: 0
+  bonusPoints: 0
+--- !u!114 &11435480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64a5b996834f4e4584006b6ab8c7a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockType: 0
   hexType:
-    hexType: 5
+    hexType: 0
     blockMaterial: {fileID: 0}
     points: 0
     Flow: 0
@@ -346,8 +364,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027ef62e3209c3a489c9296bf1a87c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemEquip: 0
+  ItemEquip: 1
   AttachedItem: {fileID: 0}
+--- !u!114 &11477384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dce7a7c2c0081439b60e30076853cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPoints:
+  - {fileID: 415464}
+  - {fileID: 415466}
+  - {fileID: 415460}
+  - {fileID: 415462}
+  - {fileID: 415468}
+  - {fileID: 432972}
+  pegState: {fileID: 11415458}
+  PegType: {fileID: 11435480}
+  neighborHEX:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  tokenIndex: 0
+  _ping: 0
+  _nullPing: 0
+  posStatus: {fileID: 11479774}
+--- !u!114 &11479774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e4af6a32d00f440812400369fcf194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  side: 000000000000000000000000
+  groupIndex: 0
+  cennectedGroup: 0
+  posState: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

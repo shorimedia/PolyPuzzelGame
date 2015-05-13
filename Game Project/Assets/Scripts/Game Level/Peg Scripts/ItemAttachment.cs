@@ -7,6 +7,7 @@ public class ItemAttachment : MonoBehaviour  {
 
 	public bool ItemEquip = false;
 
+	
 	public Item AttachedItem;
 
 //	private ItemBar itemBar;
@@ -28,7 +29,7 @@ public class ItemAttachment : MonoBehaviour  {
 		// Add new data
 		AttachedItem = iAttach;
 		// set new item to read Peg data
-		AttachedItem.PegObject = this.gameObject.GetComponent<HexBlock>();
+		AttachedItem.PegObject = this.gameObject.GetComponent<PegStateMachine>();
 		AttachedItem.Use();
 	}
 

@@ -8,8 +8,8 @@ public class BlackPeg : Item {
 		
 		PegObject.bonusPoints = 100;
 		GameManger.ACTIVE = false;
-		PegObject.blockType = HexBlock.BlockType.Darkness;
-		PegObject.ChangeBlockType();
-		PegObject.UpdateNeighbor();
+		PegObject.PegType.blockType = PegTypeMach.BlockType.Darkness;
+		PegObject.PegType.ChangeBlockType();
+		PegObject.pUpdater.UpdateNeighbor();
 	}
 }

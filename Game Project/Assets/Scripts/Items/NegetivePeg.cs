@@ -10,7 +10,7 @@ public class NegetivePeg : Item {
 		GameManger.TOTAL_POINTS_COUNT -=  60;
 		GameManger.ACTIVE = false;
 		PegObject.isJumpable  = true;
-		PegObject.blockState = HexBlock.BlockState.Dissolve;
+		PegObject.blockState = PegStateMachine.BlockState.Dissolve;
 		PegObject.ChangeBlockState();
 	}
 }

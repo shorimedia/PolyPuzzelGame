@@ -6,6 +6,6 @@ public class TenPoints : Item {
 	public override void Use()
 	{
 		
-		PegObject.bonusPoints = PegObject.hexType.points + 10;
+		//PegObject.bonusPoints = PegObject.hexType.points + 10;
 	}
 }

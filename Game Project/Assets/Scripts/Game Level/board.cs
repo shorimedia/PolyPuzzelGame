@@ -9,7 +9,7 @@ public class board : MonoBehaviour {
 	public GameObject hex;
 
 	public Transform[] hexagonGridSpace = new Transform[169];
-	public List<HexBlock> TokenData = new List<HexBlock>();
+	public static List<PegStateMachine> TokenData = new List<PegStateMachine>();
 	public LevelManager levelManager;
 
 
@@ -17,15 +17,14 @@ public class board : MonoBehaviour {
 	private int ranNum;//  random use for random placement of starter blocks 
 	private int[] mulitRanNum; // holds the random numbers for multi starter block levels
 
-	void Awake(){
-		Messenger.AddListener("Check for Empties", EmptyCheck );
-
-	}
 
 
-
+	
 	// Use this for initialization
 	void Start () {
+
+		Debug.Log ("Board is Started");
+
 		levelManager = new LevelManager(GameManger.LEVEL_NUM);
 		StartGame(GameManger.STAGE_NUM);
 	}
@@ -57,6 +56,10 @@ public class board : MonoBehaviour {
 
 
 	void Generator(int hexAmount){
+
+		// clear list a new level starts so that only one instsist is connected
+		TokenData.Clear();
+
 		GameObject go;
 
 		levelManager.SetRandomNum(Random.Range(0f,1.0f), Random.Range(0f,1.0f));
@@ -64,9 +67,9 @@ public class board : MonoBehaviour {
 		for(int i = 0; i < hexAmount; i++){
 
 			go = Instantiate(hex, new Vector3(hexagonGridSpace[i].position.x,hexagonGridSpace[i].position.y + 1 ,hexagonGridSpace[i].position.z), hexagonGridSpace[i].rotation) as GameObject;
-			TokenData.Add(go.GetComponent<HexBlock>());
+			TokenData.Add(go.GetComponent<PegStateMachine>());
 
-			levelManager.LevelTypeSelect(TokenData[i]);
+			levelManager.LevelTypeSelect(TokenData[i].PegType);
 
 		}
 
@@ -78,23 +81,23 @@ public class board : MonoBehaviour {
 
 			for(int i = 0; i < levelManager.startEmptyNum; i++){
 				ranNum = Random.Range(0,GameManger.BLOCK_COUNT );
-				TokenData[mulitRanNum[i]].blockType = HexBlock.BlockType.Empty;
-				TokenData[mulitRanNum[i]].ChangeBlockType();
+				TokenData[mulitRanNum[i]].PegType.blockType = PegTypeMach.BlockType.Empty;
+				TokenData[mulitRanNum[i]].PegType.ChangeBlockType();
 				mulitRanNum[i] = ranNum;
 			}
 
 		}else{    
 			// if empty space are centered
 			for(int i = 0; i < levelManager.startEmptyNum; i++){
-				TokenData[i].blockType = HexBlock.BlockType.Empty;
-				TokenData[i].ChangeBlockType();
+				TokenData[i].PegType.blockType = PegTypeMach.BlockType.Empty;
+				TokenData[i].PegType.ChangeBlockType();
 			}
 		
 		}
 
 
-		EmptyCheck();
-		CheckMoves();
+		Messenger.Broadcast("Check Empties");
+		//CheckMoves();
 
 
 		// Set the neighbors of all the empty blocks
@@ -102,7 +105,7 @@ public class board : MonoBehaviour {
 
 
 			for(int i = 0; i < levelManager.startEmptyNum; i++){
-				TokenData[ranNum].EmptyPing();
+				TokenData[ranNum].pUpdater.EmptyPing();
 				TokenData[ranNum].moveIn = false;
 			}
 			
@@ -110,7 +113,7 @@ public class board : MonoBehaviour {
 
 			// base pon the level number set the number of empty blocks
 			for(int i = 0; i < levelManager.startEmptyNum; i++){
-				TokenData[i].EmptyPing();
+				TokenData[i].pUpdater.EmptyPing();
 				TokenData[i].moveIn = false;
 			}
 			
@@ -118,41 +121,6 @@ public class board : MonoBehaviour {
 
 	}
 
-	// count the number of empty blocks in the scene
-	public void EmptyCheck(){
-		GameManger.CURRENT_NUM_EMPTY = 0;
 
-		for(int i = 0; i < TokenData.Count; i++){
-
-			if (TokenData[i].blockType == HexBlock.BlockType.Empty){
-				GameManger.CURRENT_NUM_EMPTY++;
-			}
-		}
-
-
-	} 
-
-	// every block check their neighboring blocks
-	public void CheckMoves(){
-
-		for(int i = 0; i < TokenData.Count; i++){
-			
-			if (TokenData[i].blockType != HexBlock.BlockType.Empty){
-				TokenData[i].CheckNeighbor();
-			}
-		}
-	}
-
-
-	void RandomType(){
-
-	}
-
-
-
-	void OnDisable(){
-
-		Messenger.RemoveListener("Check for Empties", EmptyCheck );
-	}
 		
 }

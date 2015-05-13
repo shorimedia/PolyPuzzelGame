@@ -10,7 +10,7 @@ public class MenusZero : Item {
 		PegObject.bonusPoints = -1;
 		GameManger.ACTIVE = false;
 		PegObject.isJumpable  = true;
-		PegObject.blockState = HexBlock.BlockState.Dissolve;
+		PegObject.blockState = PegStateMachine.BlockState.Dissolve;
 		PegObject.ChangeBlockState();
 	}
 }

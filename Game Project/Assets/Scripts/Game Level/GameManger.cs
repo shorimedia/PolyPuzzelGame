@@ -21,8 +21,8 @@ public class GameManger : MonoBehaviour {
 	public GameState gameState = GameState.OpenGame;
 
 	public static bool ACTIVE = false;
-	public static HexBlock  CURRENT_ACTIVE_BLOCK;
-	public static HexBlock  CURRENT_OPEN_BLOCK;
+	public static PegStateMachine  CURRENT_ACTIVE_BLOCK;
+	public static PegStateMachine  CURRENT_OPEN_BLOCK;
 
 	//End Game tracking possivle move by player
 	public static int CURRENT_NUM_EMPTY = 0;
@@ -68,6 +68,13 @@ public class GameManger : MonoBehaviour {
 	void OnEnable()
 
 	{	
+
+		// reset or set move tracking data
+		CURRENT_NUM_EMPTY = 0;
+		TOTAL_PINGS = 0; // When a empty have a non-empty side to it
+		TOTAL_NULL_PINGS = 0; // When a empty have a non-empty side to it
+
+
 		//Messenger.AddListener( "Check Neighbor", CheckNeighbor );
 
 		// test any level for debug only
@@ -102,6 +109,7 @@ public class GameManger : MonoBehaviour {
 
 
 
+	// Start Game
 		ChangeGameState();
 
 	}
@@ -119,6 +127,8 @@ public class GameManger : MonoBehaviour {
 		ChangeGameState();
 			testMode = false;
 		}
+
+
 		CalculateMoves();
 
 		//only working the Gametime script
@@ -164,6 +174,8 @@ public class GameManger : MonoBehaviour {
 
 
 		int CurrentSpace = TOTAL_PINGS + TotalNulls();
+
+		Debug.Log ("Current Space: " + CurrentSpace + " & " + " Max Space: "+ MaxSpace);
 
 		if(CurrentSpace == MaxSpace){
 

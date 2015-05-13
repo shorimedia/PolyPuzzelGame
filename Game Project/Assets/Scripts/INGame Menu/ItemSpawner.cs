@@ -18,10 +18,7 @@ public class ItemSpawner : MonoBehaviour {
 	public string TestType = "Common";
 
 
-	void Awake()
-	{
 
-	}
 
 	
 
@@ -113,7 +110,7 @@ public class ItemSpawner : MonoBehaviour {
 	{
 		if(spawn)
 		{
-			TestItem(TestIndex, TestType);
+			//TestItem(TestIndex, TestType);
 			SpawnItem();
 			spawn = false;
 		}
@@ -156,7 +153,7 @@ public class ItemSpawner : MonoBehaviour {
 
 
 	#region  Spawner
-	void SpawnItem() 
+	public void SpawnItem() 
 	{
 		// rarity on the items
 		float random = Random.Range (0f,1f);

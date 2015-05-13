@@ -68,6 +68,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	// Use this for initialization
 	void Start () {
 
+		Messenger.AddListener<float>("Set MaxTime", SetMaxTime);
+
 		timeBar.maxValue = maxTime; // Set max value of timebar
 		timeBar.value = maxTime;	// set the timebar  value to max
 
@@ -234,5 +236,21 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 		}
 
 	}
+
+
+public void SetMaxTime(float addTime)
+	{
+		maxTime += addTime;
+
+		timeBar.maxValue = maxTime; // Set max value of timebar
+		timeBar.value = maxTime;	// set the timebar  value to max
+	}
+
+
+	void OnDisable(){
+		
+		Messenger.RemoveListener<float>( "Set MaxTime", SetMaxTime );
+	}
+
 
 }

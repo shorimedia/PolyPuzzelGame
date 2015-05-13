@@ -8,7 +8,7 @@ public class DoublePointsItem : Item {
 	public override void Use()
 	{
 
-		PegObject.bonusPoints = PegObject.hexType.points * 2;
+		PegObject.bonusPoints = PegObject.PegType.hexType.points * 2;
 		GameManger.ACTIVE = false;
 	}
 

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
 public class Item : MonoBehaviour {
 
 	public Sprite spriteNeutral;
@@ -10,7 +12,9 @@ public class Item : MonoBehaviour {
 
 	public float itemTime;
 
-	public string type = "Item";
+	public bool onDissolve = false;
+
+//	public string type = "Item";
 
 	public enum Rarity
 	{
@@ -26,11 +30,11 @@ public class Item : MonoBehaviour {
 	public bool timeIsActive = true;
 
 	[HideInInspector]
-	public HexBlock PegObject;
+	public PegStateMachine PegObject;
 
 
 	// Use this for initialization
-	public void Start () {
+	public virtual void Start () {
 		maxSize = 1;
 	}
 
@@ -53,6 +57,13 @@ public class Item : MonoBehaviour {
 	{
 		Debug.Log ("Using this Item Plus 11000 points");
 		GameManger.TOTAL_POINTS_COUNT += 11000;
+	}
+
+
+	public virtual void OnItemDissolve()
+	{
+
+
 	}
 
 }

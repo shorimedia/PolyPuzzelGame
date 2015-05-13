@@ -8,9 +8,9 @@ public class LightPeg : Item {
 		
 		PegObject.bonusPoints = 100;
 		GameManger.ACTIVE = false;
-		PegObject.blockType = HexBlock.BlockType.Lite;
-		PegObject.ChangeBlockType();
-		PegObject.UpdateNeighbor();
+		PegObject.PegType.blockType = PegTypeMach.BlockType.Lite;
+		PegObject.PegType.ChangeBlockType();
+		PegObject.pUpdater.UpdateNeighbor();
 	}
 
 }

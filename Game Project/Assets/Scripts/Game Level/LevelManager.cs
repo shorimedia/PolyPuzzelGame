@@ -1,4 +1,4 @@
-﻿//Shori Media Game 2014 - 2015
+﻿//Shoori Studios, LLC 2015
 //
 //Setup each level and  etlls the board what a level can or cannot have
 //
@@ -23,7 +23,6 @@ public class LevelManager  {
 		levelNumber = num;
 		LeveSetup();
 	}
-
 
 
 public void UpdateLevelNum (int num){
@@ -96,31 +95,84 @@ public void UpdateLevelNum (int num){
 	#endregion
 
 	#region Level Guide
-	public void LevelTypeSelect(HexBlock hex){
+	public void LevelTypeSelect(PegTypeMach hex){
 
 		int numberType = 0;
 		float randomNumHolder = RandomNumber();
 
 	
-		if(levelNumber >= 1 && levelNumber <= 5){
-			#region Levels 1 to 5
-			if(randomTypeNumA  <= 0.33f){
-				numberType = 1;
-			}
+
+		if(levelNumber == 1){
+			#region Levels 1 
+						if(randomTypeNumA  <= 0.33f){
+							numberType = 1;
+						}
+						
+						if(randomTypeNumA  >  0.33f && randomTypeNumA  <= 0.66f){
+							numberType = 2;
+						}
+						
+						if(randomTypeNumA  >  0.66f && randomTypeNumA  <= 1){
+							numberType = 3;
+						}
+						
+						switch(numberType){
+						case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+						case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+						case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+						}
+
+			#endregion
+
+		}else
+
+		if(levelNumber >= 2 && levelNumber <= 5){
+			#region Levels 2 to 5
+
+			//Randomly altnate between two types
+			//Type one
+			if( randomNumHolder <= 0.90f){
+				
+				// pick one of three
+				if(randomTypeNumA  <= 0.33f){
+					numberType = 1;
+				}
+				
+				if(randomTypeNumA  >  0.33f && randomTypeNumA  <= 0.66f){
+					numberType = 2;
+				}
+				
+				if(randomTypeNumA  >  0.66f && randomTypeNumA  <= 1){
+					numberType = 3;
+				}
+			} 
 			
-			if(randomTypeNumA  >  0.33f && randomTypeNumA  <= 0.66f){
-				numberType = 2;
-			}
 			
-			if(randomTypeNumA  >  0.66f && randomTypeNumA  <= 1){
-				numberType = 3;
-			}
+			//Type two
+			if( randomNumHolder > 0.90f && randomNumHolder <= 1.0f){
+				
+				// pick one of three 
+				if(randomTypeNumB  <= 0.33f){
+					numberType = 1;
+				}
+				
+				if(randomTypeNumB  >  0.33f && randomTypeNumA  <= 0.66f){
+					numberType = 2;
+				}
+				
+				if(randomTypeNumB  >  0.66f && randomTypeNumA  <= 1){
+					numberType = 3;
+				}
+				
+			} 
 			
-			switch(numberType){
-			case 1: hex.blockType = HexBlock.BlockType.Fire; break;
-			case 2: hex.blockType = HexBlock.BlockType.Flow; break;
-			case 3: hex.blockType = HexBlock.BlockType.Stone; break;
+			switch(numberType){ 
+			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+
 			}
+
 			#endregion
 		}else
 
@@ -165,9 +217,9 @@ public void UpdateLevelNum (int num){
 			} 
 			
 			switch(numberType){ 
-			case 1: hex.blockType = HexBlock.BlockType.Fire; break;
-			case 2: hex.blockType = HexBlock.BlockType.Flow; break;
-			case 3: hex.blockType = HexBlock.BlockType.Stone; break;
+			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
 			}
 			#endregion
 		}else
@@ -201,10 +253,10 @@ public void UpdateLevelNum (int num){
 			} 
 			
 			switch(numberType){ 
-			case 1: hex.blockType = HexBlock.BlockType.Fire; break;
-			case 2: hex.blockType = HexBlock.BlockType.Flow; break;
-			case 3: hex.blockType = HexBlock.BlockType.Stone; break;
-			case 4: hex.blockType = HexBlock.BlockType.Lite; break;
+			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+			case 4: hex.blockType = PegTypeMach.BlockType.Lite; break;
 			}
 			#endregion
 			
@@ -238,13 +290,13 @@ public void UpdateLevelNum (int num){
 			} 
 			
 			switch(numberType){ 
-			case 1: hex.blockType = HexBlock.BlockType.Fire; break;
-			case 2: hex.blockType = HexBlock.BlockType.Flow; break;
-			case 3: hex.blockType = HexBlock.BlockType.Stone; break;
-			case 4: hex.blockType = HexBlock.BlockType.Lite; break;
-			case 5: hex.blockType = HexBlock.BlockType.Shield; break;
-			case 6: hex.blockType = HexBlock.BlockType.Sword; break;
-			case 7: hex.blockType = HexBlock.BlockType.Spear; break;
+			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+			case 4: hex.blockType = PegTypeMach.BlockType.Lite; break;
+			case 5: hex.blockType = PegTypeMach.BlockType.Shield; break;
+			case 6: hex.blockType = PegTypeMach.BlockType.Sword; break;
+			case 7: hex.blockType = PegTypeMach.BlockType.Spear; break;
 
 			}
 			#endregion
@@ -279,15 +331,15 @@ public void UpdateLevelNum (int num){
 			} 
 			
 			switch(numberType){ 
-			case 1: hex.blockType = HexBlock.BlockType.Fire; break;
-			case 2: hex.blockType = HexBlock.BlockType.Flow; break;
-			case 3: hex.blockType = HexBlock.BlockType.Stone; break;
-			case 4: hex.blockType = HexBlock.BlockType.Lite; break;
-			case 5: hex.blockType = HexBlock.BlockType.Shield; break;
-			case 6: hex.blockType = HexBlock.BlockType.Sword; break;
-			case 7: hex.blockType = HexBlock.BlockType.Spear; break;
-			case 8: hex.blockType = HexBlock.BlockType.Wealth; break;
-			case 9: hex.blockType = HexBlock.BlockType.Wisdom; break;
+			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+			case 4: hex.blockType = PegTypeMach.BlockType.Lite; break;
+			case 5: hex.blockType = PegTypeMach.BlockType.Shield; break;
+			case 6: hex.blockType = PegTypeMach.BlockType.Sword; break;
+			case 7: hex.blockType = PegTypeMach.BlockType.Spear; break;
+			case 8: hex.blockType = PegTypeMach.BlockType.Wealth; break;
+			case 9: hex.blockType = PegTypeMach.BlockType.Wisdom; break;
 
 				
 			}
@@ -323,18 +375,18 @@ public void UpdateLevelNum (int num){
 			} 
 			
 			switch(numberType){ 
-			case 1: hex.blockType = HexBlock.BlockType.Fire; break;
-			case 2: hex.blockType = HexBlock.BlockType.Flow; break;
-			case 3: hex.blockType = HexBlock.BlockType.Stone; break;
-			case 4: hex.blockType = HexBlock.BlockType.Lite; break;
-			case 5: hex.blockType = HexBlock.BlockType.Shield; break;
-			case 6: hex.blockType = HexBlock.BlockType.Sword; break;
-			case 7: hex.blockType = HexBlock.BlockType.Spear; break;
-			case 8: hex.blockType = HexBlock.BlockType.Wealth; break;
-			case 9: hex.blockType = HexBlock.BlockType.Wisdom; break;
-			case 10: hex.blockType = HexBlock.BlockType.TimeType; break;
-			case 11: hex.blockType = HexBlock.BlockType.Darkness; break;
-			case 12: hex.blockType = HexBlock.BlockType.Destruction; break;
+			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+			case 4: hex.blockType = PegTypeMach.BlockType.Lite; break;
+			case 5: hex.blockType = PegTypeMach.BlockType.Shield; break;
+			case 6: hex.blockType = PegTypeMach.BlockType.Sword; break;
+			case 7: hex.blockType = PegTypeMach.BlockType.Spear; break;
+			case 8: hex.blockType = PegTypeMach.BlockType.Wealth; break;
+			case 9: hex.blockType = PegTypeMach.BlockType.Wisdom; break;
+			case 10: hex.blockType = PegTypeMach.BlockType.TimeType; break;
+			case 11: hex.blockType = PegTypeMach.BlockType.Darkness; break;
+			case 12: hex.blockType = PegTypeMach.BlockType.Destruction; break;
 				
 			}
 			#endregion

@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11443466}
   - 114: {fileID: 11443464}
   - 114: {fileID: 11443462}
+  - 114: {fileID: 11441116}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -30,6 +31,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11441116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582eeb3b67115ca40ae38bca5be9d05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cycleTime: 10
+  OnStart: 0
+  Spawner: {fileID: 0}
+  timerTime: 0
 --- !u!114 &11443462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,9 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 2
-  level: 1
+  level: 2
   stage: 1
-  testMode: 0
+  testMode: 1
   pointText: {fileID: 0}
   LevelTitle: {fileID: 0}
   titleTrans: {fileID: 0}

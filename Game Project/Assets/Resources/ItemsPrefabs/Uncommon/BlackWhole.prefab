@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452218}
-  - 114: {fileID: 11436644}
+  - 114: {fileID: 11420212}
   m_Layer: 0
   m_Name: BlackWhole
   m_TagString: Item
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11436644
+--- !u!114 &11420212
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,14 +36,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 170050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de4553484b77f74fa038f5b3bfc26e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 106cd0d9386f31a448041ebff7c76ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNeutral: {fileID: 21300022, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
+  spriteNeutral: {fileID: 0}
   maxSize: 1
-  itemTime: -.0152184516
-  type: Item
-  rarity: 1
+  itemTime: 0
+  onDissolve: 0
+  rarity: 0
   timeIsActive: 1
   PegObject: {fileID: 0}
 --- !u!1001 &100100000

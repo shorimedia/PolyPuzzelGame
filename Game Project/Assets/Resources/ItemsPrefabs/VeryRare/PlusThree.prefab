@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452218}
+  - 114: {fileID: 11492204}
   m_Layer: 0
   m_Name: PlusThree
   m_TagString: Item
@@ -27,6 +28,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11492204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3482ff75442e541bf7c7b36abc5a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteNeutral: {fileID: 0}
+  maxSize: 1
+  itemTime: 0
+  onDissolve: 1
+  rarity: 0
+  timeIsActive: 1
+  PegObject: {fileID: 0}
+  NumberOfSpawns: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

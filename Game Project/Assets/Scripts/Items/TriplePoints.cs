@@ -6,7 +6,7 @@ public class TriplePoints : Item {
 	public override void Use()
 	{
 		
-		PegObject.bonusPoints = PegObject.hexType.points * 3;
+		PegObject.bonusPoints = PegObject.PegType.hexType.points * 3;
 		GameManger.ACTIVE = false;
 	}
 }

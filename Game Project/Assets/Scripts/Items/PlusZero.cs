@@ -14,20 +14,20 @@ public class PlusZero : Item {
 		switch(ranNum)
 		{
 		case 1: 
-			PegObject.blockType = HexBlock.BlockType.Flow;
+			PegObject.PegType.blockType = PegTypeMach.BlockType.Flow;
 			break;
 		case 2: 
-			PegObject.blockType = HexBlock.BlockType.Fire;
+			PegObject.PegType.blockType = PegTypeMach.BlockType.Fire;
 			break;
 		case 3: 
-			PegObject.blockType = HexBlock.BlockType.Stone;
+			PegObject.PegType.blockType = PegTypeMach.BlockType.Stone;
 			break;
 		}
 
-		PegObject.blockState = HexBlock.BlockState.Normal;
+		PegObject.blockState = PegStateMachine.BlockState.Normal;
 		PegObject.ChangeBlockState();
 
-		PegObject.UpdateNeighbor();
+		PegObject.pUpdater.UpdateNeighbor();
 
 	}
 }
