@@ -9,17 +9,16 @@ public class PegUpdater : MonoBehaviour {
 
 	public PegStateMachine pegState;
 	public PegTypeMach PegType;
+	public PosStatus posStatus;
 
-
+	//[HideInInspector]
 	public PegStateMachine[] neighborHEX = new PegStateMachine[6];
 
+	[HideInInspector]
 	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
 
-	public int _ping = 0;
-	public int _nullPing = 0;
 
 
-	public PosStatus posStatus;
 
 	// Use this for initialization
 	void Start () {
@@ -53,23 +52,39 @@ public class PegUpdater : MonoBehaviour {
 						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
 							//Debug.Log (" check next");
 							neighborHEX[c].pUpdater.SecondNeighborCheck(c); }
+
+
 					}else{
 						
-						
+
 						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
 							
 						}
 						
 					}
-					
+
+
 					// use for end game condition n = null side
 					
-					if (neighborHEX[c].PegType.blockType == PegTypeMach.BlockType.Empty )
+					if ((neighborHEX[c].PegType.blockType == PegTypeMach.BlockType.Empty)  || (neighborHEX[c].PegType.CompareType(PegType.blockType) == false) )
+					{
+
+						posStatus.side[c] = 'E';
+
+					}else if(PegType.CompareType(neighborHEX[c].PegType.blockType) == false  && neighborHEX[c].posStatus.side[c] != 'E')
 					{
 						posStatus.side[c] = 'E';
+
+					}else if(PegType.CompareType(neighborHEX[c].PegType.blockType) == false  && neighborHEX[c].pUpdater.neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty)
+					{
+						posStatus.side[c] = 'E';
+						
 					}else
 					{
+
 						posStatus.side[c] = 'C';
+
+
 					}
 					
 				}else{
@@ -86,10 +101,13 @@ public class PegUpdater : MonoBehaviour {
 		
 		
 		// Set Status
-		SetHexPosStat();
+		posStatus.SetPositionState();
+
 		
 	}
 	#endregion
+
+
 
 
 
@@ -144,8 +162,7 @@ public class PegUpdater : MonoBehaviour {
 						neighborHEX[index].moveIn = false;
 						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
 					}
-					
-					
+
 					Debug.Log (" check two! done");
 					
 				}
@@ -157,122 +174,7 @@ public class PegUpdater : MonoBehaviour {
 	}
 	
 	
-	public void EmptyPing(){
-		
-		RaycastHit hit;
-		
-		for(int c = 0; c < checkPoints.Length; c++){
-			
-			Ray ray = new Ray (checkPoints[c].position,  checkPoints[c].forward);
-			
-			if (Physics.Raycast(ray , out hit,1)){
-				if (hit.collider != null){ 
-					//Debug.Log ("Hit object at check point " + (c + 1 ) + " "+ hit.collider.name );
-					if(neighborHEX[c] == null){
-						neighborHEX[c] = hit.collider.gameObject.GetComponent<PegStateMachine>();
-					}
-					
-					if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
-						_ping++;
-						GameManger.TOTAL_PINGS ++;
-					}
-				}}
-			
-			if(neighborHEX[c] == null){
-				_nullPing ++;
-				GameManger.TOTAL_NULL_PINGS ++;     
-			}
-			
-			
-			
-		}
-		
-	}  
-	
-	
-	// check if there a peg next to this one
-	public void UpdateNeighbor(){
-		// check block neighbors
-		
-		RaycastHit hit;
-		
-		for(int c = 0; c < checkPoints.Length; c++){
-			
-			Ray ray = new Ray (checkPoints[c].position,  checkPoints[c].forward);
-			
-			if (Physics.Raycast(ray , out hit,1)){
-				if (hit.collider != null){ 
-					
-					if (neighborHEX[c].PegType.blockType == PegTypeMach.BlockType.Empty ){
-						GameManger.TOTAL_PINGS -= neighborHEX[c].pUpdater._ping ;
-						neighborHEX[c].pUpdater._ping = 0;
-						GameManger.TOTAL_NULL_PINGS -= neighborHEX[c].pUpdater._nullPing ;
-						neighborHEX[c].pUpdater._nullPing = 0;
-						neighborHEX[c].pUpdater.EmptyPing();
-					}
-				}
-			}}
-	}
 
-
-
-	void SetHexPosStat()
-	{
-		posStatus.SetPositionState();
-		
-		// Check if end peg is cennected to a group
-		if( posStatus.posState == PosStatus.PosState.EndPeg )
-		{
-			
-			for(int i =0; i < neighborHEX.Length; i++)
-			{
-				
-				if(neighborHEX[i] != null  && neighborHEX[i].posStatus.posState == PosStatus.PosState.AlignPeg )
-				{
-					// end peg is in a group
-					posStatus.cennectedGroup = true;
-					
-					neighborHEX[i].posStatus.cennectedGroup = true;
-					
-					// set up a new group
-					if(posStatus.groupIndex == 0)
-					{
-						
-						EndGameCheck.TotalNum_GroupIndex++;
-						
-						posStatus.groupIndex = EndGameCheck.TotalNum_GroupIndex;
-						
-						EndGameCheck.groups.Add(posStatus.groupIndex, new List<PosStatus>());
-						
-						EndGameCheck.groups[posStatus.groupIndex].Add(posStatus);
-						
-					}
-					
-					neighborHEX[i].posStatus.groupIndex = posStatus.groupIndex;
-				}
-				
-				
-			}
-			
-			
-			
-		}else if(posStatus.posState == PosStatus.PosState.AlignPeg && posStatus.cennectedGroup == true)
-		{
-			
-			for(int i =0; i < neighborHEX.Length; i++)
-			{
-				
-				if(neighborHEX[i] != null  && neighborHEX[i].posStatus.posState == PosStatus.PosState.AlignPeg )
-				{
-					neighborHEX[i].posStatus.groupIndex = posStatus.groupIndex;
-					neighborHEX[i].posStatus.cennectedGroup = true;
-				}
-			}
-		}else { posStatus.cennectedGroup = true; }
-	}
-
-
-	
 	void OnDisable(){
 		
 		Messenger.RemoveListener( "Check Neighbor", CheckNeighbor  );

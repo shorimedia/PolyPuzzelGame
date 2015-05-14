@@ -10,7 +10,7 @@ public class LightPeg : Item {
 		GameManger.ACTIVE = false;
 		PegObject.PegType.blockType = PegTypeMach.BlockType.Lite;
 		PegObject.PegType.ChangeBlockType();
-		PegObject.pUpdater.UpdateNeighbor();
+//		PegObject.pUpdater.UpdateNeighbor();
 	}
 
 }

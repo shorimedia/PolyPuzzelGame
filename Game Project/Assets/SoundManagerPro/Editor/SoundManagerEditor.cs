@@ -52,11 +52,11 @@ public partial class SoundManagerEditor : Editor {
 		InitSFX();
 		
 		if(!titleBar)
-			titleBar = Resources.LoadAssetAtPath ("Assets/Gizmos/TitleBar.png", typeof(Texture2D)) as Texture2D;
+			titleBar = AssetDatabase.LoadAssetAtPath ("Assets/Gizmos/TitleBar.png", typeof(Texture2D)) as Texture2D;
 		if(!footer)
-			footer = Resources.LoadAssetAtPath ("Assets/Gizmos/AntiLunchBox Logo.png", typeof(Texture2D)) as Texture2D;
+			footer = AssetDatabase.LoadAssetAtPath ("Assets/Gizmos/AntiLunchBox Logo.png", typeof(Texture2D)) as Texture2D;
 		if(!icon)
-			icon = Resources.LoadAssetAtPath ("Assets/Gizmos/SoundManager Icon.png", typeof(Texture2D)) as Texture2D;
+			icon = AssetDatabase.LoadAssetAtPath ("Assets/Gizmos/SoundManager Icon.png", typeof(Texture2D)) as Texture2D;
 	}
 	
 	private void OnDisable()

@@ -13,7 +13,7 @@ public class ItemEgg : Item {
 		PegObject.isJumpable  = true;
 
 		spawner = GameObject.Find("Item_Bar").GetComponent<ItemSpawner>();
-		PegObject.pUpdater.UpdateNeighbor();
+//		PegObject.pUpdater.UpdateNeighbor();
 	}
 
 

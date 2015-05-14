@@ -88,9 +88,7 @@ public class PegStateMachine : MonoBehaviour {
 			PegType.blockType = PegTypeMach.BlockType.Empty; // Call change type on normal state
 			
 			blockState = BlockState.Normal;
-			//Update the number of empty blocks
-			pUpdater.EmptyPing();
-			pUpdater.UpdateNeighbor();
+
 			ChangeBlockState();
 			break;
 		case BlockState.Hover	:
@@ -121,13 +119,8 @@ public class PegStateMachine : MonoBehaviour {
 				//GameManger.CURRENT_ACTIVE_BLOCK.blockType  = BlockType.Empty;
 				//GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockType();
 				GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockState();
-				GameManger.CURRENT_ACTIVE_BLOCK  = null;
-				
-				GameManger.TOTAL_PINGS -= pUpdater._ping;
-				pUpdater._ping = 0;
-				GameManger.TOTAL_NULL_PINGS -= pUpdater._nullPing ;
-				pUpdater._nullPing = 0;
-				pUpdater.UpdateNeighbor();
+				GameManger.CURRENT_ACTIVE_BLOCK  = null;			
+
 				
 				Messenger.Broadcast("Check Empties");
 				Debug.Log ("Check for Empties");

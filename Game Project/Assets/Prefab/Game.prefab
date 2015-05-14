@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11443464}
   - 114: {fileID: 11443462}
   - 114: {fileID: 11441116}
+  - 114: {fileID: 11437212}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11437212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b905b42fc16c8a44aa83dbf394b31b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playablePegsNum: 0
+  Game: {fileID: 11443466}
+  currentGroup: []
 --- !u!114 &11441116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 2
-  level: 2
+  level: 1
   stage: 1
   testMode: 1
   pointText: {fileID: 0}

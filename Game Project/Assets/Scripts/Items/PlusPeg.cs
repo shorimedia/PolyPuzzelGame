@@ -27,7 +27,7 @@ public class PlusPeg : Item {
 		PegObject.blockState = PegStateMachine.BlockState.Normal;
 		PegObject.ChangeBlockState();
 		
-		PegObject.pUpdater.UpdateNeighbor();
+//		PegObject.pUpdater.UpdateNeighbor();
 		
 	}
 }

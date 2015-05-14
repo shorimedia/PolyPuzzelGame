@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PegTypeMach : MonoBehaviour {
 
+
+
 	public enum BlockType {
 		Flow,
 		Stone,
@@ -18,9 +20,7 @@ public class PegTypeMach : MonoBehaviour {
 		Darkness,
 		Empty
 	}
-	
-	
-	
+
 	public BlockType blockType = BlockType.Flow;
 
 	public HexType hexType;
@@ -38,7 +38,6 @@ public class PegTypeMach : MonoBehaviour {
 	void Start () {
 		ChangeBlockType();
 	}
-
 
 	public void ChangeBlockType(){
 		
@@ -111,8 +110,8 @@ public class PegTypeMach : MonoBehaviour {
 			break;
 			
 		}
-		
-		
+
+
 	}
 
 	public  bool CompareType( BlockType peg){

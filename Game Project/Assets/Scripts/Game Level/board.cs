@@ -95,17 +95,12 @@ public class board : MonoBehaviour {
 		
 		}
 
-
-		Messenger.Broadcast("Check Empties");
-		//CheckMoves();
-
-
 		// Set the neighbors of all the empty blocks
 		if( levelManager.randomLoc == true){
 
 
 			for(int i = 0; i < levelManager.startEmptyNum; i++){
-				TokenData[ranNum].pUpdater.EmptyPing();
+//				TokenData[ranNum].pUpdater.EmptyPing();
 				TokenData[ranNum].moveIn = false;
 			}
 			
@@ -113,12 +108,13 @@ public class board : MonoBehaviour {
 
 			// base pon the level number set the number of empty blocks
 			for(int i = 0; i < levelManager.startEmptyNum; i++){
-				TokenData[i].pUpdater.EmptyPing();
+//				TokenData[i].pUpdater.EmptyPing();
 				TokenData[i].moveIn = false;
 			}
 			
 		}
 
+		Messenger.Broadcast("Check Empties");
 	}
 
 

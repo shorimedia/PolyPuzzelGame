@@ -26,8 +26,8 @@ public class GameManger : MonoBehaviour {
 
 	//End Game tracking possivle move by player
 	public static int CURRENT_NUM_EMPTY = 0;
-	public static int TOTAL_PINGS = 0; // When a empty have a non-empty side to it
-	public static int TOTAL_NULL_PINGS = 0; // When a empty have a non-empty side to it
+//	public static int TOTAL_PINGS = 0; // When a empty have a non-empty side to it
+//	public static int TOTAL_NULL_PINGS = 0; // When a empty have a non-empty side to it
 
 	public static int BLOCK_COUNT;
 
@@ -71,11 +71,6 @@ public class GameManger : MonoBehaviour {
 
 		// reset or set move tracking data
 		CURRENT_NUM_EMPTY = 0;
-		TOTAL_PINGS = 0; // When a empty have a non-empty side to it
-		TOTAL_NULL_PINGS = 0; // When a empty have a non-empty side to it
-
-
-		//Messenger.AddListener( "Check Neighbor", CheckNeighbor );
 
 		// test any level for debug only
 		if(testMode ==  true || PlayerPrefs.GetInt("Game Level") == 0 ) 
@@ -107,8 +102,6 @@ public class GameManger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
-
 	// Start Game
 		ChangeGameState();
 
@@ -117,26 +110,14 @@ public class GameManger : MonoBehaviour {
 	// Update is called once per frame
 	 void Update () 
 	{
-
-
-//		count = CURRENT_NUM_EMPTY;
-//		countTwo = TOTAL_PINGS;
-//		countThree = TOTAL_NULL_PINGS;
 		if(testMode)
 		{
 		ChangeGameState();
 			testMode = false;
 		}
-
-
-		CalculateMoves();
-
-		//only working the Gametime script
-		//pointText.text = TOTAL_POINTS_COUNT.ToString();
-
-	//	Debug.Log (TotalNulls());
-
 	}
+
+
 
 
 	int NumberOfPlayableBlocks()
@@ -153,37 +134,7 @@ public class GameManger : MonoBehaviour {
 		}
 	}
 
-	int TotalNulls()
-	{
 
-		switch(STAGE_NUM){
-		case 1 : return 54 - TOTAL_NULL_PINGS; break;
-		case 2: return  66 - TOTAL_NULL_PINGS;  break;
-		case 3 : return  78 - TOTAL_NULL_PINGS;  break;
-		case 4 : return  90 - TOTAL_NULL_PINGS;  break;
-		default: return  54 - TOTAL_NULL_PINGS;  break;
-		}
-
-	}
-	
-
-	void CalculateMoves()
-	{
-
-		int MaxSpace = NumberOfPlayableBlocks() * 6; 
-
-
-		int CurrentSpace = TOTAL_PINGS + TotalNulls();
-
-		Debug.Log ("Current Space: " + CurrentSpace + " & " + " Max Space: "+ MaxSpace);
-
-		if(CurrentSpace == MaxSpace){
-
-			Debug.Log("End Of Game!!!!!!!!    Score: " + TOTAL_SCORE);
-			EndGame();
-		}
-
-	}
 
 
 	public int ScoreCalculator(){

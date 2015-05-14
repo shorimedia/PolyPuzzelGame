@@ -10,6 +10,7 @@ public class BlackPeg : Item {
 		GameManger.ACTIVE = false;
 		PegObject.PegType.blockType = PegTypeMach.BlockType.Darkness;
 		PegObject.PegType.ChangeBlockType();
-		PegObject.pUpdater.UpdateNeighbor();
+//		PegObject.pUpdater.UpdateNeighbor();
+		Messenger.Broadcast("Check Empties");
 	}
 }

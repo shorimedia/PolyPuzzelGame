@@ -15,7 +15,8 @@ public class PosStatus : MonoBehaviour {
 		EndPeg,
 		ReadyPeg,
 		TurnPeg,
-		AlignPeg
+		AlignPeg,
+		ClosedPeg
 	}
 	
 	
@@ -26,37 +27,47 @@ public class PosStatus : MonoBehaviour {
 	
 	private int NumberOfConnectedSides;
 	private int NumberOfNullSides;
+
+	public bool Closed = false;
 	
 	// Use this for initialization
 	void Start () {
 		
 		// set to zero  at the start of a levels
 		groupIndex = 0;
+		cennectedGroup = false; 
 		
 	}
 	
 	
 	public void SetPositionState()
 	{
-		NumberOfConnectedSides = 0;
-		NumberOfNullSides = 0;
-		
-		// Set the N and C; Use the number of "C" Connect side  and "N" Null sides to determine the Peg State
-		for(int s = 0; s < 6; s++)
+
+		if(Closed == false)
 		{
-			if(side[s] == 'C')
-			{
-				NumberOfConnectedSides++;
-			}
-			
-			
-			if(side[s] == 'N')
-			{
-				NumberOfNullSides++;
-			}
-			
+				NumberOfConnectedSides = 0;
+				NumberOfNullSides = 0;
+				
+				// Set the N and C; Use the number of "C" Connect side  and "N" Null sides to determine the Peg State
+				for(int s = 0; s < 6; s++)
+				{
+					if(side[s] == 'C')
+					{
+						NumberOfConnectedSides++;
+					}
+					
+					
+					if(side[s] == 'N')
+					{
+						NumberOfNullSides++;
+					}
+					
+				}
+		}else{
+			NumberOfConnectedSides = 7;
 		}
-		
+
+
 		// Us
 		switch(NumberOfConnectedSides)
 		{
@@ -97,9 +108,7 @@ public class PosStatus : MonoBehaviour {
 			{
 				posState =  PosState.ReadyPeg;
 			}
-			
-			
-			
+
 			break;
 		case 2:
 			
@@ -137,11 +146,20 @@ public class PosStatus : MonoBehaviour {
 				}else
 				{
 					posState =  PosState.ReadyPeg;
+
+				
 				}
 				
 				
 			}
 			break;
+
+		case 7 :
+
+			posState =  PosState.ClosedPeg;
+
+			break;
+
 		default: 
 			posState =  PosState.ReadyPeg;
 			break;
