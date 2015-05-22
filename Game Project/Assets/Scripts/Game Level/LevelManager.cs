@@ -129,6 +129,8 @@ public void UpdateLevelNum (int num){
 		if(levelNumber >= 2 && levelNumber <= 5){
 			#region Levels 2 to 5
 
+
+
 			//Randomly altnate between two types
 			//Type one
 			if( randomNumHolder <= 0.90f){
@@ -156,11 +158,11 @@ public void UpdateLevelNum (int num){
 					numberType = 1;
 				}
 				
-				if(randomTypeNumB  >  0.33f && randomTypeNumA  <= 0.66f){
+				if(randomTypeNumB  >  0.33f && randomTypeNumB  <= 0.66f){
 					numberType = 2;
 				}
 				
-				if(randomTypeNumB  >  0.66f && randomTypeNumA  <= 1){
+				if(randomTypeNumB  >  0.66f && randomTypeNumB  <= 1){
 					numberType = 3;
 				}
 				
@@ -206,11 +208,11 @@ public void UpdateLevelNum (int num){
 					numberType = 1;
 				}
 				
-				if(randomTypeNumB  >  0.33f && randomTypeNumA  <= 0.66f){
+				if(randomTypeNumB  >  0.33f && randomTypeNumB <= 0.66f){
 					numberType = 2;
 				}
 				
-				if(randomTypeNumB  >  0.66f && randomTypeNumA  <= 1){
+				if(randomTypeNumB  >  0.66f && randomTypeNumB  <= 1){
 					numberType = 3;
 				}
 				
@@ -399,14 +401,86 @@ public void UpdateLevelNum (int num){
 
 	public void SetRandomNum(float numA, float numB){
 
-		if( numA != numB){
+		int TestNumOne = 0;
+		int TestNumTwo = 0;
+
+
+		int numRan = 0;
+
+		//Check if NumA and NumB are within the same range
+		if(numA  <= 0.33f){
+			TestNumOne = 1;
+		}
+		
+		if(numA  >  0.33f && numA  <= 0.66f){
+			TestNumOne = 2;
+		}
+		
+		if(numA  >  0.66f && numA  <= 1){
+			TestNumOne = 3;
+		}
+		
+		
+		
+		if(numB  <= 0.33f){
+			TestNumTwo = 1;
+		}
+		
+		if(numB  >  0.33f && numB  <= 0.66f){
+			TestNumTwo = 2;
+		}
+		
+		if(numB  >  0.66f && numB  <= 1){
+			TestNumTwo = 3;
+		}
+
+
+		if(TestNumOne == TestNumTwo)
+		{
+
+			// select a number in any range but  TestNumOne range
+
+			switch(TestNumOne)
+			{
+			case 1 :
+				randomTypeNumA = numA;
+
+				randomTypeNumB = Random.Range(0.34f,1.0f);
+				
+				break;
+			case 2:
+				randomTypeNumA = numA;
+
+
+				numRan = Random.Range(1,3);
+
+				if(numRan == 1){
+				randomTypeNumB = Random.Range(0f,0.33f);
+				}
+
+				
+				if(numRan == 2){
+					randomTypeNumB = Random.Range(0.66f,1.0f);
+				}
+
+				break;
+			case 3 : 
+
+				randomTypeNumA = numA;
+	
+					randomTypeNumB = Random.Range(0f,0.66f);
+	
+				break;
+			}
+
+
+
+		}else{
+
 		randomTypeNumA = numA;
 		randomTypeNumB = numB;
-		}else{
-			randomTypeNumA = numA;
-			randomTypeNumB = Random.Range(0f,1.0f);;
-
 		}
+
 
 	}
 

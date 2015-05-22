@@ -39,6 +39,7 @@ public class PegTypeMach : MonoBehaviour {
 		ChangeBlockType();
 	}
 
+
 	public void ChangeBlockType(){
 		
 		switch(blockType){
@@ -114,73 +115,78 @@ public class PegTypeMach : MonoBehaviour {
 
 	}
 
+
+// What can defeat this peg
+
 	public  bool CompareType( BlockType peg){
+
+		bool canDefeat = true;
 		
 		switch(peg){
 			
 		case BlockType.Flow : 
 			
-			if( hexType.Flow == true){ return true; } else {return false;}
+			if( hexType.Flow == true){ canDefeat = true; } else {canDefeat = false;}
 			
 			break;
 			
 		case BlockType.Stone : 
-			if( hexType.Stone == true){ return true; } else {return false;}
+			if( hexType.Stone == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Fire : 
-			if( hexType.Fire == true){ return true; } else {return false;}
+			if( hexType.Fire == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Lite : 
-			if( hexType.Lite == true){ return true; } else {return false;}
+			if( hexType.Lite == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Shield : 
 			
-			if( hexType.Shield == true){ return true; } else {return false;}
+			if( hexType.Shield == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Sword : 
-			if( hexType.Sword == true){ return true; } else {return false;}
+			if( hexType.Sword == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Spear : 
-			if( hexType.Spear == true){ return true; } else {return false;}
+			if( hexType.Spear == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Wealth : 
-			if( hexType.Wealth == true){ return true; } else {return false;}
+			if( hexType.Wealth == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Wisdom : 
-			if( hexType.Wisdom == true){ return true; } else {return false;}
+			if( hexType.Wisdom == true){ canDefeat = true; } else {canDefeat =  false;}
 			
 			break;
 		case BlockType.TimeType : 
 			
-			if( hexType.TimeType == true){ return true; } else {return false;}
+			if( hexType.TimeType == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Destruction : 
 			
-			if( hexType.Destruction == true){ return true; } else {return false;}
+			if( hexType.Destruction == true){ canDefeat = true; } else {canDefeat =  false;}
 			break;
 			
 		case BlockType.Darkness : 
-			if( hexType.Darkness == true){ return true; } else {return false;}
+			if( hexType.Darkness == true){ canDefeat =  true; } else {canDefeat =  false;}
 			
 			break;
 			
 		case BlockType.Empty : 
 			
-			if( hexType.Flow == true){ return true; } else {return false;}
+			if( hexType.Flow == true){ canDefeat =  true; } else {canDefeat =  false;}
 			break;
 			
-		default : if( hexType.Flow == true){ return true; } else {return false;}
+		default : if( hexType.Flow == true){ canDefeat =  true; } else {canDefeat =  false;}
 			break;
 		}
 		
-		
+		return canDefeat;
 	}
 }

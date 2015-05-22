@@ -13,6 +13,7 @@ public class GameDataManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
+
 		//newGame = PlayerPrefs.GetBool("New Game");
 
 		if(newGame == true){
@@ -25,6 +26,24 @@ public class GameDataManager : MonoBehaviour {
 			PlayerPrefs.SetBool("Stage Number " + 1 + " LockStatus", false );
 		}
 	}
-	
+
+
+	void Start()
+	{
+		//Use when then scene is open from a pause state
+		if(Time.timeScale  < 1)
+		{
+			Time.timeScale = 1;
+			Debug.Log("Fix time scale!!!");
+		}
+
+	}
+
+
+	public void CloseApp()
+	{
+		Application.CancelQuit();
+	}
+
 
 }

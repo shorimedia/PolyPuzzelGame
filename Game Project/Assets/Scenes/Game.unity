@@ -503,6 +503,14 @@ Prefab:
       propertyPath: winScript
       value: 
       objectReference: {fileID: 2141900557}
+    - target: {fileID: 11443466, guid: 8cc0d808f9c68d249b0a3995c76d2ec2, type: 2}
+      propertyPath: level
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443466, guid: 8cc0d808f9c68d249b0a3995c76d2ec2, type: 2}
+      propertyPath: testMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cc0d808f9c68d249b0a3995c76d2ec2, type: 2}
   m_IsPrefabParent: 0
@@ -3426,6 +3434,45 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: .5}
   m_EffectDistance: {x: 7.57000017, y: -5.98999977}
   m_UseGraphicAlpha: 1
+--- !u!1 &450157026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 450157028}
+  - 114: {fileID: 450157027}
+  m_Layer: 0
+  m_Name: AdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &450157027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 450157026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6912ce548c54564990d19725fe2c6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &450157028
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 450157026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 233.787842, y: 402.614075, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1001 &493159699
 Prefab:
   m_ObjectHideFlags: 0
@@ -9173,7 +9220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11459350, guid: 84f7057774df4d0408fc31a0865e80d3, type: 2}
       propertyPath: spawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84f7057774df4d0408fc31a0865e80d3, type: 2}
@@ -9359,8 +9406,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1204, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1258, y: 17}
+  m_SizeDelta: {x: 195, y: 167}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1844185968
 MonoBehaviour:

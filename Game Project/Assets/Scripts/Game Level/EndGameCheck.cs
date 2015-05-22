@@ -38,11 +38,13 @@ public class EndGameCheck : MonoBehaviour {
 		
 		for(int i = 0; i < board.TokenData.Count; i++)
 		{
-
+//			if (board.TokenData[i].PegType.blockType == PegTypeMach.BlockType.Empty && GameManger.ACTIVE == false)
+//			{
+//				board.TokenData[i].moveIn = false;
+//			}
 			
 			if (board.TokenData[i].PegType.blockType == PegTypeMach.BlockType.Empty){
 				GameManger.CURRENT_NUM_EMPTY++;
-				
 				board.TokenData[i].posStatus.Closed = true;
 			}else{
 

@@ -9,7 +9,7 @@ public class CameraSliderZoom : MonoBehaviour {
 
 	public float CameraZoom
 	{
-		get{return cameraZoomIndex * 0.1f; UpdateZoom();}
+		get{return cameraZoomIndex * 0.1f;} // UpdateZoom();
 		set
 		{
 			if(value > 0)
@@ -22,12 +22,6 @@ public class CameraSliderZoom : MonoBehaviour {
 	}
 
 
-	// Use this for initialization
-	void Start () {
-
-
-	
-	}
 	
 	// Update is called once per frame
 	void UpdateZoom () {

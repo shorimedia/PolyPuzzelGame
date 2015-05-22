@@ -21,13 +21,12 @@ public class GameManger : MonoBehaviour {
 	public GameState gameState = GameState.OpenGame;
 
 	public static bool ACTIVE = false;
-	public static PegStateMachine  CURRENT_ACTIVE_BLOCK;
+	public static PegStateMachine  CURRENT_ACTIVE_BLOCK; // The peg thats currently activly selected
 	public static PegStateMachine  CURRENT_OPEN_BLOCK;
 
 	//End Game tracking possivle move by player
 	public static int CURRENT_NUM_EMPTY = 0;
-//	public static int TOTAL_PINGS = 0; // When a empty have a non-empty side to it
-//	public static int TOTAL_NULL_PINGS = 0; // When a empty have a non-empty side to it
+
 
 	public static int BLOCK_COUNT;
 
@@ -106,15 +105,21 @@ public class GameManger : MonoBehaviour {
 		ChangeGameState();
 
 	}
-	
+
+
+	public bool ShowActive;
 	// Update is called once per frame
 	 void Update () 
 	{
+
+		ShowActive = ACTIVE;
 		if(testMode)
 		{
 		ChangeGameState();
 			testMode = false;
 		}
+
+
 	}
 
 
@@ -122,16 +127,20 @@ public class GameManger : MonoBehaviour {
 
 	int NumberOfPlayableBlocks()
 	{
+		int pegCount = 0;
 	
 			switch(STAGE_NUM){
 		case 1 : 
-			return 61 - CURRENT_NUM_EMPTY;
+			pegCount = 61 - CURRENT_NUM_EMPTY;
 			break;
-		case 2: return 91 - CURRENT_NUM_EMPTY; break;
-		case 3 : return 127 - CURRENT_NUM_EMPTY; break;
-		case 4 : return 169 - CURRENT_NUM_EMPTY; break;
-		default: return 61 - CURRENT_NUM_EMPTY; break;
+		case 2: pegCount = 91 - CURRENT_NUM_EMPTY; break;
+		case 3 : pegCount = 127 - CURRENT_NUM_EMPTY; break;
+		case 4 : pegCount = 169 - CURRENT_NUM_EMPTY; break;
+		default: pegCount = 61 - CURRENT_NUM_EMPTY; break;
 		}
+
+
+		return pegCount;
 	}
 
 

@@ -1,28 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game Level\EndGameCheck.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SimpleAds.cs">
     <Files>
-      <File FileName="Assets\Scripts\Game Level\HexBlock.cs" Line="297" Column="19" />
-      <File FileName="Assets\Scripts\Game Level\GameManger.cs" Line="60" Column="1" />
-      <File FileName="Assets\Scripts\Game Level\EndGameCheck.cs" Line="80" Column="46" />
-      <File FileName="Assets\Scripts\Game Level\HexPositionStatus.cs" Line="23" Column="40" />
+      <File FileName="Assets\Scripts\Game Menu\MenuManager.cs" Line="12" Column="15" />
+      <File FileName="Assets\Scripts\Game Menu\Menu.cs" Line="48" Column="4" />
+      <File FileName="Assets\Scripts\Game Menu\GameDataManager.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\Game Menu\ChangeScene.cs" Line="8" Column="1" />
+      <File FileName="Assets\Scripts\Game Menu\FadeScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SimpleAds.cs" Line="16" Column="2" />
+      <File FileName="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Mediation\Engine.cs" Line="73" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\Slot.cs" line="69" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\HexBlock.cs" line="184" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\GameTime.cs" line="11" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Menu\Menu.cs" line="43" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="180" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\HexBlock.cs" line="189" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="145" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\GameManger.cs" line="170" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\HexBlock.cs" line="80" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\HexBlock.cs" line="136" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\HexBlock.cs" line="213" />
-      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\EndGameCheck.cs" line="62" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <AuthorInfo Name="Victor Josey" Email="victor.josey@shorimedia" Copyright="Shori Media Games 2015" Company="Shori Media Games" Trademark="Shori Media Games" />

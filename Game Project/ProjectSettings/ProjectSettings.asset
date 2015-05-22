@@ -75,8 +75,8 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.unity3d.remote
-  bundleVersion: 1.0
+  bundleIdentifier: com.shooristudios.hexpeggame
+  bundleVersion: 0.1
   preloadedAssets: []
   metroEnableIndependentInputSource: 1
   metroEnableLowLatencyPresentationAPI: 0
@@ -123,8 +123,8 @@ PlayerSettings:
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Victor/Google Drive/Shoori Studios LLC/shooristudios.keystore
+  AndroidKeyaliasName: shooristudios
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 0

@@ -36,16 +36,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 170050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a0468abceeaae4bb457d1ace36a300, type: 3}
+  m_Script: {fileID: 11500000, guid: cadef7729d6d1a348bf7f0587324684e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteNeutral: {fileID: 21300022, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
   maxSize: 1
   itemTime: 20
-  type: Item
+  onDissolve: 0
   rarity: 2
   timeIsActive: 1
   PegObject: {fileID: 0}
+  pointsValue: 3
+  operation: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

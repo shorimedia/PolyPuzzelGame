@@ -144,6 +144,11 @@ public class PosStatus : MonoBehaviour {
 					posState =  PosState.TurnPeg;
 					
 				}else
+					if((side[5] == 'C' && side[3] == 'C') || (side[4] == 'C' && side[2] == 'C'))
+				{
+					posState =  PosState.TurnPeg;
+					
+				}else
 				{
 					posState =  PosState.ReadyPeg;
 

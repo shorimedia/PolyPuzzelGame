@@ -280,7 +280,6 @@ GameObject:
   - 222: {fileID: 22293354}
   - 114: {fileID: 11493364}
   - 114: {fileID: 11493362}
-  - 114: {fileID: 11493360}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1672,17 +1671,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11493360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 680aa9014f112464d822b08073e61f6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11493362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1721,19 +1709,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11493364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11493360}
-        m_MethodName: PlaySFXTest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11493364
@@ -5306,4 +5282,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193476}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

@@ -8,7 +8,7 @@ public class GameTime : MonoBehaviour {
 	public int  minutes;
 	public int 	seconds;
 
-	private int CountSeconds;
+	private int CountSeconds = 0;
 	private int CountMinutes;
 
 	private int restSeconds;

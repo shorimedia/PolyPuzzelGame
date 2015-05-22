@@ -12,7 +12,9 @@ public class MenuManager : MonoBehaviour {
 	void Start ()
 	{
 
-		if(IsSubMenu == false)
+
+		//If menu is a sub menu do not show at start
+		if(IsSubMenu == false) 
 		{
 		ShowMenu(CurrenMenu);
 		}
@@ -22,8 +24,9 @@ public class MenuManager : MonoBehaviour {
 	public void ShowMenu(Menu menu)
 	{
 		if ( CurrenMenu != null)
+		{
 			CurrenMenu.IsOpen = false; CurrenMenu.ShowDepends(false);
-		
+		}
 
 		CurrenMenu = menu;
 		CurrenMenu.IsOpen = true;

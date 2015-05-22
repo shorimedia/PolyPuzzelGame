@@ -29,7 +29,13 @@ public class PegUpdater : MonoBehaviour {
 	#region Check Peg's Neighbor
 	
 	public void CheckNeighbor(){
-		
+
+		if(PegType.blockType == PegTypeMach.BlockType.Empty && GameManger.ACTIVE == false)
+		{
+			pegState.moveIn = false;
+		}
+
+
 		// check Peg neighbors
 		
 		RaycastHit hit;
@@ -47,7 +53,8 @@ public class PegUpdater : MonoBehaviour {
 					if(neighborHEX[c] == null){
 						neighborHEX[c] = hit.collider.gameObject.GetComponent<PegStateMachine>();
 					}
-					
+
+				
 					if(PegType.blockType != PegTypeMach.BlockType.Empty){
 						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
 							//Debug.Log (" check next");
@@ -66,20 +73,15 @@ public class PegUpdater : MonoBehaviour {
 
 					// use for end game condition n = null side
 					
-					if ((neighborHEX[c].PegType.blockType == PegTypeMach.BlockType.Empty)  || (neighborHEX[c].PegType.CompareType(PegType.blockType) == false) )
-					{
-
-						posStatus.side[c] = 'E';
-
-					}else if(PegType.CompareType(neighborHEX[c].PegType.blockType) == false  && neighborHEX[c].posStatus.side[c] != 'E')
+					if (neighborHEX[c].PegType.blockType == PegTypeMach.BlockType.Empty  || neighborHEX[c].PegType.CompareType(PegType.blockType) == false )
 					{
 						posStatus.side[c] = 'E';
 
-					}else if(PegType.CompareType(neighborHEX[c].PegType.blockType) == false  && neighborHEX[c].pUpdater.neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty)
+					}else if(neighborHEX[c].PegType.CompareType(PegType.blockType)  ==  true  && neighborHEX[c].posStatus.side[c] != 'E' && neighborHEX[c].PegType.blockType != PegType.blockType)
 					{
 						posStatus.side[c] = 'E';
-						
-					}else
+
+					}else 
 					{
 
 						posStatus.side[c] = 'C';
@@ -148,16 +150,27 @@ public class PegUpdater : MonoBehaviour {
 					// if block one and to are compatible
 					
 					
-					// check avctived neighbor via revase index direction and check if the type is jumpable
-					if(PegType.CompareType(neighborHEX[PointIndex(index)].PegType.blockType ) == true)
+					// check actived neighbor via revese index direction and check if the type is jumpable
+					if(PegType.CompareType(neighborHEX[PointIndex(index)].PegType.blockType ) )
 					{
 						pegState.isJumpable = true;
+						if(GameManger.ACTIVE == true)
+						{
 						neighborHEX[index].moveIn = true;
+						}else{
+							neighborHEX[index].moveIn = false;
+						}
 						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
 						GameManger.CURRENT_OPEN_BLOCK = neighborHEX[index];
 					}else{   
 						pegState.isJumpable = false;
+
+						if(GameManger.ACTIVE == true){
 						pegState.blockState = PegStateMachine.BlockState.Uncapable;
+						}else{
+							pegState.blockState = PegStateMachine.BlockState.Normal;
+						}
+
 						pegState.ChangeBlockState();
 						neighborHEX[index].moveIn = false;
 						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);

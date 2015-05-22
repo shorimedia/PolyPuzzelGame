@@ -47,6 +47,7 @@ public class PegStateMachine : MonoBehaviour {
 			
 			break;
 		case BlockState.Normal : 
+			pUpdater.CheckNeighbor();
 			PegType.ChangeBlockType();
 			break;
 			
@@ -84,9 +85,11 @@ public class PegStateMachine : MonoBehaviour {
 			
 			// clear the Item thats is attach
 			AttachedItem.AttachedItem = null;
-			
+
 			PegType.blockType = PegTypeMach.BlockType.Empty; // Call change type on normal state
-			
+
+//			moveIn = false;
+//			Debug.Log("Move In " + moveIn );
 			blockState = BlockState.Normal;
 
 			ChangeBlockState();
@@ -120,8 +123,7 @@ public class PegStateMachine : MonoBehaviour {
 				//GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockType();
 				GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockState();
 				GameManger.CURRENT_ACTIVE_BLOCK  = null;			
-
-				
+			
 				Messenger.Broadcast("Check Empties");
 				Debug.Log ("Check for Empties");
 			}
