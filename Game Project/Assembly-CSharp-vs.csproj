@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameInput.cs" />
      <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
      <Compile Include="Assets\GooglePlayGames\BasicApi\CommonTypes.cs" />
      <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
@@ -196,6 +197,7 @@
      <Compile Include="Assets\JMO Assets\MatCap Shaders\Demo\Assets\MC_SwitchTexture.cs" />
      <Compile Include="Assets\Messenger\Callback.cs" />
      <Compile Include="Assets\Messenger\Messenger.cs" />
+     <Compile Include="Assets\PoolableObjects.cs" />
      <Compile Include="Assets\Scripts\CallEvent.cs" />
      <Compile Include="Assets\Scripts\Class\HexType.cs" />
      <Compile Include="Assets\Scripts\Class\Item.cs" />

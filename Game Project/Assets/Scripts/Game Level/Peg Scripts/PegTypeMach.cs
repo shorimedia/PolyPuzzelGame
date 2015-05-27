@@ -4,6 +4,7 @@ using System.Collections;
 public class PegTypeMach : MonoBehaviour {
 
 
+	public SpriteRenderer SpriteObject;
 
 	public enum BlockType {
 		Flow,
@@ -44,19 +45,22 @@ public class PegTypeMach : MonoBehaviour {
 		
 		switch(blockType){
 		case BlockType.Flow : 
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Flow);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
-		case BlockType.Stone : 
+		case BlockType.Stone :
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Stone);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Fire : 
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Fire);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Lite : 
-			
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Lite);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
@@ -66,41 +70,45 @@ public class PegTypeMach : MonoBehaviour {
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Sword : 
-			
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Sword);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Spear : 
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Spear);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Wealth : 
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Wealth);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Wisdom : 
-			
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Wisdom);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.TimeType : 
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.TimeType);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 			
 		case BlockType.Destruction : 
-			
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Destruction);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 		case BlockType.Darkness : 
-			
+			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Darkness);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
 			
 		case BlockType.Empty : 
-			
+			SpriteObject.enabled = false;
+
 			hexType.ChangeHexType(HexType.BlockType.Empty);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;

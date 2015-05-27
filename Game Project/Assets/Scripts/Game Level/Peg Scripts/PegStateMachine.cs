@@ -5,6 +5,7 @@ public class PegStateMachine : MonoBehaviour {
 
 
 	public ItemAttachment AttachedItem;
+	public GameObject EffectPos;
 	public PegTypeMach PegType;
 	public PegUpdater pUpdater;
 
@@ -41,14 +42,25 @@ public class PegStateMachine : MonoBehaviour {
 			break;
 		case BlockState.Active :
 			GameManger.ACTIVE = true;
+			PoolableObjects.ActiveEffectSet(EffectPos.transform);
+
 			GameManger.CURRENT_ACTIVE_BLOCK = this.GetComponent<PegStateMachine>();
-			pUpdater.CheckNeighbor();
+
 			GetComponent<Renderer>().material.color = new Color(0, 1, 1);
+
+			pUpdater.CheckNeighbor();
 			
 			break;
 		case BlockState.Normal : 
+
 			pUpdater.CheckNeighbor();
 			PegType.ChangeBlockType();
+
+			// if this peg is no longer a empty peg
+			if (PegType.blockType != PegTypeMach.BlockType.Empty)
+			{
+				moveIn = false;
+			}
 			break;
 			
 		case BlockState.Dissolve :
@@ -88,8 +100,6 @@ public class PegStateMachine : MonoBehaviour {
 
 			PegType.blockType = PegTypeMach.BlockType.Empty; // Call change type on normal state
 
-//			moveIn = false;
-//			Debug.Log("Move In " + moveIn );
 			blockState = BlockState.Normal;
 
 			ChangeBlockState();
@@ -105,6 +115,8 @@ public class PegStateMachine : MonoBehaviour {
 			
 			break;
 		case BlockState.Move :
+
+
 			if(GameManger.CURRENT_ACTIVE_BLOCK != null){
 				PegType.blockType = GameManger.CURRENT_ACTIVE_BLOCK.PegType.blockType; 
 
@@ -119,16 +131,35 @@ public class PegStateMachine : MonoBehaviour {
 					}}
 				
 				GameManger.CURRENT_ACTIVE_BLOCK.blockState = BlockState.Dissolve;
-				//GameManger.CURRENT_ACTIVE_BLOCK.blockType  = BlockType.Empty;
-				//GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockType();
 				GameManger.CURRENT_ACTIVE_BLOCK.ChangeBlockState();
-				GameManger.CURRENT_ACTIVE_BLOCK  = null;			
-			
+				GameManger.CURRENT_ACTIVE_BLOCK  = null;
+
+
+				blockState = BlockState.Normal;
+
 				Messenger.Broadcast("Check Empties");
 				Debug.Log ("Check for Empties");
+
+				ChangeBlockState();
 			}
 			break;
 			
 		}
 	}
+
+	public void SelectedSpace()
+	{
+
+		if ( moveIn )
+		{
+		PegType.SpriteObject.enabled = true;
+		GetComponent<Renderer>().material.color = new Color(0, 30, 1);
+		}else{
+			blockState = BlockState.Normal;
+			
+			ChangeBlockState();
+		}
+	}
+
+
 }

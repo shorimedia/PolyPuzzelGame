@@ -63,6 +63,7 @@ public class GameManger : MonoBehaviour {
 
 
 	private GameTime timer; 
+	
 
 	void OnEnable()
 
@@ -100,6 +101,8 @@ public class GameManger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+
 
 	// Start Game
 		ChangeGameState();

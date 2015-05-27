@@ -30,10 +30,6 @@ public class PegUpdater : MonoBehaviour {
 	
 	public void CheckNeighbor(){
 
-		if(PegType.blockType == PegTypeMach.BlockType.Empty && GameManger.ACTIVE == false)
-		{
-			pegState.moveIn = false;
-		}
 
 
 		// check Peg neighbors
@@ -58,6 +54,8 @@ public class PegUpdater : MonoBehaviour {
 					if(PegType.blockType != PegTypeMach.BlockType.Empty){
 						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
 							//Debug.Log (" check next");
+
+							// Check the next peg over
 							neighborHEX[c].pUpdater.SecondNeighborCheck(c); }
 
 
@@ -105,7 +103,7 @@ public class PegUpdater : MonoBehaviour {
 		// Set Status
 		posStatus.SetPositionState();
 
-		
+		//pegState.SelectedSpace();
 	}
 	#endregion
 
@@ -136,6 +134,9 @@ public class PegUpdater : MonoBehaviour {
 	// If block is a middle block. check next if its empty type
 	
 	void SecondNeighborCheck(int index){
+
+
+
 		RaycastHit hit;
 		
 		Ray ray = new Ray (checkPoints[index].position,  checkPoints[index].forward);
@@ -151,31 +152,41 @@ public class PegUpdater : MonoBehaviour {
 					
 					
 					// check actived neighbor via revese index direction and check if the type is jumpable
+
+					//Debug.Log (PegType.CompareType(neighborHEX[PointIndex(index)].PegType.blockType).ToString());
+
 					if(PegType.CompareType(neighborHEX[PointIndex(index)].PegType.blockType ) )
 					{
 						pegState.isJumpable = true;
-						if(GameManger.ACTIVE == true)
+
+						if(neighborHEX[PointIndex(index)].blockState == PegStateMachine.BlockState.Active)
 						{
-						neighborHEX[index].moveIn = true;
+							neighborHEX[index].moveIn = true;
 						}else{
 							neighborHEX[index].moveIn = false;
 						}
+
+
 						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
 						GameManger.CURRENT_OPEN_BLOCK = neighborHEX[index];
 					}else{   
 						pegState.isJumpable = false;
 
-						if(GameManger.ACTIVE == true){
+						neighborHEX[index].moveIn = false;
+
+						if(neighborHEX[PointIndex(index)].blockState == PegStateMachine.BlockState.Active)
+						{
 						pegState.blockState = PegStateMachine.BlockState.Uncapable;
+
 						}else{
 							pegState.blockState = PegStateMachine.BlockState.Normal;
 						}
 
-						pegState.ChangeBlockState();
-						neighborHEX[index].moveIn = false;
+					
 						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
+						pegState.ChangeBlockState();
 					}
-
+					neighborHEX[index].SelectedSpace();
 					Debug.Log (" check two! done");
 					
 				}
@@ -186,7 +197,10 @@ public class PegUpdater : MonoBehaviour {
 		//	Debug.Log ("Index # " + index);
 	}
 	
-	
+
+
+
+
 
 	void OnDisable(){
 		
