@@ -123,6 +123,7 @@ MonoBehaviour:
   LoseScreen: {fileID: 0}
   Background: {fileID: 0}
   winScript: {fileID: 0}
+  pfManager: {fileID: 0}
   ShowActive: 0
 --- !u!1001 &100100000
 Prefab:

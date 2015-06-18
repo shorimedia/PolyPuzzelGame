@@ -24,8 +24,10 @@ public class GameInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+
 		
 		#if UNITY_EDITOR
+		if(GameManger.CanTouch == true){
 		if(Input.GetMouseButton(0) || Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0)){
 			
 			
@@ -71,10 +73,10 @@ public class GameInput : MonoBehaviour {
 					g.SendMessage("OnTouchExit", hit.point, SendMessageOptions.DontRequireReceiver );
 				}
 			}}
-		
+		}
 		#endif
 		
-		if(Input.touchCount > 0){
+		if(Input.touchCount > 0 && GameManger.CanTouch == true){
 			
 			
 			touchOld= new GameObject[touchList.Count];

@@ -1,15 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game Level\Peg Scripts\PegStateMachine.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\INGame Menu\ItemBar.cs">
     <Files>
-      <File FileName="..\..\..\Unity_Training\TouchInputPractice\Assets\TouchIput.cs" Line="93" Column="55" />
-      <File FileName="Assets\GameInput.cs" Line="130" Column="3" />
-      <File FileName="..\..\..\Unity_Training\TouchInputPractice\Assets\button.cs" Line="24" Column="1" />
-      <File FileName="Assets\Scripts\Game Level\Peg Scripts\PegController.cs" Line="28" Column="57" />
-      <File FileName="Assets\Scripts\Game Level\Peg Scripts\PegStateMachine.cs" Line="8" Column="30" />
-      <File FileName="Assets\Scripts\Game Level\Peg Scripts\PegUpdater.cs" Line="161" Column="7" />
-      <File FileName="Assets\Scripts\Game Level\GameManger.cs" Line="67" Column="2" />
-      <File FileName="Assets\Scripts\Game Level\Peg Scripts\PegTypeMach.cs" Line="58" Column="32" />
+      <File FileName="Assets\GameInput.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SlotResizer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\INGame Menu\ItemSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\INGame Menu\ItemBar.cs" Line="9" Column="47" />
+      <File FileName="Assets\Scripts\Game Level\Peg Scripts\PegController.cs" Line="79" Column="4" />
+      <File FileName="Assets\Scripts\INGame Menu\Slot.cs" Line="240" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -17,6 +15,11 @@
       <Breakpoint file="C:\Users\Victor\Documents\Unity_Training\TouchInputPractice\Assets\TouchIput.cs" line="36" />
       <Breakpoint file="C:\Users\Victor\Documents\Unity_Training\TouchInputPractice\Assets\TouchIput.cs" line="88" />
       <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\Game Level\Peg Scripts\PegUpdater.cs" line="154" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="55" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\Slot.cs" line="233" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="219" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\ItemBar.cs" line="222" />
+      <Breakpoint file="C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\Scripts\INGame Menu\Slot.cs" line="236" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

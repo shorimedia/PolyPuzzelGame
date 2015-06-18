@@ -30,12 +30,7 @@ public class GameManger : MonoBehaviour {
 
 	public static int BLOCK_COUNT;
 
-
-
-//	public int count;
-//	public int countTwo;
-//	public int countThree;
-
+	
 	public static int TOTAL_POINTS_COUNT;
 	public static int TOTAL_SCORE = 0;
 
@@ -62,8 +57,13 @@ public class GameManger : MonoBehaviour {
 	public WinPopup winScript;
 
 
+
+
+	public PlatformManager pfManager;
+
 	private GameTime timer; 
-	
+
+	public static bool CanTouch;
 
 	void OnEnable()
 
@@ -102,7 +102,7 @@ public class GameManger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
+		ACTIVE = false;
 
 	// Start Game
 		ChangeGameState();
@@ -124,8 +124,7 @@ public class GameManger : MonoBehaviour {
 
 
 	}
-
-
+	
 
 
 	int NumberOfPlayableBlocks()
@@ -161,6 +160,7 @@ public class GameManger : MonoBehaviour {
 	
 		switch(gameState){
 		case GameState.Win:
+			CanTouch = false;
 			// show win screen with score, points and time
 			Debug.Log("Winner!!!!!!");
 
@@ -178,25 +178,14 @@ public class GameManger : MonoBehaviour {
 
 			// Check leader board data
 
-
-			// Set Win screen mode
-
-//			winScript.winState = WinPopup.WinState.Normal;
-//
-//			winScript.winState = WinPopup.WinState.Best;
-//
-//			winScript.winState = WinPopup.WinState.Leader;
-
-
-
-
 			timer.ToggleTimer = false;
 			Background.IsOpen = true;
 			WinScreen.IsOpen = true;
 
 			break;
 		
-		case GameState.Lose: 
+		case GameState.Lose:
+			CanTouch = false;
 			// show loser screen
 			Debug.Log("Loser!!!!!!");
 
@@ -207,6 +196,14 @@ public class GameManger : MonoBehaviour {
 			break;
 
 		case GameState.OpenGame: 
+
+
+			CanTouch = false;
+
+			// Check if game is the full, free, or demo
+			if(pfManager.SetGameStatus(LEVEL_NUM))
+			{
+
 			LevelTitle.text = "Level " +  STAGE_NUM + " - " + LEVEL_NUM;
 			timer.ToggleTimer = false;
 
@@ -218,11 +215,17 @@ public class GameManger : MonoBehaviour {
 
 			// Start thet game after the title and image fades
 			StartCoroutine("StartGame",3.4f);
+			}else{
+				timer.ToggleTimer = false;
+				imageTrans.IsOpen = true;
+			}
+
+
 			break;
 
 		case GameState.CloseGame: 
 			//save game
-
+			CanTouch = false;
 			timer.ToggleTimer = false;
 			//Fade out screen
 			imageTrans.IsOpen = false;
@@ -235,9 +238,11 @@ public class GameManger : MonoBehaviour {
 			// In game runtime
 			
 			timer.ToggleTimer = true;
+			CanTouch = true;
+
 			break;
 		case GameState.Pause: 
-
+			CanTouch = false;
 			timer.ToggleTimer = false;
 
 			break;

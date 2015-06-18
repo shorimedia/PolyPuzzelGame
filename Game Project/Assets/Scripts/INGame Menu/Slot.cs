@@ -49,14 +49,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	}
 
 
-	private bool isHolder = false;
-
-	public bool IsHolder
-	{
-		get{ return isHolder;}
-		set{ isHolder = value;}
-	}
-
 
 	void Awake () 
 	{
@@ -80,13 +72,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	// Update is called once per frame
 	void Update () {
 
-		if(items.Count != 0 && items.Peek().itemTime <= 0f)
+		if(items.Count != 0 && items.Peek().itemTime <= 0f )
 		{
 			// play sound wait then clear item
+
+			if(ItemBar.ItemSelectionMode == true && ItemBar.from  != this.gameObject.GetComponent<Slot>())
+			{
 			OutOfTime();
+			}else if(ItemBar.ItemSelectionMode == false)
+			{
+				OutOfTime();
+			}
 		
 			Debug.Log ( gameObject.name + " has clear item due to time");
-			
 		}
 
 
@@ -108,15 +106,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
 		StartCoroutine(CountDownTime(item)); // start count down
 
-		// this slot is in the holder inventory alway hide time bar
-		if(isHolder)
-		{
-		timeBarCanvasGroup.alpha = 0;
-		}
-		else
-		{
+
 		timeBarCanvasGroup.alpha = 1;
-		}
+
 
 		ChangeSprite(item.spriteNeutral);
 	}
@@ -132,19 +124,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 		this.items.Peek().timeIsActive = items.Peek().timeIsActive;
 		timeBar.value = this.items.Peek().itemTime;				// Set slot's timeBar value to the Item's.
 
-		// this slot is in the holder inventory alway hide time bar
-		if(isHolder)
-		{
-			this.items.Peek().timeIsActive = false;
-			timeBarCanvasGroup.alpha = 0;
+
+			timeBarCanvasGroup.alpha = 1;
 			// don't restart time is on holder's slot
-		}
-		else
-		{
-			this.items.Peek().timeIsActive = true;
-			StartCoroutine(CountDownTime(this.items.Peek()));		// continue the countdown.
-			timeBarCanvasGroup.alpha = 1;  // make timebar visiable
-		}
+
 	
 		ChangeSprite(CurrentItem.spriteNeutral); // change sprite to item's sprite.
 	}
@@ -226,13 +209,29 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 		
 	}
 
+
+
+
+
 	public void OnPointerClick (PointerEventData eventData)
 	{
 
-		// right click was clicked
-		if( eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("Hover"))
+		//Debug.LogWarning("Item Click");
+
+		if(IsEmpty == false && ItemBar.ItemSelectionMode == false)
 		{
+			ItemBar.ItemSelectionMode = true;
+		}else
+		{
+			ItemBar.ItemSelectionMode = false;
+		}
+
+		// right click was clicked
+		if( eventData.pointerPress == ItemBar.PegAttachObject)
+		{
+
 			UseItem();
+
 		}
 
 	}

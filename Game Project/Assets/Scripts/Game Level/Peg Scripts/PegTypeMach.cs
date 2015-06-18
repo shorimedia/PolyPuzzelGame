@@ -100,6 +100,7 @@ public class PegTypeMach : MonoBehaviour {
 			hexType.ChangeHexType(HexType.BlockType.Destruction);
 			GetComponent<Renderer>().material = hexType.blockMaterial;
 			break;
+
 		case BlockType.Darkness : 
 			SpriteObject.enabled = true;
 			hexType.ChangeHexType(HexType.BlockType.Darkness);

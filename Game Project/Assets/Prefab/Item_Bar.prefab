@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e52f8d0d867a64db871551551aaf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotNum: 5
+  slotNum: 4
   isHolderBar: 0
   slotPrefab: {fileID: 192820, guid: 1457b5f9d2383c84a943da41c1c7d49d, type: 2}
   iconPrefab: {fileID: 176724, guid: a6bade163c0ef924bbf62171dcc829cb, type: 2}
@@ -84,6 +84,9 @@ MonoBehaviour:
   canvas: {fileID: 0}
   hoverYOffset: 60
   eventSystem: {fileID: 0}
+  touchInputMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &11459350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,8 +137,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -58, y: -63.4360008}
-  m_SizeDelta: {x: 74, y: -167.130005}
+  m_AnchoredPosition: {x: -58, y: -15}
+  m_SizeDelta: {x: 74, y: -263}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:
