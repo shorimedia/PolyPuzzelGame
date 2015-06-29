@@ -8,6 +8,8 @@ public class PegController : MonoBehaviour {
 
 	public PegTypeMach PegType;
 
+	private PegAudio pegAudio;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -16,6 +18,8 @@ public class PegController : MonoBehaviour {
 		if(GameManger.ACTIVE == false ){
 			pegState.moveIn = false;
 		}
+
+		pegAudio = pegState.pegAudio;
 	}
 		
 	void OnTouchDown()
@@ -31,6 +35,8 @@ public class PegController : MonoBehaviour {
 			
 		}else if(pegState.blockState == PegStateMachine.BlockState.Active)
 		{
+				pegAudio.PlayPegSoundFX("De-activate");
+
 			// if this block is active when clicked on de-activeate it
 			GameManger.ACTIVE = false;
 			GameManger.CURRENT_OPEN_BLOCK.moveIn = false;
@@ -49,10 +55,11 @@ public class PegController : MonoBehaviour {
 
 		}else{
 
-			//attach item
+			//Set current Pegattach scipt to this object
 
 			ItemBar.PegAttachObject = this.gameObject;
 
+			// set game tp item selection mode
 			Messenger.Broadcast< bool >("Set Selection Mode", true);
 
 		}

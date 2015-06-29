@@ -78,6 +78,7 @@ GameObject:
   - 114: {fileID: 11492820}
   - 114: {fileID: 11423996}
   - 114: {fileID: 11447838}
+  - 114: {fileID: 11404484}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -85,6 +86,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &11404484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32a463cd9c21ea419329537f8bcece7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPopup: HUD_Notification_Misc_01
+  itemselect: HoverOver_Generic_Clicks_01
+  itemUse: Interactions_Pickup_Retro_09
+  itemDestroy: HoverOver_SciFi_Frequency_05
 --- !u!114 &11423996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,8 +145,7 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 192820}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -242,6 +257,7 @@ MonoBehaviour:
   timeBarObject: {fileID: 134856}
   maxTime: 15
   slotEmpty: {fileID: 21300008, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
+  slotAudio: {fileID: 11404484}
 --- !u!114 &11492820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,7 +403,31 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: itemPopup
+      value: HUD_Notification_Misc_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: itemselect
+      value: HoverOver_Generic_Clicks_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: itemUse
+      value: Interactions_Pickup_Retro_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: slotAudio
+      value: 
+      objectReference: {fileID: 11404484}
+    - target: {fileID: 0}
+      propertyPath: itemDestory
+      value: HoverOver_SciFi_Frequency_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: itemDestroy
+      value: HoverOver_SciFi_Frequency_05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192820}

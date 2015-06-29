@@ -110,7 +110,7 @@ public class ItemSpawner : MonoBehaviour {
 	{
 		if(spawn)
 		{
-			TestItem(TestIndex, TestType);
+			//TestItem(TestIndex, TestType);
 			SpawnItem();
 			spawn = false;
 		}

@@ -17,10 +17,10 @@ public class ItemBar : MonoBehaviour {
 
 	public static GameObject PegAttachObject;
 
-	private static GameObject hoverObject;
+
 	public Canvas canvas;
 	public static Slot from,to;
-	public float hoverYOffset;
+
 	public EventSystem eventSystem;
 
 	private List<GameObject> slots;
@@ -62,12 +62,13 @@ public class ItemBar : MonoBehaviour {
 	{
 		if(mode)
 		{
+			// get the Peg attach script from the current selected peg
 			PegAttach = PegAttachObject.GetComponent<ItemAttachment>();
 
 
 		} else
 		{
-
+			//Exit Item selection mode and reset pegattach
 			ItemSelectionMode = false;
 			PegAttach= null;
 		}
@@ -78,12 +79,12 @@ public class ItemBar : MonoBehaviour {
 				
 				from.GetComponent<Image>().color = Color.white;
 				from.ClearSlot(); // remove item from slot
-				Destroy(GameObject.Find ("Hover")); // remove icon
+
 				
 				//Reset objects
 				to = null;
 				from = null;
-				hoverObject = null;
+
 				emptySlots++;
 			}else if (!eventSystem.IsPointerOverGameObject(-1) && from != null && PegAttach != null)
 			{
@@ -92,12 +93,10 @@ public class ItemBar : MonoBehaviour {
 				
 				from.GetComponent<Image>().color = Color.white;
 				from.ClearSlot(); // remove item from slot
-				Destroy(GameObject.Find ("Hover")); // remove icon
-				
+
 				//Reset objects
 				to = null;
 				from = null;
-				hoverObject = null;
 				emptySlots++;
 				//				Debug.Log("Did not Click on the UI " + eventSystem.name);
 			}
@@ -173,27 +172,12 @@ public class ItemBar : MonoBehaviour {
 				from.GetComponent<Image>().color = Color.gray;
 
 
-				//Connect the icon to the mouse curse when move items
-				hoverObject = (GameObject)Instantiate(iconPrefab);
-				hoverObject.GetComponent<Image>().sprite = clicked.GetComponent<Image>().sprite;
-				hoverObject.name = "Hover";
-
-				RectTransform hoverTransform = hoverObject.GetComponent<RectTransform>();
-				RectTransform clickedTransform = clicked.GetComponent<RectTransform>();
-
-				hoverTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Horizontal, clickedTransform.sizeDelta.x);
-				hoverTransform.SetSizeWithCurrentAnchors( RectTransform.Axis.Vertical, clickedTransform.sizeDelta.y);
-
-				hoverObject.transform.SetParent(GameObject.Find ("Canvas").transform,true); 
-				hoverObject.transform.localScale = from.gameObject.transform.localScale;
-
-
 			}
 		}
 		else if ( to == null)
 		{
 			to = clicked.GetComponent<Slot>();
-			Destroy(GameObject.Find ("Hover"));
+
 		}
 		 
 
@@ -215,7 +199,6 @@ public class ItemBar : MonoBehaviour {
 			from.GetComponent<Image>().color = Color.white;
 			to = null;
 			from = null;
-			hoverObject = null;
 		}
 	}
 

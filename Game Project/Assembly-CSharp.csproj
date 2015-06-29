@@ -212,7 +212,9 @@
      <Compile Include="Assets\Scripts\Game Level\GameSave.cs" />
      <Compile Include="Assets\Scripts\Game Level\GameTime.cs" />
      <Compile Include="Assets\Scripts\Game Level\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Game Level\PatternManager.cs" />
      <Compile Include="Assets\Scripts\Game Level\Peg Scripts\ItemAttachment.cs" />
+     <Compile Include="Assets\Scripts\Game Level\Peg Scripts\PegAudio.cs" />
      <Compile Include="Assets\Scripts\Game Level\Peg Scripts\PegController.cs" />
      <Compile Include="Assets\Scripts\Game Level\Peg Scripts\PegStateMachine.cs" />
      <Compile Include="Assets\Scripts\Game Level\Peg Scripts\PegTypeMach.cs" />
@@ -235,7 +237,6 @@
      <Compile Include="Assets\Scripts\INGame Menu\CameraSliderZoom.cs" />
      <Compile Include="Assets\Scripts\INGame Menu\ItemBar.cs" />
      <Compile Include="Assets\Scripts\INGame Menu\ItemSpawner.cs" />
-     <Compile Include="Assets\Scripts\INGame Menu\Player.cs" />
      <Compile Include="Assets\Scripts\INGame Menu\Slot.cs" />
      <Compile Include="Assets\Scripts\INGame Menu\WinPopup.cs" />
      <Compile Include="Assets\Scripts\Items\BlackPeg.cs" />
@@ -260,6 +261,7 @@
      <Compile Include="Assets\Scripts\Option scripts\DetailsSettings.cs" />
      <Compile Include="Assets\Scripts\Option scripts\ResolutionSettings.cs" />
      <Compile Include="Assets\Scripts\Option scripts\SoundSettings.cs" />
+     <Compile Include="Assets\Scripts\PlaySoundFX.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefs.cs" />
      <Compile Include="Assets\Scripts\RemoteConnection.cs" />
      <Compile Include="Assets\Scripts\ScreenStream.cs" />
@@ -270,6 +272,7 @@
      <Compile Include="Assets\Scripts\Utilities\CoroutineUtil.cs" />
      <Compile Include="Assets\Scripts\Utilities\Utils.cs" />
      <Compile Include="Assets\Scripts\WebCamStreamer.cs" />
+     <Compile Include="Assets\SlotAudio.cs" />
      <Compile Include="Assets\SoundManagerPro\Demo\DemoScripts\DemoPart1.cs" />
      <Compile Include="Assets\SoundManagerPro\Demo\DemoScripts\DemoPart2.cs" />
      <Compile Include="Assets\SoundManagerPro\Demo\DemoScripts\DemoPart3.cs" />

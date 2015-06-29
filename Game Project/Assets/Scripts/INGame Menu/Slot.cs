@@ -49,6 +49,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	}
 
 
+	public SlotAudio slotAudio;
 
 	void Awake () 
 	{
@@ -58,7 +59,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 
 		Messenger.AddListener<float>("Set MaxTime", SetMaxTime);
 
@@ -74,29 +76,27 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
 		if(items.Count != 0 && items.Peek().itemTime <= 0f )
 		{
-			// play sound wait then clear item
+
 
 			if(ItemBar.ItemSelectionMode == true && ItemBar.from  != this.gameObject.GetComponent<Slot>())
 			{
-			OutOfTime();
+				OutOfTime();
 			}else if(ItemBar.ItemSelectionMode == false)
 			{
 				OutOfTime();
 			}
 		
-			Debug.Log ( gameObject.name + " has clear item due to time");
+			Debug.Log ( gameObject.name + " has clear item due to time limitations");
 		}
 
-
-//		if(items.Count != 0)
-//		Debug.Log (items.Count);
-	
-	
 	}
+
+
 
 	// Used when adding new items
 	 public void AddItem(Item item)
 	{
+		slotAudio.StartPlay("Popup");
 		items.Push(item);
 		Debug.Log ("push Item");
 
@@ -141,7 +141,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	
 
 	// Count down timer for each item
-	IEnumerator CountDownTime (Item item) {
+	IEnumerator CountDownTime (Item item) 
+	{
 
 		float itemTime = item.itemTime;
 
@@ -165,27 +166,14 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	}
 	
 
-	private void UseItem()
-	{
-
-		if( !IsEmpty)
-		{
-		items.Pop().Use();
-
-			if(IsEmpty)
-			{
-				ChangeSprite(slotEmpty);
-				timeBarCanvasGroup.alpha = 0;
-				ItemBar.EmptySlots++;
-			}
-		}
-	}
 
 	public void ClearSlot()
 	{
+		slotAudio.StartPlay("Use");
 		items.Clear();
 		timeBarCanvasGroup.alpha = 0;
 		ChangeSprite(slotEmpty);
+		// ItemBar.EmptySlots++ is place with itembar code for this function
 
 	}
 
@@ -195,7 +183,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
 		if( !IsEmpty)
 		{
-
+			slotAudio.StartPlay("Destroy");
 			items.Pop();
 
 			
@@ -220,19 +208,16 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
 		if(IsEmpty == false && ItemBar.ItemSelectionMode == false)
 		{
+		
+			slotAudio.StartPlay("Select");
+			
 			ItemBar.ItemSelectionMode = true;
 		}else
 		{
+			slotAudio.StartPlay("Select");
 			ItemBar.ItemSelectionMode = false;
 		}
-
-		// right click was clicked
-		if( eventData.pointerPress == ItemBar.PegAttachObject)
-		{
-
-			UseItem();
-
-		}
+	
 
 	}
 

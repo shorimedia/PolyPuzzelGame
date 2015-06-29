@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 public class board : MonoBehaviour {
 
-
+	public int[] patternList;
 
 	public GameObject hex;
-
-	public Transform[] hexagonGridSpace = new Transform[169];
+	
 	public static List<PegStateMachine> TokenData = new List<PegStateMachine>();
 	public LevelManager levelManager;
 
@@ -23,8 +22,7 @@ public class board : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Debug.Log ("Board is Started");
-
+		Debug.Log ("Create Game Boad");
 		levelManager = new LevelManager(GameManger.LEVEL_NUM);
 		StartGame(GameManger.STAGE_NUM);
 	}
@@ -57,62 +55,41 @@ public class board : MonoBehaviour {
 
 	void Generator(int hexAmount){
 
-		// clear list a new level starts so that only one instsist is connected
 		TokenData.Clear();
-
-		GameObject go;
 
 		levelManager.SetRandomNum(Random.Range(0f,1.0f), Random.Range(0f,1.0f));
 
-		for(int i = 0; i < hexAmount; i++){
+	
+		for(int i = 0; i < hexAmount; i++)
+		{
+			TokenData.Add(GameObject.Find("Peg: " + i).GetComponent<PegStateMachine>());
+			bool set = true;
 
-			go = Instantiate(hex, new Vector3(hexagonGridSpace[i].position.x,hexagonGridSpace[i].position.y + 1 ,hexagonGridSpace[i].position.z), hexagonGridSpace[i].rotation) as GameObject;
-			TokenData.Add(go.GetComponent<PegStateMachine>());
 
-			levelManager.LevelTypeSelect(TokenData[i].PegType);
+			// check if peg is empty via pattern
+					for(int l = 0; l < patternList.Length; l++)
+					{
+
+						if( patternList[l] == i)
+									{
+											TokenData[i].PegType.blockType = PegTypeMach.BlockType.Empty;
+											TokenData[i].PegType.ChangeBlockType();
+											TokenData[i].moveIn = false;
+											set = false;
+											break;
+									}
+							}
+
+
+			if(set)
+				{
+					levelManager.LevelTypeSelect(TokenData[i].PegType);
+					TokenData[i].ChangeBlockState();
+				}
 
 		}
 
-		//setup empty block location
 
-		// if empty space at random locations
-		if( levelManager.randomLoc == true){
-			mulitRanNum = new int[5];
-
-			for(int i = 0; i < levelManager.startEmptyNum; i++){
-				ranNum = Random.Range(0,GameManger.BLOCK_COUNT );
-				TokenData[mulitRanNum[i]].PegType.blockType = PegTypeMach.BlockType.Empty;
-				TokenData[mulitRanNum[i]].PegType.ChangeBlockType();
-				mulitRanNum[i] = ranNum;
-			}
-
-		}else{    
-			// if empty space are centered
-			for(int i = 0; i < levelManager.startEmptyNum; i++){
-				TokenData[i].PegType.blockType = PegTypeMach.BlockType.Empty;
-				TokenData[i].PegType.ChangeBlockType();
-			}
-		
-		}
-
-		// Set the neighbors of all the empty blocks
-		if( levelManager.randomLoc == true){
-
-
-			for(int i = 0; i < levelManager.startEmptyNum; i++){
-//				TokenData[ranNum].pUpdater.EmptyPing();
-				TokenData[ranNum].moveIn = false;
-			}
-			
-		}else{    
-
-			// base pon the level number set the number of empty blocks
-			for(int i = 0; i < levelManager.startEmptyNum; i++){
-//				TokenData[i].pUpdater.EmptyPing();
-				TokenData[i].moveIn = false;
-			}
-			
-		}
 
 		Messenger.Broadcast("Check Empties");
 	}

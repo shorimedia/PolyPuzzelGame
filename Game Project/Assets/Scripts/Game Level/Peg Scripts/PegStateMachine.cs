@@ -11,6 +11,8 @@ public class PegStateMachine : MonoBehaviour {
 
 	public PosStatus posStatus;
 
+	public PegAudio pegAudio;
+
 	public enum BlockState{
 		Uncapable,
 		Active,
@@ -37,10 +39,14 @@ public class PegStateMachine : MonoBehaviour {
 		
 		switch (blockState){
 		case BlockState.Uncapable :
+			pegAudio.PlayPegSoundFX("Uncap");
 			GetComponent<Renderer>().material.color = new Color(0, 0.5f, 0.3f);
 			
 			break;
 		case BlockState.Active :
+			//Play sound
+			pegAudio.PlayPegSoundFX("Activate");
+
 			GameManger.ACTIVE = true;
 			PoolableObjects.ActiveEffectSet(EffectPos.transform);
 
@@ -64,6 +70,9 @@ public class PegStateMachine : MonoBehaviour {
 			break;
 			
 		case BlockState.Dissolve :
+
+			pegAudio.PlayPegSoundFX("Destroy");
+
 			if(isJumpable == true){
 				
 				
@@ -71,15 +80,35 @@ public class PegStateMachine : MonoBehaviour {
 				if(bonusPoints == 0)
 				{
 					GameManger.TOTAL_POINTS_COUNT += PegType.hexType.points; 
+
+					if(PegType.hexType.points >= 0 && PegType.hexType.points <= 60)
+					{
+						pegAudio.PlayPegSoundFX("PlusPoints");
+					}
+
+					if( PegType.hexType.points > 60)
+					{
+						pegAudio.PlayPegSoundFX("BigPoints");
+					}
 					
 				}else if(bonusPoints > 0)
 				{
 					GameManger.TOTAL_POINTS_COUNT += bonusPoints; 
+
+					if(bonusPoints >= 0 && bonusPoints <= 60)
+					{
+						pegAudio.PlayPegSoundFX("PlusPoints");
+					}
+					
+					if( bonusPoints > 60)
+					{
+						pegAudio.PlayPegSoundFX("BigPoints");
+					}
 					
 				}else if(bonusPoints < 0)
 					
 				{
-					
+					pegAudio.PlayPegSoundFX("MinusPoints");
 					//Do Nothing
 					
 				}
@@ -116,6 +145,7 @@ public class PegStateMachine : MonoBehaviour {
 			break;
 		case BlockState.Move :
 
+			pegAudio.PlayPegSoundFX("Move");
 
 			if(GameManger.CURRENT_ACTIVE_BLOCK != null){
 				PegType.blockType = GameManger.CURRENT_ACTIVE_BLOCK.PegType.blockType; 
@@ -152,6 +182,7 @@ public class PegStateMachine : MonoBehaviour {
 
 		if ( moveIn )
 		{
+		pegAudio.PlayPegSoundFX("Open");
 		PegType.SpriteObject.enabled = true;
 		GetComponent<Renderer>().material.color = new Color(0, 30, 1);
 		}else{

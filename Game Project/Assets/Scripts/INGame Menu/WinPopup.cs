@@ -6,11 +6,12 @@ public class WinPopup : MonoBehaviour {
 
 	public Text ScoreTxt;
 	public Text LeaderScoreTxt;
-
 	public Text TimeTxt;
 	public Text LeaderTimeTxt;
-
 	public Text PegNumberTxt;
+
+	// Sounds
+	public string OpenNormal, OpenBest, OpenLeader;
 
 
 public enum WinState
@@ -28,9 +29,9 @@ public void SetWinState()
 
 		switch(winState)
 		{
-		case WinState.Normal: break;
-		case WinState.Best : break;
-		case WinState.Leader : break;
+		case WinState.Normal: SoundManager.PlaySFX(OpenNormal); break;
+		case WinState.Best : SoundManager.PlaySFX(OpenBest); break;
+		case WinState.Leader : SoundManager.PlaySFX(OpenLeader); break;
 
 		}
 

@@ -20,7 +20,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &458440
 Transform:
-  m_ObjectHideFlags: 10
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115710}
@@ -32,7 +32,7 @@ Transform:
   m_RootOrder: 0
 --- !u!82 &8221216
 AudioSource:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115710}
@@ -101,7 +101,7 @@ AudioSource:
     m_PostInfinity: 2
 --- !u!82 &8272672
 AudioSource:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115710}
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115710}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 617da7e6dc6c82f43988a70b1b7fd69e, type: 3}
   m_Name: 
@@ -185,7 +185,7 @@ MonoBehaviour:
   showList: 1
   showAdd: 1
   showSFX: 1
-  showSFXDetails: 
+  showSFXDetails: 0000000000000000000000000000000000
   groupAddIndex: 0
   autoPrepoolAmount: 0
   autoBaseVolume: 1
@@ -196,7 +196,17 @@ MonoBehaviour:
   - level: Game_Menu
     isCustomLevel: 0
     soundsToPlay:
-    - {fileID: 8300000, guid: bce9b44e46193024ba37e78d3ada7700, type: 3}
+    - {fileID: 8300000, guid: c5e45fc026ac80947b20a58ebc15c218, type: 3}
+    baseVolumes:
+    - 1
+    playMethod: 0
+    minDelay: 0
+    maxDelay: 0
+    delay: 0
+  - level: Game
+    isCustomLevel: 0
+    soundsToPlay:
+    - {fileID: 8300000, guid: dcaf03a9aa7edc04bb720cd67287e014, type: 3}
     baseVolumes:
     - 1
     playMethod: 0
@@ -222,25 +232,86 @@ MonoBehaviour:
   isPaused: 0
   movingOnFromSong: 0
   ignoreLevelLoad: 0
-  resourcesPath: Sounds/SFX
-  storedSFXs: []
+  resourcesPath: Audio/SFX
+  storedSFXs:
+  - {fileID: 8300000, guid: bd9a6620a9dbb04428054a86cd7b7147, type: 3}
+  - {fileID: 8300000, guid: 954e70c25882add46937c1394722930c, type: 3}
+  - {fileID: 8300000, guid: a08839130fa3ac040b518dc04417dadd, type: 3}
+  - {fileID: 8300000, guid: e2a0db24de9e07a43982d9ee4076e081, type: 3}
+  - {fileID: 8300000, guid: 495ff9349954c4a47b7d4c5aff5a6702, type: 3}
+  - {fileID: 8300000, guid: bf95b484e867a5740a439590be2e28f4, type: 3}
+  - {fileID: 8300000, guid: bde3f005d7458b14cafaaec158345672, type: 3}
+  - {fileID: 8300000, guid: 4ae5d946361db4d46aa38b56c70ad004, type: 3}
+  - {fileID: 8300000, guid: 9c982507a73162a45ba10cabf5d9e6db, type: 3}
+  - {fileID: 8300000, guid: 34538db7b8b1ed74f97eadc2b9fbb909, type: 3}
+  - {fileID: 8300000, guid: a95735d7e07b74a408f1ec09585f181e, type: 3}
+  - {fileID: 8300000, guid: c34b4dd716d554748bf5f0bfd910f232, type: 3}
+  - {fileID: 8300000, guid: 19b7c719ec5218449a68c015a6560ef2, type: 3}
+  - {fileID: 8300000, guid: ac00a5ec444601645b0d9571aabdfc04, type: 3}
+  - {fileID: 8300000, guid: 92e3396efda2de345b559a79edcaf4ad, type: 3}
+  - {fileID: 8300000, guid: dd198b7f0522f0942906dfc4163d82e4, type: 3}
+  - {fileID: 8300000, guid: 0453ead24a1b4de45a4fc71b71571d86, type: 3}
   unOwnedSFXObjects: []
-  sfxGroups:
-  - groupName: TestSfx
-    specificCapAmount: 5
-    clips: []
-    independentVolume: 0
-    independentPitch: 0
-    volume: 1
-    pitch: 1
+  sfxGroups: []
   clipToGroupKeys: []
   clipToGroupValues: []
   offTheSFX: 0
   capAmount: 3
-  sfxPrePoolAmounts: 
-  sfxBaseVolumes: []
-  sfxVolumeVariations: []
-  sfxPitchVariations: []
+  sfxPrePoolAmounts: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  sfxBaseVolumes:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  sfxVolumeVariations:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  sfxPitchVariations:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   SFXObjectLifetime: 10
   currentPockets:
   - Default
