@@ -203,6 +203,7 @@
      <Compile Include="Assets\Scripts\Class\HexType.cs" />
      <Compile Include="Assets\Scripts\Class\Item.cs" />
      <Compile Include="Assets\Scripts\Class\Level.cs" />
+     <Compile Include="Assets\Scripts\Class\Pattern.cs" />
      <Compile Include="Assets\Scripts\DataReceiver.cs" />
      <Compile Include="Assets\Scripts\DataSender.cs" />
      <Compile Include="Assets\Scripts\Game Level\CameraMechinics.cs" />

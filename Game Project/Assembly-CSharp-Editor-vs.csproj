@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\Builder.cs" />
+     <Compile Include="Assets\Editor\PatternInspector.cs" />
      <Compile Include="Assets\Editor\PegBoardBilder.cs" />
      <Compile Include="Assets\Editor\TestSFX.cs" />
      <Compile Include="Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
