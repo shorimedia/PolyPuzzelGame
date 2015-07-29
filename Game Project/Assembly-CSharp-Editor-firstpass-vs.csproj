@@ -146,6 +146,7 @@
      <None Include="Assets\Plugins\Android\res\drawable\row_background.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-te-rIN\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bg\common_strings.xml" />
+     <None Include="Assets\PatternData.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-lt\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\drawable\common_signin_btn_icon_light.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\common_signin_btn_text_light.xml" />
@@ -270,6 +271,15 @@
  </Reference>
  <Reference Include="UnityEngine.Cloud.Analytics">
  <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/Plugins/UnityAnalytics/UnityEngine.Cloud.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+ <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
+ <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityVS.VersionSpecific">
+ <HintPath>C:/Users/Victor/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Pattern Saved Data-->
+<Patterns>
+  <Pattern id="25226144622">
+    <Name>TwoTest</Name>
+    <LevelNumber>2</LevelNumber>
+    <StageNumber>61</StageNumber>
+    <PegEmpty>
+      <PegNum>0</PegNum>
+      <PegNum>1</PegNum>
+      <PegNum>2</PegNum>
+      <PegNum>8</PegNum>
+      <PegNum>18</PegNum>
+      <PegNum>19</PegNum>
+      <PegNum>26</PegNum>
+      <PegNum>34</PegNum>
+      <PegNum>44</PegNum>
+      <PegNum>45</PegNum>
+      <PegNum>46</PegNum>
+      <PegNum>47</PegNum>
+      <PegNum>51</PegNum>
+      <PegNum>52</PegNum>
+      <PegNum>53</PegNum>
+      <PegNum>54</PegNum>
+      <PegNum>55</PegNum>
+      <PegNum>58</PegNum>
+      <PegNum>59</PegNum>
+      <PegNum>60</PegNum>
+    </PegEmpty>
+  </Pattern>
+</Patterns>

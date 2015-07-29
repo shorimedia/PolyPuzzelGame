@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: 161feccd52d2f484cb88579fd1dd773b
+timeCreated: 1437863679
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 25Points
+    21300002: DoublePoints
+    21300004: IncreaseTime
+    21300006: Quess
+    21300008: TriplePoints
+    21300010: bombPeg
+    21300012: easterEgg
+    21300014: easterEgg2
+    21300016: easterEgg3
+    21300018: fivePoints
+    21300020: menusPeg
+    21300022: plusPeg
+    21300024: tenPoints
+    21300026: LitePeg
+    21300028: MenusZero
+    21300030: PlusZero
+    21300032: bronzePeg
+    21300034: darkPeg
+    21300036: goldPeg
+    21300038: silverPeg
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 25Points
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1793
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DoublePoints
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1793
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IncreaseTime
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1793
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LitePeg
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1793
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MenusZero
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 775
+        width: 220
+        height: 251
+      alignment: 9
+      pivot: {x: .4909091, y: .509960175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlusZero
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 522
+        width: 220
+        height: 251
+      alignment: 9
+      pivot: {x: .4909091, y: .509960175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Quess
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1538
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TriplePoints
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1538
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bombPeg
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1538
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bronzePeg
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1538
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: darkPeg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1283
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: easterEgg
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1283
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: easterEgg2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1283
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: easterEgg3
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1283
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fivePoints
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1028
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: goldPeg
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1028
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menusPeg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 269
+        width: 220
+        height: 251
+      alignment: 9
+      pivot: {x: .4909091, y: .509960175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plusPeg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 16
+        width: 220
+        height: 251
+      alignment: 9
+      pivot: {x: .4909091, y: .509960175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: silverPeg
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1028
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tenPoints
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1028
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

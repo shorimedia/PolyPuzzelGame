@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Spear_blockMaterial
   m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -36,12 +38,12 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .203921571, g: .31764707, b: .211764708, a: 1}
+        second: {r: .223529413, g: .745098054, b: .443137258, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .75686276, g: .713725507, b: .576470613, a: 1}
+        second: {r: .136245683, g: .514705896, b: .295597374, a: 1}
       data:
         first:
           name: _Emission
-        second: {r: .125490203, g: .125490203, b: .125490203, a: 0}
+        second: {r: .0640138388, g: .235294104, b: .136131853, a: 0}

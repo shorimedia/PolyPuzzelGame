@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Sword_blockMaterial
   m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -36,12 +38,12 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .145815298, g: .167356476, b: .227941155, a: 1}
+        second: {r: .862745166, g: .301098049, b: .0392157026, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .355211973, g: .661764741, b: .583680511, a: 1}
+        second: {r: .933823526, g: .475609154, b: .260921299, a: 1}
       data:
         first:
           name: _Emission
-        second: {r: .125490203, g: .125490203, b: .125490203, a: 0}
+        second: {r: .544117689, g: .200843453, b: .0400086604, a: 0}

@@ -43,6 +43,8 @@ public class SoundSettings : MonoBehaviour {
 	
 		//musicValue = 	PlayerPrefs.GetFloat("Music Volume");
 		//sfxValue = 		PlayerPrefs.GetFloat("SFX Volume");
+        musicValue = SoundManager.GetVolumeMusic(); 
+        sfxValue = SoundManager.GetVolumeSFX();
 	}
 	
 

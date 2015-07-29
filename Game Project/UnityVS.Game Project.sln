@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Game Project.CSharp.Plugins", "UnityVS.Game Project.CSharp.Plugins.csproj", "{E651F978-89F3-C159-F3EC-643C08533D6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Game Project.CSharp", "UnityVS.Game Project.CSharp.csproj", "{A121D7CE-88EC-1922-B593-9341B9EC25FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Game Project.CSharp.Editor.Plugins", "UnityVS.Game Project.CSharp.Editor.Plugins.csproj", "{159E3A59-D613-596C-0AB7-C668F33F8863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Game Project.CSharp.Editor", "UnityVS.Game Project.CSharp.Editor.csproj", "{ABDBF906-92DC-A40C-9A84-10D05A425E5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E651F978-89F3-C159-F3EC-643C08533D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E651F978-89F3-C159-F3EC-643C08533D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E651F978-89F3-C159-F3EC-643C08533D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E651F978-89F3-C159-F3EC-643C08533D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A121D7CE-88EC-1922-B593-9341B9EC25FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A121D7CE-88EC-1922-B593-9341B9EC25FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A121D7CE-88EC-1922-B593-9341B9EC25FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A121D7CE-88EC-1922-B593-9341B9EC25FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{159E3A59-D613-596C-0AB7-C668F33F8863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{159E3A59-D613-596C-0AB7-C668F33F8863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{159E3A59-D613-596C-0AB7-C668F33F8863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{159E3A59-D613-596C-0AB7-C668F33F8863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDBF906-92DC-A40C-9A84-10D05A425E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDBF906-92DC-A40C-9A84-10D05A425E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDBF906-92DC-A40C-9A84-10D05A425E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDBF906-92DC-A40C-9A84-10D05A425E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

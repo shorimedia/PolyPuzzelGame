@@ -43,7 +43,7 @@ MonoBehaviour:
   maxSize: 1
   itemTime: 0
   onDissolve: 0
-  rarity: 0
+  rarity: 1
   timeIsActive: 1
   PegObject: {fileID: 0}
 --- !u!1001 &100100000
@@ -52,7 +52,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: rarity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170050}

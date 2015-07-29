@@ -40,6 +40,9 @@ public class PatternInspector : Editor
 	private int Row;
 	public int currentRow;
 	private int MaxRow = 8;
+
+
+	private List<int> newPegData = new List<int>();
 	
 
 	void OnEnable()
@@ -94,9 +97,11 @@ public class PatternInspector : Editor
 			GUILayout.Space(20);
 			//New pattern data display
 
-		
-
-			#region Row  
+			name = EditorGUILayout.TextField("Pattern Name: ", name);
+			levelNum = EditorGUILayout.IntField("Level Number:", levelNum);
+			stageNum = EditorGUILayout.IntField("Stage Number:", stageNum);
+			GUILayout.Space(10);
+			#region Button grid 
 			for(int r = 1; r < ResetRowCount(); r++){
 			GUILayout.BeginHorizontal();
 				 
@@ -154,13 +159,52 @@ public class PatternInspector : Editor
 			GUILayout.Space(15);
 			//Button for New patterns editor
 			GUILayout.BeginHorizontal();
-			if(GUILayout.Button("Create",GUILayout.Height(30) ))
+
+			GUI.backgroundColor =  Color.grey;
+			if(GUILayout.Button("Create",GUILayout.Height(30)))
 			{
-				XmlDataSave();
-			}
+				if(name != null && stageNum != 0 && levelNum != 0)
+				{
+				for(int p = 0; p < pegCount; p++)
+				{
+					if(pegSpace[p] == true)
+						newPegData.Add(p);
+				}
+
+				Pattern newPattern = new Pattern(name,levelNum,stageNum);
+
+				newPattern.Id = CreateId(name,levelNum,stageNum);
+
+				for(int d = 0; d < newPegData.Count; d++)
+				{
+
+					newPattern.pegEmptyNum.Add(newPegData[d]);
+				}
+
+				XmlDataSave(newPattern);
+					name = null;
+					levelNum = 0;
+					stageNum = 0;
+
+					for(int i = 0; i < pegSpaceName.Length; i++)
+					{
+						pegSpaceName[i] = i.ToString();
+						pegSpace[i] = false;
+					}
+
+				}}
 			if(GUILayout.Button("Clear",GUILayout.Height(30) ))
 			{
-				
+				name = null;
+				levelNum = 0;
+				stageNum = 0;
+
+				for(int i = 0; i < pegSpaceName.Length; i++)
+				{
+					pegSpaceName[i] = i.ToString();
+					pegSpace[i] = false;
+				}
+
 			}
 			GUILayout.EndHorizontal();
 
@@ -214,10 +258,21 @@ public class PatternInspector : Editor
 										select new XElement("PegNum", peg)
 											))
 		             ));
-			xmlDoc.Save(@"\Asset\PatternData.xml");
+		xmlDoc.Save(@"C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\PatternData.xml");
 	}
 
 
+
+	string CreateId(string name, int level, int stage)
+	{
+		string IDNum;
+		int ran1 = Random.Range(1,100);
+		int ran2 = Random.Range(1,1001);
+
+		IDNum = name[0] + name[0] + name[0]  + level.ToString() + stage.ToString() + ran1.ToString() +ran2.ToString();
+
+		return IDNum;
+	}
 
 	void SetStageNumber(Stage set)
 	{

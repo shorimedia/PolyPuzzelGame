@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBarObject: {fileID: 134856}
   maxTime: 15
-  slotEmpty: {fileID: 21300008, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
+  slotEmpty: {fileID: 21300080, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
   slotAudio: {fileID: 11404484}
 --- !u!114 &11492820
 MonoBehaviour:
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300008, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
+  m_Sprite: {fileID: 21300080, guid: 818400fd3791c2f489eda238b3098ac1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -428,6 +428,16 @@ Prefab:
       propertyPath: itemDestroy
       value: HoverOver_SciFi_Frequency_05
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300080, guid: 818400fd3791c2f489eda238b3098ac1,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: slotEmpty
+      value: 
+      objectReference: {fileID: 21300080, guid: 818400fd3791c2f489eda238b3098ac1,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192820}

@@ -227,7 +227,7 @@ MonoBehaviour:
     maxDelay: 0
     delay: 0
   crossDuration: 5
-  showDebug: 1
+  showDebug: 0
   offTheBGM: 0
   isPaused: 0
   movingOnFromSong: 0

@@ -141,6 +141,7 @@ public class PegUpdater : MonoBehaviour {
 		
 		Ray ray = new Ray (checkPoints[index].position,  checkPoints[index].forward);
 		
+
 		if (Physics.Raycast(ray , out hit,1)){
 			if (hit.collider != null){ 
 				//			Debug.Log ("Hit object at check point " + (index + 1 ) + " "+ hit.collider.name );
@@ -197,9 +198,6 @@ public class PegUpdater : MonoBehaviour {
 		//	Debug.Log ("Index # " + index);
 	}
 	
-
-
-
 
 
 	void OnDisable(){

@@ -18,6 +18,33 @@ TextureImporter:
     21300026: CamIcon
     21300028: PauseIcon
     21300030: RefreshIcon
+    21300032: HexFull
+    21300034: audioOff
+    21300036: audioOn
+    21300038: checkmark
+    21300040: cross
+    21300042: exclamation
+    21300044: exit
+    21300046: gear
+    21300048: home
+    21300050: information
+    21300052: leaderboardsComplex
+    21300054: left
+    21300056: locked
+    21300058: medal2
+    21300060: musicOff
+    21300062: musicOn
+    21300064: open
+    21300066: pause
+    21300068: question
+    21300070: return
+    21300072: right
+    21300074: sampleHex
+    21300076: share2
+    21300078: shoppingCart
+    21300080: styleHex
+    21300082: warning
+    21300084: zoom
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -63,155 +90,285 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: CamIcon
-      rect:
-        serializedVersion: 2
-        x: 1752
-        y: 3815
-        width: 118
-        height: 67
-      alignment: 9
-      pivot: {x: .5, y: .373134315}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Hex_button_Whitebg
+    - name: HexFull
       rect:
         serializedVersion: 2
         x: 2
-        y: 1793
-        width: 511
-        height: 590
+        y: 800
+        width: 256
+        height: 222
       alignment: 9
-      pivot: {x: .512720168, y: .496610165}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Hex_button_bg
-      rect:
-        serializedVersion: 2
-        x: 604
-        y: 2993
-        width: 520
-        height: 594
-      alignment: 9
-      pivot: {x: .498076916, y: .498316497}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: PauseIcon
-      rect:
-        serializedVersion: 2
-        x: 520
-        y: 3453
-        width: 72
-        height: 119
-      alignment: 9
-      pivot: {x: .486111104, y: .49579832}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RefreshIcon
-      rect:
-        serializedVersion: 2
-        x: 1872
-        y: 3763
-        width: 117
-        height: 119
-      alignment: 9
-      pivot: {x: .504273534, y: .50420171}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: UI_Box
-      rect:
-        serializedVersion: 2
-        x: 1193
-        y: 3538
-        width: 557
-        height: 556
-      alignment: 9
-      pivot: {x: .497307003, y: .494604319}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: UI_Icon
-      rect:
-        serializedVersion: 2
-        x: 604
-        y: 3589
-        width: 587
-        height: 505
-      alignment: 9
-      pivot: {x: .505962551, y: .500990093}
-      border: {x: 172, y: 243, z: 191, w: 230}
-    - name: UI_Icon2
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 3574
-        width: 600
-        height: 520
-      alignment: 9
-      pivot: {x: .5, y: .515384614}
+      pivot: {x: .5, y: .513513505}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: UI_panel_hex
       rect:
         serializedVersion: 2
-        x: 1752
-        y: 3884
+        x: 260
+        y: 812
         width: 246
         height: 210
       alignment: 9
       pivot: {x: .5, y: .504761934}
       border: {x: 73, y: 106, z: 80, w: 102}
-    - name: Ui_elements_white
+    - name: audioOff
       rect:
         serializedVersion: 2
         x: 2
-        y: 2977
-        width: 516
-        height: 595
+        y: 733
+        width: 40
+        height: 65
       alignment: 9
-      pivot: {x: .492248058, y: .50420171}
+      pivot: {x: .800000012, y: .538461566}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: exit_button
+    - name: audioOn
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 2946
-        width: 516
-        height: 590
+        x: 44
+        y: 733
+        width: 64
+        height: 65
       alignment: 9
-      pivot: {x: .494186044, y: .5}
+      pivot: {x: .5, y: .538461566}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: options_button
+    - name: checkmark
       rect:
         serializedVersion: 2
-        x: 520
-        y: 2401
-        width: 516
-        height: 590
+        x: 110
+        y: 741
+        width: 64
+        height: 57
       alignment: 9
-      pivot: {x: .492248058, y: .5}
+      pivot: {x: .5, y: .526315808}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: play_button
+    - name: cross
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 734
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5, y: .53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: exclamation
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 738
+        width: 16
+        height: 60
+      alignment: 9
+      pivot: {x: .5, y: .566666663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: exit
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 732
+        width: 50
+        height: 66
+      alignment: 9
+      pivot: {x: .479999989, y: .545454562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gear
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 734
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .46875, y: .53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: home
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 734
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .46875, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: information
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 730
+        width: 36
+        height: 68
+      alignment: 9
+      pivot: {x: .444444448, y: .529411793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leaderboardsComplex
       rect:
         serializedVersion: 2
         x: 2
-        y: 2385
-        width: 516
-        height: 590
+        y: 672
+        width: 68
+        height: 56
       alignment: 9
-      pivot: {x: .492248058, y: .506779671}
+      pivot: {x: .470588237, y: .571428597}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: signleplay_button
+    - name: left
       rect:
         serializedVersion: 2
-        x: 1038
-        y: 2355
-        width: 516
-        height: 589
-      alignment: 9
-      pivot: {x: .492248058, y: .509337842}
+        x: 72
+        y: 664
+        width: 40
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: stats_button
+    - name: locked
       rect:
         serializedVersion: 2
-        x: 520
-        y: 1810
-        width: 516
-        height: 589
+        x: 114
+        y: 664
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: .492248058, y: .509337842}
+      pivot: {x: .46875, y: .53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: medal2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 661
+        width: 61
+        height: 67
+      alignment: 9
+      pivot: {x: .475409836, y: .552238822}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: musicOff
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 666
+        width: 60
+        height: 62
+      alignment: 9
+      pivot: {x: .466666669, y: .54838711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: musicOn
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 666
+        width: 55
+        height: 62
+      alignment: 9
+      pivot: {x: .5090909, y: .54838711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: open
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 664
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .46875, y: .53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pause
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 663
+        width: 56
+        height: 65
+      alignment: 9
+      pivot: {x: .5, y: .476923078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: question
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 595
+        width: 40
+        height: 64
+      alignment: 9
+      pivot: {x: .5, y: .5625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: return
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 603
+        width: 62
+        height: 56
+      alignment: 9
+      pivot: {x: .45161289, y: .571428597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: right
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 595
+        width: 40
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sampleHex
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 408
+        width: 218
+        height: 251
+      alignment: 9
+      pivot: {x: .513761461, y: .498007983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: share2
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 587
+        width: 68
+        height: 72
+      alignment: 9
+      pivot: {x: .5, y: .527777791}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shoppingCart
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 599
+        width: 66
+        height: 60
+      alignment: 9
+      pivot: {x: .484848499, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: styleHex
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 153
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: warning
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 344
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .484848499, y: .54838711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zoom
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 341
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: .46875, y: .538461566}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

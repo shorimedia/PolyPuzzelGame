@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Flow_blockMaterial
   m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -36,12 +38,12 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .337254912, g: .505882382, b: .4627451, a: 1}
+        second: {r: .309803933, g: .772549033, b: .968627453, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .510272503, g: .512889266, b: .889705896, a: 1}
+        second: {r: .240268171, g: .593129635, b: .742647052, a: 1}
       data:
         first:
           name: _Emission
-        second: {r: 0, g: .0959432051, b: .323529422, a: 0}
+        second: {r: .122621112, g: .253406167, b: .308823526, a: 0}

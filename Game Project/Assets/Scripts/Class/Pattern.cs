@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Pattern 
 {
@@ -7,7 +8,7 @@ public class Pattern
 	private string name;
 	private int levelNum;
 	private int stageNum;
-	private int[] pegEmptyNum;
+	public List<int> pegEmptyNum = new List<int>();
 
 	private string id;
 	
@@ -50,7 +51,7 @@ public string Id
 	}
 
 
-	public int[] PegEmptyNum
+	public List<int> PegEmptyNum
 	{
 		get{ return pegEmptyNum;}
 		set { PegEmptyNum = value; }

@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E651F978-89F3-C159-F3EC-643C08533D6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>5.1.0f3</UnityVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_1_0;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_1_0;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Cloud.Analytics">
+      <HintPath>Assets\Plugins\UnityAnalytics\UnityEngine.Cloud.Analytics.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Plugins\UnityAnalytics\AndroidWrapper.cs" />
+    <Compile Include="Assets\Plugins\UnityAnalytics\PlatformWrapper.cs" />
+    <Compile Include="Assets\Plugins\UnityAnalytics\UnityAnalytics.cs" />
+    <Compile Include="Assets\Plugins\UnityAnalytics\iOSWrapper.cs" />
+    <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisement.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Adapter.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\DeviceInfo\DeviceInfo.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\DeviceInfo\DeviceInfoAndroid.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\DeviceInfo\DeviceInfoEditor.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\DeviceInfo\DeviceInfoIos.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\DeviceInfo\DeviceInfoPlatform.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Events\Event.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Events\EventJSON.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Events\EventManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\HTTP\HTTPManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\HTTP\HTTPRequest.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\HTTP\HTTPResponse.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\HTTP\RetryRequest.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Mediation\AdapterManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Mediation\ConfigManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Mediation\Engine.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Mediation\IntervalManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Mediation\Zone.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Mediation\ZoneManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Misc\AsyncExec.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Misc\MiniJSON.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Misc\Settings.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\Misc\Utils.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\PictureAds\PictureAd.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\PictureAds\PictureAdAdapter.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\PictureAds\PictureAdsFrameManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\PictureAds\PictureAdsManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\PictureAds\PictureAdsParser.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\PictureAds\PictureAdsRequestsManager.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\ShowOptionsExtended.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAds.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsAndroid.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsEditor.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsEditorPlaceholder.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsExternal.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsIos.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsIosBridge.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\UnityAdsPlatform.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\Advertisements\VideoAds\VideoAdAdapter.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\ShowOptions.cs" />
+    <Compile Include="Assets\Standard Assets\UnityAds\Scripts\ShowResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
+    <None Include="Assets\HUD_Interface SFX Library\ReadMe.txt" />
+    <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Lit.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Additive.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_AdditiveZ.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Bumped.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureAdd.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureAdd_Bumped.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureMult.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureMult_Bumped.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Textures\BenSimonds\_Textures Readme.txt" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Textures\MaCrea\MaCrea.txt" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\_MatCap Shaders Readme.txt" />
+    <None Include="Assets\PatternData.xml" />
+    <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\README.txt" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\proguard.txt" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\common_signin_btn_text_dark.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\common_signin_btn_text_light.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\wallet_primary_text_holo_light.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\wallet_secondary_text_holo_dark.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\drawable\common_signin_btn_icon_dark.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\drawable\common_signin_btn_icon_light.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\drawable\common_signin_btn_text_dark.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\drawable\common_signin_btn_text_light.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-af\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-am\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ar\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bg\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bn-rBD\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ca\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-cs\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-da\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-de\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-el\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rGB\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rIN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-es-rUS\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-es\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-es\wallet_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-et-rEE\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-eu-rES\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fa\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fi\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fr-rCA\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fr\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-gl-rES\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-hi\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-hr\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-hu\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-hy-rAM\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-in\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-is-rIS\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-it\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-iw\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ja\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ka-rGE\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-kk-rKZ\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-km-rKH\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-kn-rIN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ko\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ky-rKG\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-lo-rLA\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-lt\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-lv\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-mk-rMK\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ml-rIN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-mn-rMN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-mr-rIN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ms-rMY\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-my-rMM\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-nb\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ne-rNP\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-nl\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pl\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt-rBR\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt-rPT\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ro\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ru\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-si-rLK\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sk\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sl\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sr\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sv\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sw\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ta-rIN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-te-rIN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-th\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-tl\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-tr\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-uk\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ur-rPK\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-uz-rUZ\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-vi\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rCN\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rHK\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rTW\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zu\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\admob_ads_attrs.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\admob_iap_style.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\admob_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\common_attrs.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\common_colors.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\maps_attrs.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\version.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_attrs.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_colors.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_strings.xml" />
+    <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_styles.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\blue_button.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\coin_provider_button.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\contextual_grey_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\footer_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\footer_button_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\green_button.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\grey_button.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\header_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\message_speech_bubble_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\offline_error_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\popup_background_rect.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\popup_header_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_buy_button.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_cancel_button.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_header.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_tophalf.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\row_background.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\sub_header_button.xml" />
+    <None Include="Assets\Plugins\Android\res\drawable\swarm_background.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_achievement_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_app_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_create_account.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_dashboard_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_featured_app_popup.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_featured_app_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_friends.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_friends_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_get_coins.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_header.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_header_external.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_inbox_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_inventory.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_leaderboard_list.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_leaderboard_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_list.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_list_section_header.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_load_more.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_loading_popup.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_login.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_lost_password.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_purchase_popup.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_settings.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_store.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_store_category.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_store_category_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_store_row.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_thread.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_thread_row_other.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_thread_row_self.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_upgrade_guest.xml" />
+    <None Include="Assets\Plugins\Android\res\layout\swarm_webview.xml" />
+    <None Include="Assets\Plugins\Android\res\values\colors.xml" />
+    <None Include="Assets\Plugins\Android\res\values\strings.xml" />
+    <None Include="Assets\Plugins\Android\res\values\styles.xml" />
+    <None Include="Assets\Plugins\Android\unityads\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\unityads\build.xml" />
+    <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
+    <None Include="Assets\Plugins\Android\unityads\res\values\strings.xml" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
+    <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
+    <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+    <None Include="Assets\codeandweb.com\Readme.txt" />
+    <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
+    <None Include="Assets\link.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>

@@ -17,7 +17,7 @@ public class board : MonoBehaviour {
 	private int[] mulitRanNum; // holds the random numbers for multi starter block levels
 
 
-
+    //stetting
 	
 	// Use this for initialization
 	void Start () {

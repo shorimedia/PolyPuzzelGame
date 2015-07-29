@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Wisdom_blockMateria
   m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -36,12 +38,12 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .867647052, g: .746311247, b: .637975752, a: 1}
+        second: {r: .847058833, g: .301960796, b: .898039222, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .91911763, g: .698144436, b: .35818556, a: 1}
+        second: {r: .871992588, g: .525356829, b: .904411793, a: 1}
       data:
         first:
           name: _Emission
-        second: {r: .154411793, g: .143448189, b: .0840181857, a: 0}
+        second: {r: .258713841, g: .11602509, b: .272058845, a: 0}

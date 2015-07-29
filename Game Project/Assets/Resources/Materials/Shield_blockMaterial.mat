@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Shield_blockMaterial
   m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -36,12 +38,12 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .613793373, g: 0, b: 1, a: 1}
+        second: {r: .31764707, g: .352941185, b: .482352942, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 1, g: .529411793, b: .987018347, a: 1}
+        second: {r: .274039656, g: .214965388, b: .411764681, a: 1}
       data:
         first:
           name: _Emission
-        second: {r: .125490203, g: .125490203, b: .125490203, a: 0}
+        second: {r: .153654858, g: .166422084, b: .213235319, a: 0}
