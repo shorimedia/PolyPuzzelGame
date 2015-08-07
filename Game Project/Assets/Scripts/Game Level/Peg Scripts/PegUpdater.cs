@@ -2,6 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//
+// Script Name: PegUpdater
+//Script by: Victor L Josey
+// Description: Checks and Update Peg status and surrounding pegs
+// (c) 2015 Shoori Studios LLC  All rights reserved.
 
 public class PegUpdater : MonoBehaviour {
 
@@ -18,39 +23,92 @@ public class PegUpdater : MonoBehaviour {
 	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
 
 
-
-
 	// Use this for initialization
-	void Start () {
-		Messenger.AddListener( "Check Neighbor", CheckNeighbor );
-	}
+    void Start()
+    {
+        Messenger.AddListener("Check Neighbor", CheckNeighbor);
+        Messenger.AddListener("Set Neighbors", SetNeighborPegs);
+
+    }
+
+
+    void FixedUpdate() 
+    {
+        if(GameManger.ACTIVE == false && pegState.moveIn == true)
+        {
+            pegState.moveIn = false;
+            pegState.blockState = PegStateMachine.BlockState.Normal;
+            pegState.ChangeBlockState();
+
+        }
+
+
+        if (GameManger.ACTIVE == false && pegState.isJumpable == true)
+        {
+            pegState.isJumpable = false;
+        }
+
+    }
+
+    public void SetNeighborPegs()
+    {
+
+        RaycastHit hit;
+
+        for (int c = 0; c < checkPoints.Length; c++)
+        {
+
+            Ray ray = new Ray(checkPoints[c].position, checkPoints[c].forward);
+
+            if (Physics.Raycast(ray, out hit, 1))
+            {
+
+                if (hit.collider.tag == "Peg")
+                {
+
+                    //Debug.Log ("Hit object at check point " + (c + 1 ) + " "+ hit.collider.name );
+                    if (neighborHEX[c] == null)
+                    {
+                        neighborHEX[c] = hit.collider.gameObject.GetComponent<PegStateMachine>();
+                    }
+
+                }
+                else
+                {
+                    // if ray hit any other object onther then Peg tag
+                    posStatus.side[c] = 'N';
+                }
+            }
+            else
+            {
+                // if ray doesnt hit any thing
+                posStatus.side[c] = 'N';
+            }
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
 
 
 	#region Check Peg's Neighbor
 	
 	public void CheckNeighbor(){
 
-
-
 		// check Peg neighbors
-		
-		RaycastHit hit;
 		
 		for(int c = 0; c < checkPoints.Length; c++){
 			
-			Ray ray = new Ray (checkPoints[c].position,  checkPoints[c].forward);
-			
-			if (Physics.Raycast(ray , out hit,1)){
-				
-				if (hit.collider.tag == "Peg"){ 
-					
-					
-					//Debug.Log ("Hit object at check point " + (c + 1 ) + " "+ hit.collider.name );
-					if(neighborHEX[c] == null){
-						neighborHEX[c] = hit.collider.gameObject.GetComponent<PegStateMachine>();
-					}
-
-				
+	
+                    /// If peg and the next peg
 					if(PegType.blockType != PegTypeMach.BlockType.Empty){
 						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
 							//Debug.Log (" check next");
@@ -62,9 +120,9 @@ public class PegUpdater : MonoBehaviour {
 					}else{
 						
 
-						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
+						//if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
 							
-						}
+						//}
 						
 					}
 
@@ -86,16 +144,6 @@ public class PegUpdater : MonoBehaviour {
 
 
 					}
-					
-				}else{
-					// if ray hit any other object onther then Peg tag
-					posStatus.side[c] = 'N';
-				}
-				
-			}else{
-				// if ray doesnt hit any thing
-				posStatus.side[c] = 'N';
-			}
 			
 		}
 		
@@ -135,8 +183,6 @@ public class PegUpdater : MonoBehaviour {
 	
 	void SecondNeighborCheck(int index){
 
-
-
 		RaycastHit hit;
 		
 		Ray ray = new Ray (checkPoints[index].position,  checkPoints[index].forward);
@@ -163,18 +209,13 @@ public class PegUpdater : MonoBehaviour {
 						if(neighborHEX[PointIndex(index)].blockState == PegStateMachine.BlockState.Active)
 						{
 							neighborHEX[index].moveIn = true;
-						}else{
-							neighborHEX[index].moveIn = false;
 						}
 
 
 						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
 						GameManger.CURRENT_OPEN_BLOCK = neighborHEX[index];
 					}else{   
-						pegState.isJumpable = false;
-
-						neighborHEX[index].moveIn = false;
-
+	
 						if(neighborHEX[PointIndex(index)].blockState == PegStateMachine.BlockState.Active)
 						{
 						pegState.blockState = PegStateMachine.BlockState.Uncapable;
@@ -187,8 +228,11 @@ public class PegUpdater : MonoBehaviour {
 						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
 						pegState.ChangeBlockState();
 					}
-					neighborHEX[index].SelectedSpace();
-					Debug.Log (" check two! done");
+
+                    neighborHEX[index].blockState = PegStateMachine.BlockState.Selected;
+                    neighborHEX[index].ChangeBlockState();
+
+					//Debug.Log (" check two! done");
 					
 				}
 				
@@ -203,6 +247,7 @@ public class PegUpdater : MonoBehaviour {
 	void OnDisable(){
 		
 		Messenger.RemoveListener( "Check Neighbor", CheckNeighbor  );
+        Messenger.RemoveListener("Set Neighbors", SetNeighborPegs);
 		
 	}
 }

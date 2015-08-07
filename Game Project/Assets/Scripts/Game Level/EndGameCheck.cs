@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//
+// Script Name: End Game  Check
+//Script by: Victor L Josey
+// Description: Check game board for end game conditions and triggers the end game state.
+// (c) 2015 Shoori Studios LLC  All rights reserved.
 
 
 

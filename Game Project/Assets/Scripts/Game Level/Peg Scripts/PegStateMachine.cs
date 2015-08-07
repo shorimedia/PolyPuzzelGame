@@ -2,7 +2,11 @@
 using System.Collections;
 
 public class PegStateMachine : MonoBehaviour {
-
+    //
+    // Script Name: Peg State Mechine
+    //Script by: Victor L Josey
+    // Description: Peg state machine that changes peg founcton during the game.
+    // (c) 2015 Shoori Studios LLC  All rights reserved.
 
 	public ItemAttachment AttachedItem;
 	public GameObject EffectPos;
@@ -30,10 +34,6 @@ public class PegStateMachine : MonoBehaviour {
 
 	public int bonusPoints = 0;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	public void ChangeBlockState(){
 		
@@ -59,7 +59,7 @@ public class PegStateMachine : MonoBehaviour {
 			break;
 		case BlockState.Normal : 
 
-			pUpdater.CheckNeighbor();
+			//pUpdater.CheckNeighbor();
 			PegType.ChangeBlockType();
 
 			// if this peg is no longer a empty peg
@@ -138,9 +138,20 @@ public class PegStateMachine : MonoBehaviour {
 			GetComponent<Renderer>().material.color = new Color(0, 30, 1);
 			
 			break;
-		case BlockState.Selected : 
-			
-			GetComponent<Renderer>().material.color = new Color(0, 30, 1);
+		case BlockState.Selected :
+
+            if (moveIn)
+            {
+                pegAudio.PlayPegSoundFX("Open");
+                PegType.SpriteObject.enabled = true;
+                GetComponent<Renderer>().material.color = new Color(0, 30, 1);
+            }
+            else
+            {
+                blockState = BlockState.Normal;
+
+                ChangeBlockState();
+            }
 			
 			break;
 		case BlockState.Move :
@@ -153,6 +164,7 @@ public class PegStateMachine : MonoBehaviour {
 				RaycastHit hit;
 				Ray ray = new Ray (pUpdater.checkPoints[pUpdater.tokenIndex].position,  pUpdater.checkPoints[pUpdater.tokenIndex].forward);
 				
+                //Dissovle peg to jump over
 				if (Physics.Raycast(ray , out hit,1)){
 					if (hit.collider != null){ 
 						pUpdater.neighborHEX[pUpdater.tokenIndex] = hit.collider.gameObject.GetComponent<PegStateMachine>();
@@ -166,31 +178,23 @@ public class PegStateMachine : MonoBehaviour {
 
 
 				blockState = BlockState.Normal;
+                ChangeBlockState();
 
 				Messenger.Broadcast("Check Empties");
 				Debug.Log ("Check for Empties");
 
-				ChangeBlockState();
+				
 			}
 			break;
 			
 		}
 	}
 
-	public void SelectedSpace()
-	{
+//	public void SelectedSpace()
+	//{
 
-		if ( moveIn )
-		{
-		pegAudio.PlayPegSoundFX("Open");
-		PegType.SpriteObject.enabled = true;
-		GetComponent<Renderer>().material.color = new Color(0, 30, 1);
-		}else{
-			blockState = BlockState.Normal;
-			
-			ChangeBlockState();
-		}
-	}
+
+	//}
 
 
 }

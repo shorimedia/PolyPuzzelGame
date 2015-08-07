@@ -1,13 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Serialization;
 
+//Shoori Studios LLC
+//Description: Pattern base class for xml 
+
+ [System.Serializable]
 public class Pattern 
 {
-
-	private string name;
-	private int levelNum;
+       [SerializeField]
+	public string name;
+       [SerializeField]
+	public int levelNum;
 	private int stageNum;
+
+     [SerializeField]
 	public List<int> pegEmptyNum = new List<int>();
 
 	private string id;
@@ -23,6 +32,7 @@ public class Pattern
 		levelNum = L;
 		stageNum = S;
 	}
+
 
 public string Id
 	{

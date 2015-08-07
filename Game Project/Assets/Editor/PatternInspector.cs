@@ -7,10 +7,20 @@ using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 
+//
+// Script Name: PatternInspector
+//Script by: Victor L Josey
+// Description: Inspector for pattern manager and save patter to xml file.
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
+
 [CustomEditor(typeof(PatternManager))]
 public class PatternInspector : Editor 
 
 {
+    public string dataFilePath = Application.streamingAssetsPath + "/Xml Assets/PatternData.xml";
+
+    public string deletePatternname;
 	private string name;
 	private int levelNum;
 	private int stageNum;
@@ -20,7 +30,8 @@ public class PatternInspector : Editor
 	private bool showPatternList;
 
 
-	private bool showStageListOne, showStageListTwo, showStageListThree, showStageListFour;
+    public List<Pattern> stageOnePatterns, stageTwoPatterns, stageThreePatterns, stageFourPatterns;
+
 
 	private bool[] pegSpace = new bool[169];
 	private string[] pegSpaceName = new string[169];
@@ -43,7 +54,8 @@ public class PatternInspector : Editor
 
 
 	private List<int> newPegData = new List<int>();
-	
+
+    XmlDocument doc;
 
 	void OnEnable()
 	{
@@ -53,7 +65,11 @@ public class PatternInspector : Editor
 			pegSpace[i] = false;
 		}
 
+        xmlDoc = XDocument.Load(@dataFilePath);
+        Debug.Log("Load Xml: " + xmlDoc);
 
+        
+       
 	}
 
 	int ResetRowCount()
@@ -70,15 +86,32 @@ public class PatternInspector : Editor
 	}
 
 
+    XDocument xmlDoc;
+
 
 	public override void OnInspectorGUI()
 	{
+        PatternManager patternScript = (PatternManager)target;
+
+
+        
+
+
 		GUILayout.Label ("This is a Label in a Custom Editor");
+
 		if(GUILayout.Button("Sync",GUILayout.Height(30) ))
 		{
-			
+            XmlPatternLoad();
+
+            patternScript.StageOneList = stageOnePatterns;
+            patternScript.StageTwoList = stageTwoPatterns;
+            patternScript.StageThreeList = stageThreePatterns;
+            patternScript.StageFourList = stageFourPatterns;
+
 		}
 		GUILayout.Space(15);
+
+
 
 		// area for new patterns creation
 		showNewPattern = EditorGUILayout.Foldout(showNewPattern, "New Pattern");
@@ -101,6 +134,8 @@ public class PatternInspector : Editor
 			levelNum = EditorGUILayout.IntField("Level Number:", levelNum);
 			stageNum = EditorGUILayout.IntField("Stage Number:", stageNum);
 			GUILayout.Space(10);
+
+            // Grid of button that repersents Peg in board to mark for patterns
 			#region Button grid 
 			for(int r = 1; r < ResetRowCount(); r++){
 			GUILayout.BeginHorizontal();
@@ -154,7 +189,6 @@ public class PatternInspector : Editor
 			}
 			#endregion
 
-		
 
 			GUILayout.Space(15);
 			//Button for New patterns editor
@@ -193,6 +227,8 @@ public class PatternInspector : Editor
 					}
 
 				}}
+
+            //Clear check mark on grid
 			if(GUILayout.Button("Clear",GUILayout.Height(30) ))
 			{
 				name = null;
@@ -217,50 +253,82 @@ public class PatternInspector : Editor
 
 		if(showPatternList)
 		{
-			// Stage one area
 
-			showStageListOne  = EditorGUILayout.Foldout(showStageListOne,"Stage 1 List");
-
-			if(showStageListOne)
-			{
-			 
-			GUILayout.Space(15);
-			if(GUILayout.Button("Refresh",GUILayout.Height(30) ))
-			{
-				
-			}
-			}
-
-
+           DrawDefaultInspector();
 
 		}
+        GUILayout.Space(15);
+
+        GUILayout.BeginHorizontal();
+        deletePatternname = EditorGUILayout.TextField("Pattern Name", deletePatternname);
+
+        if (GUILayout.Button("Delete Pattern"))
+        {
+            doc = new XmlDocument();
+            doc.Load(dataFilePath);
+
+            foreach(XmlNode xNode in doc.SelectNodes("Patterns/Pattern"))
+            {
+                if (xNode.SelectSingleNode("Name").InnerText == deletePatternname)
+                {
+                    xNode.ParentNode.RemoveChild(xNode);
+                    doc.Save(dataFilePath);
+                    deletePatternname = " ";
+                }
+               
+
+            }
+           
+
+        }
+        GUILayout.EndHorizontal();
+        
+
 	}
 
+    
 
+
+    // Call when adding a new pattern to xml file
 	void XmlDataSave(Pattern newPattern)
 	{
-		XDocument xmlDoc = new XDocument(
 
-			new XDeclaration("1.0","utf-8","yes"),
+        // If xml file is not found create a one 
+        if (xmlDoc == null)
+        {
 
-			new XComment("Pattern Saved Data"),
+            xmlDoc = new XDocument(
 
-			new XElement("Patterns",
+            new XDeclaration("1.0", "utf-8", "yes"),
 
-		             		new XElement("Pattern", new XAttribute("id", newPattern.Id),
+            new XComment("Pattern Saved Data"),
 
-		                    new XElement("Name",newPattern.PatternName),
-		                    new XElement("LevelNumber",newPattern.LevelNumber),
-		                    new XElement("StageNumber", newPattern.StageNumber),
-		                    new XElement("PegEmpty", 
+            new XElement("Patterns"));
 
-							            from peg in newPattern.PegEmptyNum
-										select new XElement("PegNum", peg)
-											))
-		             ));
-		xmlDoc.Save(@"C:\Users\Victor\Documents\GitHub\PolyPuzzelGame\Game Project\Assets\PatternData.xml");
+            xmlDoc.Save(@dataFilePath);
+        }
+        else
+        
+        {
+           XElement newPat = new XElement("Pattern", new XAttribute("id", newPattern.Id),
+
+            new XElement("Name", newPattern.PatternName),
+            new XElement("LevelNumber", newPattern.LevelNumber),
+            new XElement("StageNumber", newPattern.StageNumber),
+            new XElement("PegEmpty",
+
+                        from peg in newPattern.PegEmptyNum
+                        select new XElement("PegNum", peg)
+                            ));
+
+           xmlDoc.Root.Add(newPat);
+           xmlDoc.Save(@dataFilePath);
+           Debug.Log("Save Xml: " + xmlDoc);
+        }
+
+
+
 	}
-
 
 
 	string CreateId(string name, int level, int stage)
@@ -284,6 +352,76 @@ public class PatternInspector : Editor
 			case Stage.Fourth: pegCount = 169; break;
 		}
 	}
-	
+
+    void XmlPatternLoad()
+    {
+
+       // reset list  to add new list data
+
+        // clear now list
+        //stageOnePatterns.Clear(); stageTwoPatterns.Clear(); stageThreePatterns.Clear(); stageFourPatterns.Clear();
+
+        // Set new list
+        stageOnePatterns = new List<Pattern>();
+        stageTwoPatterns = new List<Pattern>();
+        stageThreePatterns = new List<Pattern>();
+        stageFourPatterns = new List<Pattern>();
+
+        // Load Xml file
+         doc  = new XmlDocument();
+        doc.Load(dataFilePath);
+
+        // Get Pattern data from Xml file and seperate by stages
+        foreach(XmlNode node in doc.DocumentElement)
+        {
+
+            Pattern newP = new Pattern();
+
+            newP.Id = node.Attributes["id"].Value;
+            newP.PatternName = node.SelectSingleNode("Name").InnerText;
+            // Debug.Log(node["Name"].Value);
+            Debug.Log(node.SelectSingleNode("Name").InnerText);
+
+            newP.LevelNumber = int.Parse(node.SelectSingleNode("LevelNumber").InnerText);
+            newP.StageNumber = int.Parse(node.SelectSingleNode("StageNumber").InnerText);
+         
+            // Get peg numbers with the file
+
+             XmlNode xmlLst = node.SelectSingleNode("PegEmpty");
+
+             foreach (XmlNode xnode in xmlLst.ChildNodes)
+            {
+                newP.PegEmptyNum.Add(int.Parse(xnode.InnerText));
+            }
+ 
+            // Add pattern to list base on the stage number
+            switch(newP.StageNumber)
+            {
+                case 1:
+                    stageOnePatterns.Add(newP);
+                    break;
+                case 2:
+                    stageTwoPatterns.Add(newP);
+                    break;
+                case 3:
+                    stageThreePatterns.Add(newP);
+                    break;
+                case 4:
+                    stageFourPatterns.Add(newP);
+                    break;
+            }
+
+
+        }
+
+
+        Debug.Log(stageOnePatterns.Count);
+        Debug.Log(stageOnePatterns[0].PatternName);
+        Debug.Log(stageOnePatterns[0].Id);
+        Debug.Log(stageOnePatterns[0].pegEmptyNum[7]);
+
+    }
+
+
 
 }

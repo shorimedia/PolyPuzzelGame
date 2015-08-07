@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//
+// Script Name: PegController
+//Script by: Victor L Josey
+// Description: Setup Peg's touch function for game. Uses touch input for mobile devices.
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
 public class PegController : MonoBehaviour {
 
 	

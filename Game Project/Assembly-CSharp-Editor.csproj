@@ -85,10 +85,12 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_strings.xml" />
      <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_cancel_button.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ru\common_strings.xml" />
+     <None Include="Assets\Demo\SwarmUnityDemoOverview.txt" />
      <None Include="Assets\Plugins\Android\res\drawable\popup_background_rect.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sk\common_strings.xml" />
      <None Include="Assets\Plugins\Android\unityads\build.xml" />
      <None Include="Assets\Plugins\Android\res\drawable\green_button.xml" />
+     <None Include="Assets\Plugins\SwarmUnityPluginStructure.txt" />
      <None Include="Assets\Plugins\Android\res\layout\swarm_friends.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\wallet_secondary_text_holo_dark.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-gl-rES\common_strings.xml" />
@@ -146,6 +148,7 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-km-rKH\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pl\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\common_strings.xml" />
+     <None Include="Assets\Plugins\SwarmUnityREADME.txt" />
      <None Include="Assets\Plugins\Android\res\layout\swarm_list.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-am\common_strings.xml" />
      <None Include="Assets\link.xml" />
@@ -154,7 +157,7 @@
      <None Include="Assets\Plugins\Android\res\drawable\row_background.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-te-rIN\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bg\common_strings.xml" />
-     <None Include="Assets\PatternData.xml" />
+     <None Include="Assets\StreamingAssets\Xml Assets\PatternData.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-lt\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\drawable\common_signin_btn_icon_light.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\color\common_signin_btn_text_light.xml" />
@@ -194,6 +197,7 @@
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain.shader" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt-rPT\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fr-rCA\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\res\drawable\coin_provider_button.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\admob_iap_style.xml" />
      <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Additive.shader" />

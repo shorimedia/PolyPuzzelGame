@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600e381f9e03c4a4798161af556d0efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNeutral: {fileID: 0}
+  spriteNeutral: {fileID: 21300036, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
   maxSize: 1
   itemTime: 0
   onDissolve: 0
@@ -58,6 +58,11 @@ Prefab:
       propertyPath: rarity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spriteNeutral
+      value: 
+      objectReference: {fileID: 21300036, guid: 161feccd52d2f484cb88579fd1dd773b,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170050}

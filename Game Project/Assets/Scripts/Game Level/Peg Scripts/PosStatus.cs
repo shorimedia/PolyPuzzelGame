@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//
+// Script Name: PosStatus
+//Script by: Victor L Josey
+// Description: Sets a state (posstate) of the peg base on its  surrounding peg state(ingame state). Use to  determine the end game event.
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
 public class PosStatus : MonoBehaviour {
 
 	public char[] side = new char[6]; 
