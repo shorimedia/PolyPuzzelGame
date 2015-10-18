@@ -39,9 +39,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5419536ca77704f859c4898264fbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Darkness
+  details: Only can be broken by light or fire. This peg can jump and other type.
+    If this peg is broken in worth 100  points.
   spriteNeutral: {fileID: 21300034, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
+  revealed: 1
   maxSize: 1
-  itemTime: -.0152519541
+  itemTime: -.00759352557
   onDissolve: 0
   rarity: 0
   timeIsActive: 1
@@ -58,6 +62,19 @@ Prefab:
       value: 
       objectReference: {fileID: 21300034, guid: 161feccd52d2f484cb88579fd1dd773b,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Darkness
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: details
+      value: Only can be broken by light or fire. This peg can jump and other type.
+        If this peg is broken in worth 100  points.
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: revealed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170050}

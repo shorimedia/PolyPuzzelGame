@@ -1,5 +1,12 @@
-<linker>
-	<assembly fullname="UnityEngine">
-		<type fullname="UnityEngine.WWW" preserve="all" />
-	</assembly>
+﻿<linker>
+  <assembly fullname="UnityEngine">
+    <type fullname="UnityEngine.WWW" preserve="all" />
+  </assembly>
+  <assembly fullname="mscorlib">
+    <type fullname="System.Type" preserve="all" />
+    <namespace fullname="System.Reflection" preserve="all" />
+  </assembly>
+  <assembly fullname="Assembly-CSharp">
+    <namespace fullname="VoxelBusters.NativePlugins" preserve="all" />
+  </assembly>
 </linker>

@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+//
+// Script Name: ItemBar
+//Script by: Victor L Josey
+// Description: Setup  slot for item bar
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
+
 public class ItemBar : MonoBehaviour {
 
 	public static bool ItemSelectionMode = false;
@@ -129,8 +136,11 @@ public class ItemBar : MonoBehaviour {
 	{
 		if(item.maxSize == 1)
 		{
+            item.revealed = true;
 			PlaceEmpty(item);
+#if DEBUG
 			Debug.Log ("Place Item");
+#endif
 			return true;
 		}
 
@@ -150,7 +160,9 @@ public class ItemBar : MonoBehaviour {
 				if (tmp.IsEmpty)
 				{
 					tmp.AddItem(item);
+#if DEBUG
 					Debug.Log ("Send to lot Item");
+#endif
 					emptySlots--;
 					return true;
 				}

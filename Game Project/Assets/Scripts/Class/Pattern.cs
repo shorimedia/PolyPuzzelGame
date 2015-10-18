@@ -19,7 +19,8 @@ public class Pattern
      [SerializeField]
 	public List<int> pegEmptyNum = new List<int>();
 
-	private string id;
+     [SerializeField]
+	public string id;
 	
 	public Pattern ()
 	{

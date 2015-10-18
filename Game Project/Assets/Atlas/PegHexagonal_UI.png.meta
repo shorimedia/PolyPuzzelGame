@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 818400fd3791c2f489eda238b3098ac1
+timeCreated: 1444945170
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: UI_Icon
@@ -45,6 +47,15 @@ TextureImporter:
     21300080: styleHex
     21300082: warning
     21300084: zoom
+    21300086: creditIcon
+    21300088: camera
+    21300090: LanguageBtnIcon
+    21300092: star
+    21300094: trophy
+    21300096: zoomIn
+    21300098: zoomOut
+    21300100: arrowLeft
+    21300102: arrowRight
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -78,6 +89,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -90,285 +102,375 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: HexFull
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 800
-        width: 256
-        height: 222
-      alignment: 9
-      pivot: {x: .5, y: .513513505}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: UI_panel_hex
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 812
-        width: 246
-        height: 210
-      alignment: 9
-      pivot: {x: .5, y: .504761934}
-      border: {x: 73, y: 106, z: 80, w: 102}
-    - name: audioOff
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 733
-        width: 40
-        height: 65
-      alignment: 9
-      pivot: {x: .800000012, y: .538461566}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: audioOn
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 733
-        width: 64
-        height: 65
-      alignment: 9
-      pivot: {x: .5, y: .538461566}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: checkmark
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 741
-        width: 64
-        height: 57
-      alignment: 9
-      pivot: {x: .5, y: .526315808}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: cross
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 734
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: .5, y: .53125}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: exclamation
       rect:
         serializedVersion: 2
-        x: 242
-        y: 738
+        x: 2
+        y: 962
         width: 16
         height: 60
       alignment: 9
       pivot: {x: .5, y: .566666663}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: exit
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 732
-        width: 50
-        height: 66
-      alignment: 9
-      pivot: {x: .479999989, y: .545454562}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: gear
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 734
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: .46875, y: .53125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: home
-      rect:
-        serializedVersion: 2
-        x: 378
-        y: 734
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: .46875, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: information
       rect:
         serializedVersion: 2
-        x: 444
-        y: 730
+        x: 20
+        y: 954
         width: 36
         height: 68
       alignment: 9
       pivot: {x: .444444448, y: .529411793}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaderboardsComplex
+    - name: audioOff
       rect:
         serializedVersion: 2
-        x: 2
-        y: 672
-        width: 68
-        height: 56
+        x: 58
+        y: 957
+        width: 40
+        height: 65
       alignment: 9
-      pivot: {x: .470588237, y: .571428597}
+      pivot: {x: .800000012, y: .538461566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: right
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 958
+        width: 40
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: left
       rect:
         serializedVersion: 2
-        x: 72
-        y: 664
+        x: 142
+        y: 958
         width: 40
         height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: question
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 958
+        width: 40
+        height: 64
+      alignment: 9
+      pivot: {x: .5, y: .5625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: exit
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 956
+        width: 50
+        height: 66
+      alignment: 9
+      pivot: {x: .479999989, y: .545454562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: creditIcon
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 980
+        width: 53
+        height: 42
+      alignment: 9
+      pivot: {x: .490566045, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: camera
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 982
+        width: 54
+        height: 40
+      alignment: 9
+      pivot: {x: .518518507, y: .524999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: musicOn
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 960
+        width: 55
+        height: 62
+      alignment: 9
+      pivot: {x: .5090909, y: .54838711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pause
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 957
+        width: 56
+        height: 65
+      alignment: 9
+      pivot: {x: .5, y: .476923078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LanguageBtnIcon
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 895
+        width: 57
+        height: 57
+      alignment: 9
+      pivot: {x: .491228074, y: .491228074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: musicOff
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 890
+        width: 60
+        height: 62
+      alignment: 9
+      pivot: {x: .466666669, y: .54838711}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: medal2
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 885
+        width: 61
+        height: 67
+      alignment: 9
+      pivot: {x: .475409836, y: .552238822}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: return
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 896
+        width: 62
+        height: 56
+      alignment: 9
+      pivot: {x: .45161289, y: .571428597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zoom
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 887
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: .46875, y: .538461566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zoomIn
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 887
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: .46875, y: .538461566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trophy
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 896
+        width: 64
+        height: 56
+      alignment: 9
+      pivot: {x: .5, y: .607142866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: open
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 819
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .46875, y: .53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: star
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 823
+        width: 64
+        height: 60
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: locked
       rect:
         serializedVersion: 2
-        x: 114
-        y: 664
+        x: 134
+        y: 819
         width: 64
         height: 64
       alignment: 9
       pivot: {x: .46875, y: .53125}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: medal2
+    - name: audioOn
       rect:
         serializedVersion: 2
-        x: 180
-        y: 661
-        width: 61
-        height: 67
-      alignment: 9
-      pivot: {x: .475409836, y: .552238822}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: musicOff
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 666
-        width: 60
-        height: 62
-      alignment: 9
-      pivot: {x: .466666669, y: .54838711}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: musicOn
-      rect:
-        serializedVersion: 2
-        x: 305
-        y: 666
-        width: 55
-        height: 62
-      alignment: 9
-      pivot: {x: .5090909, y: .54838711}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: open
-      rect:
-        serializedVersion: 2
-        x: 362
-        y: 664
+        x: 200
+        y: 818
         width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: .46875, y: .53125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: pause
-      rect:
-        serializedVersion: 2
-        x: 428
-        y: 663
-        width: 56
         height: 65
       alignment: 9
-      pivot: {x: .5, y: .476923078}
+      pivot: {x: .5, y: .538461566}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: question
+    - name: zoomOut
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 818
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: .46875, y: .538461566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cross
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 819
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5, y: .53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gear
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 819
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .46875, y: .53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: checkmark
       rect:
         serializedVersion: 2
         x: 2
-        y: 595
-        width: 40
+        y: 759
+        width: 64
+        height: 57
+      alignment: 9
+      pivot: {x: .5, y: .526315808}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: home
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 752
+        width: 64
         height: 64
       alignment: 9
-      pivot: {x: .5, y: .5625}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: return
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 603
-        width: 62
-        height: 56
-      alignment: 9
-      pivot: {x: .45161289, y: .571428597}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: right
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 595
-        width: 40
-        height: 64
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sampleHex
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 408
-        width: 218
-        height: 251
-      alignment: 9
-      pivot: {x: .513761461, y: .498007983}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: share2
-      rect:
-        serializedVersion: 2
-        x: 370
-        y: 587
-        width: 68
-        height: 72
-      alignment: 9
-      pivot: {x: .5, y: .527777791}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: shoppingCart
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 599
-        width: 66
-        height: 60
-      alignment: 9
-      pivot: {x: .484848499, y: .600000024}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: styleHex
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 153
-        width: 221
-        height: 253
-      alignment: 9
-      pivot: {x: .497737557, y: .498023719}
+      pivot: {x: .46875, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: warning
       rect:
         serializedVersion: 2
-        x: 225
-        y: 344
+        x: 134
+        y: 754
         width: 66
         height: 62
       alignment: 9
       pivot: {x: .484848499, y: .54838711}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: zoom
+    - name: shoppingCart
       rect:
         serializedVersion: 2
-        x: 293
-        y: 341
-        width: 64
-        height: 65
+        x: 202
+        y: 756
+        width: 66
+        height: 60
       alignment: 9
-      pivot: {x: .46875, y: .538461566}
+      pivot: {x: .484848499, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arrowLeft
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 760
+        width: 68
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leaderboardsComplex
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 760
+        width: 68
+        height: 56
+      alignment: 9
+      pivot: {x: .470588237, y: .571428597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arrowRight
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 760
+        width: 68
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: share2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 678
+        width: 68
+        height: 72
+      alignment: 9
+      pivot: {x: .5, y: .527777791}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sampleHex
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 499
+        width: 218
+        height: 251
+      alignment: 9
+      pivot: {x: .513761461, y: .498007983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: styleHex
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 244
+        width: 221
+        height: 253
+      alignment: 9
+      pivot: {x: .497737557, y: .498023719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_panel_hex
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 287
+        width: 246
+        height: 210
+      alignment: 9
+      pivot: {x: .5, y: .504761934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HexFull
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 256
+        height: 222
+      alignment: 9
+      pivot: {x: .5, y: .513513505}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

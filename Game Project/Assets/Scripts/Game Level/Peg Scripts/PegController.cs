@@ -83,7 +83,6 @@ public class PegController : MonoBehaviour {
 		{
 		Messenger.Broadcast< bool >("Set Selection Mode", false);
 		}
-
 	}
 
 	void OnTouchStay()

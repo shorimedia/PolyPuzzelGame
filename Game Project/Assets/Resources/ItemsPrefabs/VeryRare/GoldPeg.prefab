@@ -39,14 +39,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600e381f9e03c4a4798161af556d0efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Gold
+  details: Worth 250 points.
   spriteNeutral: {fileID: 21300036, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
+  revealed: 0
   maxSize: 1
   itemTime: 0
   onDissolve: 0
   rarity: 3
   timeIsActive: 1
   PegObject: {fileID: 0}
-  metalType: 0
+  metalType: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -63,6 +66,18 @@ Prefab:
       value: 
       objectReference: {fileID: 21300036, guid: 161feccd52d2f484cb88579fd1dd773b,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: metalType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Gold
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: details
+      value: Worth 250 points.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170050}

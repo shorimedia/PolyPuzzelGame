@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+//
+// Script Name:  Slots
+//Script by: Victor L Josey
+// Description:
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
+
 public class Slot : MonoBehaviour, IPointerClickHandler
 {
 	public GameObject timeBarObject; // Slide UI object
@@ -98,8 +105,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 	{
 		slotAudio.StartPlay("Popup");
 		items.Push(item);
+#if DEBUG
 		Debug.Log ("push Item");
-
+#endif
 		item.itemTime = maxTime;     // When a new item is created set its timer to max
 
 		item.timeIsActive = true;
@@ -158,11 +166,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 			else
 			{
 				StopCoroutine("CountDownTime");
-				return false;
+                yield return null;
 			}
 			
 		}
-		
+
+      //  yield return null;
 	}
 	
 

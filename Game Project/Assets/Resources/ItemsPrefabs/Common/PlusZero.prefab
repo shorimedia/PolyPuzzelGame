@@ -39,7 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43783a5ab58d3574c8df89e03a8956ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Plus Zero
+  details: Add a peg  that point value is equal to zero.
   spriteNeutral: {fileID: 21300030, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
+  revealed: 0
   maxSize: 1
   itemTime: -.016481135
   onDissolve: 0
@@ -58,6 +61,18 @@ Prefab:
       value: 
       objectReference: {fileID: 21300030, guid: 161feccd52d2f484cb88579fd1dd773b,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Plus Zero
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: details
+      value: Add a peg  that point value is equal to zero.
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: revealed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170050}

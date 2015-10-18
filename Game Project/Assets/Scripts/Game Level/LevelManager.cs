@@ -133,7 +133,7 @@ public void UpdateLevelNum (int num){
 
 			//Randomly altnate between two types
 			//Type one
-			if( randomNumHolder <= 0.90f){
+			if( randomNumHolder <= 0.80f){
 				
 				// pick one of three
 				if(randomTypeNumA  <= 0.33f){
@@ -151,19 +151,42 @@ public void UpdateLevelNum (int num){
 			
 			
 			//Type two
-			if( randomNumHolder > 0.90f && randomNumHolder <= 1.0f){
+			if( randomNumHolder > 0.80f && randomNumHolder <= 1.0f){
 				
 				// pick one of three 
-				if(randomTypeNumB  <= 0.33f){
-					numberType = 1;
+				if(randomTypeNumB  <= 0.33f)
+                {
+                    if (randomTypeNumA <= 0.33f)
+                    {
+					numberType = 2;
+                    }
+                    else
+                    {
+                        numberType = 1;
+                    }
 				}
 				
 				if(randomTypeNumB  >  0.33f && randomTypeNumB  <= 0.66f){
-					numberType = 2;
+
+                    if (randomTypeNumA > 0.33f && randomTypeNumA <= 0.66f)
+                    {
+                        numberType = 3;
+                    }
+                    else
+                    {
+                        numberType = 2;
+                    }
 				}
 				
-				if(randomTypeNumB  >  0.66f && randomTypeNumB  <= 1){
-					numberType = 3;
+				if(randomTypeNumB  >  0.66f && randomTypeNumB  <= 1f){
+                    if (randomTypeNumA > 0.66f && randomTypeNumA <= 1f)
+                    {
+                        numberType = 1;
+                    }
+                    else
+                    {
+                        numberType = 3;
+                    }
 				}
 				
 			} 
@@ -181,6 +204,59 @@ public void UpdateLevelNum (int num){
 		if(levelNumber >= 6 && levelNumber <= 10){
 
 			#region Levels 6 to 10
+			//Randomly altnate between two types
+			//Type one
+			if( randomNumHolder <= 0.75f){
+				
+				// pick one of three
+				if(randomTypeNumA  <= 0.33f){
+					numberType = 1;
+				}
+				
+				if(randomTypeNumA  >  0.33f && randomTypeNumA  <= 0.66f){
+					numberType = 2;
+				}
+				
+				if(randomTypeNumA  >  0.66f && randomTypeNumA  <= 1){
+					numberType = 3;
+				}
+			} 
+			
+			
+			//Type two
+			if( randomNumHolder > 0.75f && randomNumHolder <= 1.0f){
+				
+				// pick one of three 
+				if(randomTypeNumB  <= 0.33f){
+					numberType = 1;
+				}
+				
+				if(randomTypeNumB  >  0.33f && randomTypeNumB <= 0.66f){
+					numberType = 2;
+				}
+				
+				if(randomTypeNumB  >  0.66f && randomTypeNumB  <= 0.88){
+					numberType = 3;
+				}
+
+                if (randomTypeNumB > 0.88f && randomTypeNumB <= 1f)
+                {
+                    numberType = 4;
+                }
+				
+			} 
+			
+			switch(numberType){ 
+			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
+			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
+			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+            case 4: hex.blockType = PegTypeMach.BlockType.Lite; break;
+			}
+			#endregion
+		}else
+
+		if(levelNumber >= 11 && levelNumber <= 15){
+			#region Levels 11 to 15
 			//Randomly altnate between two types
 			//Type one
 			if( randomNumHolder <= 0.70f){
@@ -201,33 +277,33 @@ public void UpdateLevelNum (int num){
 			
 			
 			//Type two
-			if( randomNumHolder > 0.70f && randomNumHolder <= 1.0f){
-				
-				// pick one of three 
-				if(randomTypeNumB  <= 0.33f){
-					numberType = 1;
-				}
-				
-				if(randomTypeNumB  >  0.33f && randomTypeNumB <= 0.66f){
-					numberType = 2;
-				}
-				
-				if(randomTypeNumB  >  0.66f && randomTypeNumB  <= 1){
-					numberType = 3;
-				}
-				
+			if( randomNumHolder > 0.70f && randomNumHolder <= 1.0f)
+            {
+
+                if (randomTypeNumB <= 0.50f)
+                {
+                    numberType = Random.Range(1, 4);
+                }
+
+                if (randomTypeNumB > 0.50f && randomTypeNumB <= 1f)
+                {
+                    numberType = Random.Range(4, 6);
+                }
+
 			} 
 			
 			switch(numberType){ 
 			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
 			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
 			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
+			case 4: hex.blockType = PegTypeMach.BlockType.Lite; break;
+            case 5: hex.blockType = PegTypeMach.BlockType.Shield; break;
 			}
 			#endregion
+			
 		}else
-
-		if(levelNumber >= 11 && levelNumber <= 15){
-			#region Levels 11 to 15
+		if(levelNumber >= 16 && levelNumber <= 20){
+			#region Levels 16 to 20
 			//Randomly altnate between two types
 			//Type one
 			if( randomNumHolder <= 0.65f){
@@ -249,43 +325,6 @@ public void UpdateLevelNum (int num){
 			
 			//Type two
 			if( randomNumHolder > 0.65f && randomNumHolder <= 1.0f){
-				
-				numberType = Random.Range(1,5);
-
-			} 
-			
-			switch(numberType){ 
-			case 1: hex.blockType = PegTypeMach.BlockType.Fire; break;
-			case 2: hex.blockType = PegTypeMach.BlockType.Flow; break;
-			case 3: hex.blockType = PegTypeMach.BlockType.Stone; break;
-			case 4: hex.blockType = PegTypeMach.BlockType.Lite; break;
-			}
-			#endregion
-			
-		}else
-		if(levelNumber >= 16 && levelNumber <= 20){
-			#region Levels 16 to 20
-			//Randomly altnate between two types
-			//Type one
-			if( randomNumHolder <= 0.60f){
-				
-				// pick one of three
-				if(randomTypeNumA  <= 0.33f){
-					numberType = 1;
-				}
-				
-				if(randomTypeNumA  >  0.33f && randomTypeNumA  <= 0.66f){
-					numberType = 2;
-				}
-				
-				if(randomTypeNumA  >  0.66f && randomTypeNumA  <= 1){
-					numberType = 3;
-				}
-			} 
-			
-			
-			//Type two
-			if( randomNumHolder > 0.60f && randomNumHolder <= 1.0f){
 				
 				numberType = Random.Range(1,8);
 				
@@ -399,89 +438,12 @@ public void UpdateLevelNum (int num){
 #endregion
 
 
-	public void SetRandomNum(float numA, float numB){
+	public void SetRandomNum(float numA, float numB)
+    {
 
-		int TestNumOne = 0;
-		int TestNumTwo = 0;
-
-
-		int numRan = 0;
-
-		//Check if NumA and NumB are within the same range
-		if(numA  <= 0.33f){
-			TestNumOne = 1;
-		}
-		
-		if(numA  >  0.33f && numA  <= 0.66f){
-			TestNumOne = 2;
-		}
-		
-		if(numA  >  0.66f && numA  <= 1){
-			TestNumOne = 3;
-		}
-		
-		
-		
-		if(numB  <= 0.33f){
-			TestNumTwo = 1;
-		}
-		
-		if(numB  >  0.33f && numB  <= 0.66f){
-			TestNumTwo = 2;
-		}
-		
-		if(numB  >  0.66f && numB  <= 1){
-			TestNumTwo = 3;
-		}
-
-
-		if(TestNumOne == TestNumTwo)
-		{
-
-			// select a number in any range but  TestNumOne range
-
-			switch(TestNumOne)
-			{
-			case 1 :
-				randomTypeNumA = numA;
-
-				randomTypeNumB = Random.Range(0.34f,1.0f);
-				
-				break;
-			case 2:
-				randomTypeNumA = numA;
-
-
-				numRan = Random.Range(1,3);
-
-				if(numRan == 1){
-				randomTypeNumB = Random.Range(0f,0.33f);
-				}
-
-				
-				if(numRan == 2){
-					randomTypeNumB = Random.Range(0.66f,1.0f);
-				}
-
-				break;
-			case 3 : 
-
-				randomTypeNumA = numA;
-	
-					randomTypeNumB = Random.Range(0f,0.66f);
-	
-				break;
-			}
-
-
-
-		}else{
-
-		randomTypeNumA = numA;
+        randomTypeNumA = numA;
 		randomTypeNumB = numB;
-		}
-
-
+		
 	}
 
 	public float RandomNumber(){

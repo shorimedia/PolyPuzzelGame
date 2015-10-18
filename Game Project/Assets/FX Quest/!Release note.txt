@@ -1,0 +1,51 @@
+------------------------------------------------------------------
+FX Quest v.0.4.1
+------------------------------------------------------------------
+
+	Release Note
+
+		Version 0.4.1
+			• Fixed variable conflicts between GUI Animator FREE and GUI Animator for Unity UI when they are in the same project.
+
+		Version 0.4.0
+			• Redesign all particles and demo scenes.
+			• GUI Animator FREE is included.
+			• Full compatible with Unity 5.0.1 or higher.
+
+		Version 0.3.1
+			• Added 9 of 3D particle effects for Desktop.
+				- Abilities effects; 3D_Aura_01, 3D_Aura_02, 3D_Recovery_04
+				- Fight effects; 3D_GroundAttack_02
+				- Magics effects; 3D_FireMagic_03, 3D_FireMagic_04, 3D_WindMagic_01
+				- Misc effects; 3D_Force_01, 3D_Force_02
+			• Added 9 of 3D particle effects for Mobile.
+				- Abilities effects; M_3D_Aura_01, M_3D_Aura_02, M_3D_Recovery_04
+				- Fight effects; M_3D_GroundAttack_02
+				- Magics effects; M_3D_FireMagic_03, M_3D_FireMagic_04, M_3D_WindMagic_01
+				- Misc effects; M_3D_Force_01, M_3D_Force_02
+			• Added 15 tga textures.
+			• Added 2 sounds; Aura_01, WindMagic_03
+		
+		Version 0.3.0
+			- Added 47 materials and textures for Desktop.
+			- Added 7 of new 2D particles for Desktop.
+			- Added 4 of new 3D particles for Desktop.
+			- Added 47 materials and textures for Mobile.
+			- Added 7 of new 2D particles for Mobile.
+			- Added 4 of new 3D particles for Mobile.
+			- Added 22 sample sounds.
+			- Updated all paticles in 0.2.6.
+			- Updated 2D Demo scene.
+			- Added 2 sample C# scripts.
+		
+		Version 0.2.6
+			- Added 70+ prefabs for Mobile, also added new materials and textures for Mobile Quality.
+			- Separated Standalone/Mobile prefabs, materials and textures into different folders ("_Desktop" and "_Mobile" folders).
+			- Updated some Paticles from version 0.2.5.
+			- Updated Demo scene.
+		
+		Versoin 0.2.5
+			- Initial version
+
+
+

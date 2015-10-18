@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11497136}
   - 114: {fileID: 11472780}
   - 114: {fileID: 11423572}
+  - 114: {fileID: 11406624}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -43,7 +44,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: .117106408, g: .158522233, b: .279411793, a: .0196078438}
+  m_BackGroundColor: {r: .125490203, g: .141176477, b: .239215687, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -62,6 +63,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -81,6 +83,27 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197138}
   m_Enabled: 1
+--- !u!114 &11406624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4411356d2874c9d90eb7a566af53a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Cameras: []
+  m_ShakeType: 0
+  m_NumberOfShakes: 2
+  m_ShakeAmount: {x: 1, y: 1, z: 1}
+  m_RotationAmount: {x: 1, y: 1, z: 1}
+  m_Distance: .100000001
+  m_Speed: 50
+  m_Decay: .200000003
+  m_UiShakeModifier: 1
+  m_MultiplyByTimeScale: 1
 --- !u!114 &11423572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,6 +156,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   canMove: 0
   posIndex: 0
+  cameraZoomIndex: 0
   CamPos: {fileID: 0}
   ease: 14
 --- !u!124 &12497138

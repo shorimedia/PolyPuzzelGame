@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 //
@@ -27,8 +26,8 @@ public class board : MonoBehaviour {
     //setting
 	
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+    {
 		Debug.Log ("Create Game Boad");
         currentPattern = new Pattern();
 
@@ -107,8 +106,6 @@ public class board : MonoBehaviour {
 
 		TokenData.Clear();
 
-        Messenger.Broadcast("Set Neighbors");
-
 		levelManager.SetRandomNum(Random.Range(0f,1.0f), Random.Range(0f,1.0f));
 
 	
@@ -141,11 +138,19 @@ public class board : MonoBehaviour {
 
 		}
 
-        //Update empty peg count
-       
-		//Messenger.Broadcast("Check Empties");
+        SetTokenNeighbors(hexAmount);
+        //Update empty peg count. Call emptycheck method in the EndGameCheck.cs
+		Messenger.Broadcast("Check Empties");
 	}
 
-
+    private void SetTokenNeighbors(int hexAmount)
+    {
+       // Debug.Log("set token " + hexAmount);
+		for(int i = 0; i < hexAmount; i++)
+        {
+            TokenData[i].pagState_pUpdater.SetNeighborPegs();
+           // Debug.Log("Token " + i + "/" + hexAmount);
+        }
+    }
 		
 }

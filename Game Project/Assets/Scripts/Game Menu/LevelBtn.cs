@@ -3,6 +3,12 @@ using System.Collections;
 using UnityEngine.UI;
 using PlayerPrefs = PreviewLabs.PlayerPrefs;
 
+//
+// Script Name: LevelBtn
+//Script by: Victor L Josey
+// Description: 
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
 public class LevelBtn : MonoBehaviour {
 
 	public Level level;
@@ -18,13 +24,8 @@ public class LevelBtn : MonoBehaviour {
 	private int stageNum;
 
 
+    public FadeScreen fadescreen;
 
-
-	// Use this for initialization
-	void Start () {
-	
-		//level = new Level(levelNum,stageNum , );
-	}
 
 	public int LevelNumber
 	{
@@ -56,15 +57,38 @@ public class LevelBtn : MonoBehaviour {
 	}
 
 
+
+
 	public void StartGame()
 	{
+
+        fadescreen.IsOpen = true;
 
 		PlayerPrefs.SetInt("Game Level", level.levelNum);
 		PlayerPrefs.SetInt("Game Stage", level.stageNum);
 		Debug.Log("Saving Game Level and Stage");
-		Application.LoadLevel(1);
+
+        if (IsLock == false)
+        {
+            StartCoroutine("StartLoading");
+        }
 	}
 
+
+    IEnumerator StartLoading()
+    {
+
+#if UNITY_ANDROID
+         Handheld.SetActivityIndicatorStyle(AndroidActivityIndicatorStyle.Large);
+# endif
+
+         Handheld.StartActivityIndicator();
+
+        AsyncOperation async = Application.LoadLevelAsync(1);
+        yield return async;
+        //Debug.Log("Loading complete");
+       
+    }
 
 
 
@@ -99,19 +123,10 @@ public class LevelBtn : MonoBehaviour {
 			Stars[2].enabled = true;
 			break;
 
-
 		}
 
 
 	}
-
-
-
-
-
-
-
-
 
 
 }

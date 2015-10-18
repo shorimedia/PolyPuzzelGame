@@ -14,6 +14,8 @@ GameObject:
   - 114: {fileID: 11441116}
   - 114: {fileID: 11437212}
   - 114: {fileID: 11407492}
+  - 114: {fileID: 11432332}
+  - 114: {fileID: 11415206}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -45,6 +47,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {fileID: 0}
+--- !u!114 &11415206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315be88b737281459d8a005e1d30dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11432332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781f6f8e3527cf947b5dd30707e050f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicValue: .5
+  sfxValue: .5
+  SFXToggle: {fileID: 0}
+  MusicToogle: {fileID: 0}
 --- !u!114 &11437212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,9 +140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 2
-  level: 6
+  level: 1
   stage: 1
   testMode: 0
+  gameSave: {fileID: 11443462}
   pointText: {fileID: 0}
   LevelTitle: {fileID: 0}
   titleTrans: {fileID: 0}
@@ -123,6 +152,7 @@ MonoBehaviour:
   LoseScreen: {fileID: 0}
   Background: {fileID: 0}
   winScript: {fileID: 0}
+  loseScript: {fileID: 0}
   pfManager: {fileID: 0}
   ShowActive: 0
 --- !u!1001 &100100000

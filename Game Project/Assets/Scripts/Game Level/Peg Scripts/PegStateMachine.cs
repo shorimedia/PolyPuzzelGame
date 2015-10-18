@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PegStateMachine : MonoBehaviour {
     //
@@ -11,7 +10,7 @@ public class PegStateMachine : MonoBehaviour {
 	public ItemAttachment AttachedItem;
 	public GameObject EffectPos;
 	public PegTypeMach PegType;
-	public PegUpdater pUpdater;
+	public PegUpdater pagState_pUpdater;
 
 	public PosStatus posStatus;
 
@@ -34,13 +33,19 @@ public class PegStateMachine : MonoBehaviour {
 
 	public int bonusPoints = 0;
 
-	
+
+    public Color uncapColor;
+    public Color activeColor;
+    public Color selectedColor;
+    public Color hoverColor;
+
+
 	public void ChangeBlockState(){
 		
 		switch (blockState){
 		case BlockState.Uncapable :
 			pegAudio.PlayPegSoundFX("Uncap");
-			GetComponent<Renderer>().material.color = new Color(0, 0.5f, 0.3f);
+			GetComponent<Renderer>().material.color = uncapColor;
 			
 			break;
 		case BlockState.Active :
@@ -52,14 +57,16 @@ public class PegStateMachine : MonoBehaviour {
 
 			GameManger.CURRENT_ACTIVE_BLOCK = this.GetComponent<PegStateMachine>();
 
-			GetComponent<Renderer>().material.color = new Color(0, 1, 1);
+			GetComponent<Renderer>().material.color = activeColor;
 
-			pUpdater.CheckNeighbor();
+			pagState_pUpdater.CheckNeighbor();
 			
 			break;
-		case BlockState.Normal : 
 
-			//pUpdater.CheckNeighbor();
+		case BlockState.Normal :
+
+           //  GetComponent<Renderer>().material.color = new Color(0,0,0);
+             pagState_pUpdater.CheckNeighbor();
 			PegType.ChangeBlockType();
 
 			// if this peg is no longer a empty peg
@@ -67,11 +74,13 @@ public class PegStateMachine : MonoBehaviour {
 			{
 				moveIn = false;
 			}
+
+            
 			break;
 			
 		case BlockState.Dissolve :
 
-			pegAudio.PlayPegSoundFX("Destroy");
+			//pegAudio.PlayPegSoundFX("Destroy");
 
 			if(isJumpable == true){
 				
@@ -90,6 +99,11 @@ public class PegStateMachine : MonoBehaviour {
 					{
 						pegAudio.PlayPegSoundFX("BigPoints");
 					}
+
+                    if (PegType.hexType.points >= 200)
+                    {
+                        Achievements.MaxPoints();
+                    }
 					
 				}else if(bonusPoints > 0)
 				{
@@ -104,6 +118,11 @@ public class PegStateMachine : MonoBehaviour {
 					{
 						pegAudio.PlayPegSoundFX("BigPoints");
 					}
+
+                    if (PegType.hexType.points >= 200)
+                    {
+                        Achievements.MaxPoints();
+                    }
 					
 				}else if(bonusPoints < 0)
 					
@@ -117,9 +136,29 @@ public class PegStateMachine : MonoBehaviour {
 				if(AttachedItem.AttachedItem != null && AttachedItem.AttachedItem.onDissolve == true)
 				{
 					AttachedItem.AttachedItem.OnItemDissolve();
+
+                    if (AttachedItem.AttachedItem.name == "Bomb")
+                        {
+                            PlayParicleFX("Bomb FX");
+
+                        }
 				}
-				
-				
+
+
+                if (PegType.blockType == PegTypeMach.BlockType.Darkness)
+                {
+                    PlayParicleFX("Dark FX");
+                   
+                }
+
+
+                if (PegType.blockType != PegTypeMach.BlockType.Darkness )
+                {
+
+                    PlayParicleFX("Dissolve FX");
+                }
+
+
 				bonusPoints = 0;
 				isJumpable = false;
 			}
@@ -135,7 +174,7 @@ public class PegStateMachine : MonoBehaviour {
 			break;
 		case BlockState.Hover	:
 			PegType.ChangeBlockType();
-			GetComponent<Renderer>().material.color = new Color(0, 30, 1);
+			GetComponent<Renderer>().material.color = hoverColor;
 			
 			break;
 		case BlockState.Selected :
@@ -144,7 +183,8 @@ public class PegStateMachine : MonoBehaviour {
             {
                 pegAudio.PlayPegSoundFX("Open");
                 PegType.SpriteObject.enabled = true;
-                GetComponent<Renderer>().material.color = new Color(0, 30, 1);
+                GetComponent<Renderer>().material.color = selectedColor;
+      
             }
             else
             {
@@ -162,14 +202,14 @@ public class PegStateMachine : MonoBehaviour {
 				PegType.blockType = GameManger.CURRENT_ACTIVE_BLOCK.PegType.blockType; 
 
 				RaycastHit hit;
-				Ray ray = new Ray (pUpdater.checkPoints[pUpdater.tokenIndex].position,  pUpdater.checkPoints[pUpdater.tokenIndex].forward);
+				Ray ray = new Ray (pagState_pUpdater.checkPoints[pagState_pUpdater.tokenIndex].position,  pagState_pUpdater.checkPoints[pagState_pUpdater.tokenIndex].forward);
 				
                 //Dissovle peg to jump over
 				if (Physics.Raycast(ray , out hit,1)){
 					if (hit.collider != null){ 
-						pUpdater.neighborHEX[pUpdater.tokenIndex] = hit.collider.gameObject.GetComponent<PegStateMachine>();
-						pUpdater.neighborHEX[pUpdater.tokenIndex].blockState = BlockState.Dissolve;
-						pUpdater.neighborHEX[pUpdater.tokenIndex].ChangeBlockState();
+						pagState_pUpdater.neighborHEX[pagState_pUpdater.tokenIndex] = hit.collider.gameObject.GetComponent<PegStateMachine>();
+						pagState_pUpdater.neighborHEX[pagState_pUpdater.tokenIndex].blockState = BlockState.Dissolve;
+						pagState_pUpdater.neighborHEX[pagState_pUpdater.tokenIndex].ChangeBlockState();
 					}}
 				
 				GameManger.CURRENT_ACTIVE_BLOCK.blockState = BlockState.Dissolve;
@@ -181,20 +221,26 @@ public class PegStateMachine : MonoBehaviour {
                 ChangeBlockState();
 
 				Messenger.Broadcast("Check Empties");
+#if DEBUG
 				Debug.Log ("Check for Empties");
 
-				
+#endif		
 			}
 			break;
 			
 		}
 	}
 
-//	public void SelectedSpace()
-	//{
+    void PlayParicleFX(string name)
+    {
+        GameObject obj = PoolerScript.current.GetPooledObject(name);
 
+        if (obj == null) return;
 
-	//}
-
+        obj.transform.position = transform.position;
+        obj.transform.rotation = transform.rotation;
+        obj.SetActive(true);
+    
+    }
 
 }

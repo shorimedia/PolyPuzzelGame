@@ -39,9 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600e381f9e03c4a4798161af556d0efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Bronze
+  details: Adds 75 points to selected peg.
   spriteNeutral: {fileID: 21300032, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
+  revealed: 1
   maxSize: 1
-  itemTime: 0
+  itemTime: -.0055271103
   onDissolve: 0
   rarity: 1
   timeIsActive: 1
@@ -62,6 +65,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rarity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Bronze
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: details
+      value: Adds 75 points to selected peg.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

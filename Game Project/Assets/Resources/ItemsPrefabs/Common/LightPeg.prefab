@@ -39,9 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167e208b52d591645bed83d228b5035f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Light
+  details: Break all darkness Peg type and fire.
   spriteNeutral: {fileID: 21300026, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
+  revealed: 1
   maxSize: 1
-  itemTime: 10.7044687
+  itemTime: -.00132125895
   onDissolve: 0
   rarity: 0
   timeIsActive: 1
@@ -58,6 +61,18 @@ Prefab:
       value: 
       objectReference: {fileID: 21300026, guid: 161feccd52d2f484cb88579fd1dd773b,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: details
+      value: Break all darkness Peg type and fire.
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: revealed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170050}

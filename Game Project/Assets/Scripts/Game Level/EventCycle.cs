@@ -92,8 +92,9 @@ public class EventCycle : MonoBehaviour {
 
 
 				}
-	
-				Debug.Log("Point difference " + PointsIncrease());
+	#if DEBUG
+				//Debug.Log("Point difference " + PointsIncrease());
+    #endif
 
 			// Set end game points for next cycle
 			endCyclePoints = currentPoints;

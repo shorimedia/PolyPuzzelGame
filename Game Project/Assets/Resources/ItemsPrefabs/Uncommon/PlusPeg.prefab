@@ -39,9 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a87446e2ba8514d870c1b9380903e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Plus Peg
+  details: Adda new peg onto the board
   spriteNeutral: {fileID: 21300022, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
+  revealed: 1
   maxSize: 1
-  itemTime: 0
+  itemTime: -.00155033544
   onDissolve: 0
   rarity: 1
   timeIsActive: 1
@@ -61,6 +64,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rarity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Plus Peg
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: details
+      value: Adda new peg onto the board
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

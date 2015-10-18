@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//
+// Script Name: PoolableObject
+//Script by: Victor L Josey
+// Description: 
+// (c) 2015 Shoori Studios LLC  All rights reserved.
 public class PoolableObjects : MonoBehaviour {
 
 	public Transform targetPos;
@@ -8,6 +13,7 @@ public class PoolableObjects : MonoBehaviour {
 	public static GameObject ActiveEffect;
 
 	public static Transform EffectTransform;
+
 
 	// Use this for initialization
 	void Start () 
@@ -19,11 +25,6 @@ public class PoolableObjects : MonoBehaviour {
 	}
 
 
-
-
-
-
-	
 	// Update is called once per frame
 	 void Update ()
 	{

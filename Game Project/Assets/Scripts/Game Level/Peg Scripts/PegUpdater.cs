@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 //
 // Script Name: PegUpdater
@@ -12,7 +10,7 @@ public class PegUpdater : MonoBehaviour {
 
 	public Transform[] checkPoints = new Transform[6]; 
 
-	public PegStateMachine pegState;
+	public PegStateMachine pegState_Update;
 	public PegTypeMach PegType;
 	public PosStatus posStatus;
 
@@ -22,31 +20,37 @@ public class PegUpdater : MonoBehaviour {
 	[HideInInspector]
 	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
 
-
 	// Use this for initialization
     void Start()
     {
-        Messenger.AddListener("Check Neighbor", CheckNeighbor);
-        Messenger.AddListener("Set Neighbors", SetNeighborPegs);
-
+        //Messenger.AddListener("Check Neighbor", CheckNeighbor);
     }
 
 
     void FixedUpdate() 
     {
-        if(GameManger.ACTIVE == false && pegState.moveIn == true)
+        if(GameManger.ACTIVE == false && pegState_Update.moveIn == true)
         {
-            pegState.moveIn = false;
-            pegState.blockState = PegStateMachine.BlockState.Normal;
-            pegState.ChangeBlockState();
+            
+            pegState_Update.blockState = PegStateMachine.BlockState.Normal;
+            pegState_Update.ChangeBlockState();
+            pegState_Update.moveIn = false;
 
         }
 
 
-        if (GameManger.ACTIVE == false && pegState.isJumpable == true)
+        if (GameManger.ACTIVE == false && pegState_Update.isJumpable == true)
         {
-            pegState.isJumpable = false;
+            pegState_Update.isJumpable = false;
         }
+
+        if (GameManger.ACTIVE == false && pegState_Update.blockState == PegStateMachine.BlockState.Uncapable)
+        {
+            pegState_Update.blockState = PegStateMachine.BlockState.Normal;
+            pegState_Update.ChangeBlockState();
+        }
+
+
 
     }
 
@@ -85,17 +89,11 @@ public class PegUpdater : MonoBehaviour {
                 posStatus.side[c] = 'N';
             }
 
-
         }
 
 
 
     }
-
-
-
-
-
 
 
 
@@ -106,24 +104,16 @@ public class PegUpdater : MonoBehaviour {
 		// check Peg neighbors
 		
 		for(int c = 0; c < checkPoints.Length; c++){
-			
-	
+
+            if (neighborHEX[c] != null)
+            {
                     /// If peg and the next peg
 					if(PegType.blockType != PegTypeMach.BlockType.Empty){
-						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
-							//Debug.Log (" check next");
-
+						if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty )
+                        {
 							// Check the next peg over
-							neighborHEX[c].pUpdater.SecondNeighborCheck(c); }
-
-
-					}else{
-						
-
-						//if (neighborHEX[c].PegType.blockType != PegTypeMach.BlockType.Empty ){
-							
-						//}
-						
+							neighborHEX[c].pagState_pUpdater.SecondNeighborCheck(c); 
+                        }
 					}
 
 
@@ -144,6 +134,13 @@ public class PegUpdater : MonoBehaviour {
 
 
 					}
+
+
+               // if (neighborHEX[c].posStatus.posState == PosStatus.PosState.IsoPeg)
+              ///  {
+              ///      posStatus.side[c] = 'E';
+              ///  }
+            }
 			
 		}
 		
@@ -183,28 +180,20 @@ public class PegUpdater : MonoBehaviour {
 	
 	void SecondNeighborCheck(int index){
 
-		RaycastHit hit;
-		
-		Ray ray = new Ray (checkPoints[index].position,  checkPoints[index].forward);
-		
 
-		if (Physics.Raycast(ray , out hit,1)){
-			if (hit.collider != null){ 
-				//			Debug.Log ("Hit object at check point " + (index + 1 ) + " "+ hit.collider.name );
-				neighborHEX[index] = hit.collider.gameObject.GetComponent<PegStateMachine>();
-				
-				if (neighborHEX[index].PegType.blockType == PegTypeMach.BlockType.Empty ){
+        if (neighborHEX[index] != null)
+        {
+            // Check if neighbor thats in the direction is emptyS
+				if (neighborHEX[index].PegType.blockType == PegTypeMach.BlockType.Empty )
+                {
 					
 					// if block one and to are compatible
 					
-					
 					// check actived neighbor via revese index direction and check if the type is jumpable
-
-					//Debug.Log (PegType.CompareType(neighborHEX[PointIndex(index)].PegType.blockType).ToString());
 
 					if(PegType.CompareType(neighborHEX[PointIndex(index)].PegType.blockType ) )
 					{
-						pegState.isJumpable = true;
+						pegState_Update.isJumpable = true;
 
 						if(neighborHEX[PointIndex(index)].blockState == PegStateMachine.BlockState.Active)
 						{
@@ -212,21 +201,23 @@ public class PegUpdater : MonoBehaviour {
 						}
 
 
-						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
+						neighborHEX[index].pagState_pUpdater.tokenIndex = PointIndex(index);
 						GameManger.CURRENT_OPEN_BLOCK = neighborHEX[index];
 					}else{   
 	
 						if(neighborHEX[PointIndex(index)].blockState == PegStateMachine.BlockState.Active)
 						{
-						pegState.blockState = PegStateMachine.BlockState.Uncapable;
-
+						    pegState_Update.blockState = PegStateMachine.BlockState.Uncapable;
+                            neighborHEX[index].pagState_pUpdater.tokenIndex = PointIndex(index);
+                            pegState_Update.ChangeBlockState();
 						}else{
-							pegState.blockState = PegStateMachine.BlockState.Normal;
+							pegState_Update.blockState = PegStateMachine.BlockState.Normal;
+                            neighborHEX[index].pagState_pUpdater.tokenIndex = PointIndex(index);
+                            pegState_Update.ChangeBlockState();
 						}
 
 					
-						neighborHEX[index].pUpdater.tokenIndex = PointIndex(index);
-						pegState.ChangeBlockState();
+
 					}
 
                     neighborHEX[index].blockState = PegStateMachine.BlockState.Selected;
@@ -236,9 +227,9 @@ public class PegUpdater : MonoBehaviour {
 					
 				}
 				
-			}
 			
-		}
+			}
+		
 		//	Debug.Log ("Index # " + index);
 	}
 	
@@ -246,8 +237,8 @@ public class PegUpdater : MonoBehaviour {
 
 	void OnDisable(){
 		
-		Messenger.RemoveListener( "Check Neighbor", CheckNeighbor  );
-        Messenger.RemoveListener("Set Neighbors", SetNeighborPegs);
+		//Messenger.RemoveListener( "Check Neighbor", CheckNeighbor  );
+
 		
 	}
 }

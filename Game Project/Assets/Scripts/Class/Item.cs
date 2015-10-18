@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+//
+// Script Name: Item
+//Script by: Victor L Josey
+// Description: Item base class
+// (c) 2015 Shoori Studios LLC  All rights reserved.
 
 
 public class Item : MonoBehaviour {
 
+    public string name;
+    public string details;
+
 	public Sprite spriteNeutral;
+    public bool revealed = false;
 
 	[HideInInspector]
 	public int maxSize = 1;

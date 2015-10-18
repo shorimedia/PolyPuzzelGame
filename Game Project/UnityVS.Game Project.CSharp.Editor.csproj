@@ -7,19 +7,17 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{ABDBF906-92DC-A40C-9A84-10D05A425E5E}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile>Assets\gmcs.rsp</CompilerResponseFile>
     <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>5.1.0f3</UnityVersion>
+    <UnityVersion>5.1.2f1</UnityVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -27,7 +25,7 @@
     <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_1_0;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_1_2;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;NATIVE_PLUGINS_LITE_VERSION</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +34,7 @@
     <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_1_0;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_1_2;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;NATIVE_PLUGINS_LITE_VERSION</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -86,6 +84,9 @@
     <Reference Include="UnityEditor.BB10.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.BB10.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Tizen.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Tizen.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.SamsungTV.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.SamsungTV.Extensions.dll</HintPath>
     </Reference>
@@ -103,6 +104,15 @@
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="FX Quest">
+      <HintPath>Assets\FX Quest\Editor\FX Quest.dll</HintPath>
+    </Reference>
+    <Reference Include="GETween">
+      <HintPath>Assets\FX Quest\GUI Animator FREE\Scripts\GETween.dll</HintPath>
+    </Reference>
+    <Reference Include="GUIAnimatorFREE">
+      <HintPath>Assets\FX Quest\GUI Animator FREE\Scripts\GUIAnimatorFREE.dll</HintPath>
     </Reference>
     <Reference Include="JMOAssets">
       <HintPath>Assets\JMO Assets\Editor\JMOAssets.dll</HintPath>
@@ -168,7 +178,10 @@
     <Compile Include="Assets\codeandweb.com\Editor\TexturePackerImporter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Demo\SwarmUnityDemoOverview.txt" />
+    <None Include="Assets\FX Quest\!Quick start walkthrough.txt" />
+    <None Include="Assets\FX Quest\!Readme.txt" />
+    <None Include="Assets\FX Quest\!Release note.txt" />
+    <None Include="Assets\FX Quest\GUI Animator FREE\Readme.txt" />
     <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\HUD_Interface SFX Library\ReadMe.txt" />
     <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
@@ -184,7 +197,6 @@
     <None Include="Assets\JMO Assets\MatCap Shaders\Textures\BenSimonds\_Textures Readme.txt" />
     <None Include="Assets\JMO Assets\MatCap Shaders\Textures\MaCrea\MaCrea.txt" />
     <None Include="Assets\JMO Assets\MatCap Shaders\_MatCap Shaders Readme.txt" />
-    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\README.txt" />
@@ -283,66 +295,10 @@
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_colors.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_styles.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\blue_button.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\coin_provider_button.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\contextual_grey_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\footer_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\footer_button_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\green_button.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\grey_button.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\header_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\message_speech_bubble_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\offline_error_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\popup_background_rect.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\popup_header_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_buy_button.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_cancel_button.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_header.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\purchase_popup_tophalf.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\row_background.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\sub_header_button.xml" />
-    <None Include="Assets\Plugins\Android\res\drawable\swarm_background.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_achievement_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_app_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_create_account.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_dashboard_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_featured_app_popup.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_featured_app_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_friends.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_friends_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_get_coins.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_header.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_header_external.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_inbox_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_inventory.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_leaderboard_list.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_leaderboard_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_list.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_list_section_header.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_load_more.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_loading_popup.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_login.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_lost_password.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_purchase_popup.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_settings.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_store.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_store_category.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_store_category_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_store_row.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_thread.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_thread_row_other.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_thread_row_self.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_upgrade_guest.xml" />
-    <None Include="Assets\Plugins\Android\res\layout\swarm_webview.xml" />
-    <None Include="Assets\Plugins\Android\res\values\colors.xml" />
-    <None Include="Assets\Plugins\Android\res\values\strings.xml" />
-    <None Include="Assets\Plugins\Android\res\values\styles.xml" />
     <None Include="Assets\Plugins\Android\unityads\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\unityads\build.xml" />
     <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
     <None Include="Assets\Plugins\Android\unityads\res\values\strings.xml" />
-    <None Include="Assets\Plugins\SwarmUnityPluginStructure.txt" />
-    <None Include="Assets\Plugins\SwarmUnityREADME.txt" />
     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
@@ -353,9 +309,7 @@
     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-    <None Include="Assets\StreamingAssets\Xml Assets\PatternData.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\StreamingAssets\Xml Assets\PatternData.xml" />
     <None Include="Assets\codeandweb.com\Readme.txt" />
     <None Include="Assets\iTween\ReadMe!\ReadMe!.txt" />
     <None Include="Assets\link.xml" />

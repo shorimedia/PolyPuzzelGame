@@ -39,7 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a997b712beda52429b2bfbf0af53efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Menus Peg
+  details: Delect one peg from the board.
   spriteNeutral: {fileID: 21300020, guid: 161feccd52d2f484cb88579fd1dd773b, type: 3}
+  revealed: 0
   maxSize: 1
   itemTime: 12.4915781
   onDissolve: 0
@@ -61,6 +64,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: rarity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Menus Peg
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: details
+      value: Delect one peg from the board.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

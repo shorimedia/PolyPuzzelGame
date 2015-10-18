@@ -3,6 +3,12 @@ using System.Collections;
 using UnityEngine.UI;
 using PlayerPrefs = PreviewLabs.PlayerPrefs;
 
+//
+// Script Name: LoadStageData
+//Script by: Victor L Josey
+// Description: 
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
 public class LoadStageData : MonoBehaviour {
 
 

@@ -2,8 +2,15 @@
 // Controls a games states
 using UnityEngine;
 using System.Collections;
+using System;
 using UnityEngine.UI;
 using PlayerPrefs = PreviewLabs.PlayerPrefs;
+
+//
+// Script Name: Game Manager
+//Script by: Victor L Josey
+// Description: Main Game State Machine
+// (c) 2015 Shoori Studios LLC  All rights reserved.
 
 public class GameManger : MonoBehaviour {
 
@@ -41,6 +48,8 @@ public class GameManger : MonoBehaviour {
 	public int level;
 	public int stage;
 	public bool testMode = false;
+
+    public GameSave gameSave;
 	public Text pointText;
 
 	public Text LevelTitle;
@@ -55,7 +64,7 @@ public class GameManger : MonoBehaviour {
 	public FadeScreen Background;
 
 	public WinPopup winScript;
-
+    public WinPopup loseScript;
 
 
 
@@ -85,7 +94,10 @@ public class GameManger : MonoBehaviour {
 			//load Game stage and level
 			LEVEL_NUM = PlayerPrefs.GetInt("Game Level");
 			STAGE_NUM = PlayerPrefs.GetInt("Game Stage");
+
+            #if DEBUG
 			Debug.Log ("Set Level Number " + PlayerPrefs.GetInt("Game Level"));
+            #endif
 
 			// the values to show in inspector
 			stage = STAGE_NUM;
@@ -95,7 +107,10 @@ public class GameManger : MonoBehaviour {
 		TOTAL_POINTS_COUNT = 0;
 
 		timer = this.GetComponent<GameTime>(); 
+
+        #if DEBUG
 		Debug.Log ("Level Number " + PlayerPrefs.GetInt("Game Level"));
+        #endif
 	}
 
 
@@ -106,6 +121,7 @@ public class GameManger : MonoBehaviour {
 
 	// Start Game
 		ChangeGameState();
+        Handheld.StopActivityIndicator();
 
 	}
 
@@ -126,7 +142,6 @@ public class GameManger : MonoBehaviour {
 	}
 	
 
-
 	int NumberOfPlayableBlocks()
 	{
 		int pegCount = 0;
@@ -146,17 +161,23 @@ public class GameManger : MonoBehaviour {
 	}
 
 
-
-
 	public int ScoreCalculator(){
-		return (TOTAL_POINTS_COUNT * 6 / GameTime.TIME_IN_SECONDS ) + (TOTAL_POINTS_COUNT - (NumberOfPlayableBlocks() * 100)) + TOTAL_POINTS_COUNT;
+        int subTotal = (TOTAL_POINTS_COUNT * 6 / GameTime.TIME_IN_SECONDS) + (TOTAL_POINTS_COUNT - (NumberOfPlayableBlocks() * 100)) + TOTAL_POINTS_COUNT;
+
+        // Total should never be a negative number
+        if (subTotal < 0)
+        {
+            subTotal = 10 * NumberOfPlayableBlocks();
+        }
+
+        return subTotal;
 	}
 
 
 	
 	public void ChangeGameState(){
 
-
+         int _nextLevel  =  GameManger.LEVEL_NUM + 1;
 	
 		switch(gameState){
 		case GameState.Win:
@@ -164,24 +185,39 @@ public class GameManger : MonoBehaviour {
 			// show win screen with score, points and time
 			Debug.Log("Winner!!!!!!");
 
+          //  gameSave.CheckHighScore(LEVEL_NUM, TOTAL_SCORE);
+
+            if (gameSave.CheckHighScore(LEVEL_NUM, TOTAL_SCORE))
+            {
+                winScript.winState = WinPopup.WinState.Best;
+                
+            }
 
 
-			winScript.SetTxt(TOTAL_SCORE.ToString(),TOTAL_SCORE.ToString(),GameTime.TEXT_TIME, GameTime.TEXT_TIME, NumberOfPlayableBlocks().ToString());
+            winScript.SetTxt(TOTAL_SCORE.ToString(), PlayerPrefs.GetInt("Level" + GameManger.LEVEL_NUM + "_HighScore").ToString(), GameTime.TEXT_TIME, GameTime.TEXT_TIME, NumberOfPlayableBlocks().ToString());
 
 
-			if( TOTAL_SCORE > PlayerPrefs.GetInt("Level " + GameManger.LEVEL_NUM + "_Score") && GameTime.TIME_IN_SECONDS > PlayerPrefs.GetInt("Level " + GameManger.LEVEL_NUM + "_Time_in_seconds")){
+			if( TOTAL_SCORE > PlayerPrefs.GetInt("Level" + GameManger.LEVEL_NUM + "_Score") && GameTime.TIME_IN_SECONDS > PlayerPrefs.GetInt("Level" + GameManger.LEVEL_NUM + "_Time_in_seconds"))
+            {
 
 				SendMessage("SaveData");
 			}
 
+                winScript.SetStars(NumberOfPlayableBlocks());
 
-
+                //Unlock next level
+                PlayerPrefs.SetBool("Level" + _nextLevel + "_Lock", false);
+                PlayerPrefs.SetInt("Game Level", _nextLevel);
 			// Check leader board data
 
 			timer.ToggleTimer = false;
 			Background.IsOpen = true;
 			WinScreen.IsOpen = true;
+            Achievements.PegAchievements(NumberOfPlayableBlocks(), GameTime.TIME_IN_SECONDS);
+            Achievements.FastTimeLeaderBoard(GameTime.TIME_IN_SECONDS);
+            Achievements.HighScoreLeaderBoard(TOTAL_SCORE);
 
+            PlayerPrefs.Flush();
 			break;
 		
 		case GameState.Lose:
@@ -189,7 +225,7 @@ public class GameManger : MonoBehaviour {
 			// show loser screen
 			Debug.Log("Loser!!!!!!");
 
-
+            loseScript.SetPegNum(NumberOfPlayableBlocks());
 			timer.ToggleTimer = false;
 			Background.IsOpen = true;
 			LoseScreen.IsOpen = true;
@@ -254,10 +290,10 @@ public class GameManger : MonoBehaviour {
 	{
 		switch(State)
 		{
-		case "Win": gameState = GameState.Win; break;
-		case "Lose": gameState = GameState.Lose; break;
+		case "Win":     gameState = GameState.Win; break;
+		case "Lose":    gameState = GameState.Lose; break;
 		case "Pause":   gameState = GameState.Pause; break;
-		case "Game":   gameState = GameState.Game; break;
+		case "Game":    gameState = GameState.Game; break;
 
 		}
 
@@ -272,8 +308,9 @@ public class GameManger : MonoBehaviour {
 		
 		if(NumberOfPlayableBlocks() > 5){
 			gameState = GameState.Lose;
-		}else{ gameState = GameState.Win;} 
+		}else{ gameState = GameState.Win;}
 
+        gameSave.RateLevel(NumberOfPlayableBlocks(),LEVEL_NUM);
 		ChangeGameState();
 	}
 
@@ -281,8 +318,13 @@ public class GameManger : MonoBehaviour {
 	public void RestartGame()
 	{
 
+        PlayerPrefs.SetInt("Game Level", LEVEL_NUM);
+        PlayerPrefs.Flush();
+
 		//set to close state
 		Application.LoadLevel(Application.loadedLevel);
+
+
 
 	}
 
@@ -300,7 +342,7 @@ public class GameManger : MonoBehaviour {
 		}
 
 		//save level data
-		SaveGame();
+        gameSave.SaveData();
 	
 		// the values to show in inspector
 		stage = STAGE_NUM;
@@ -313,13 +355,6 @@ public class GameManger : MonoBehaviour {
 		ChangeGameState();
 	}
 
-	public void SaveGame()
-	{
-		// save game data
-
-		PlayerPrefs.SetInt("Game Level", LEVEL_NUM);
-		PlayerPrefs.SetInt("Game Stage", STAGE_NUM);
-	}
 
 
 	public IEnumerator StartGame(float seconds)
@@ -341,9 +376,16 @@ public class GameManger : MonoBehaviour {
 
 	}
 
+    public void OnApplicationQuit()
+    {
+        PlayerPrefs.Flush();
+    }
 
+    public void OnDisable()
+    {
+        GC.Collect();
 
+      //  Debug.Log("GC Called");
+    }
 
-
-	
 }

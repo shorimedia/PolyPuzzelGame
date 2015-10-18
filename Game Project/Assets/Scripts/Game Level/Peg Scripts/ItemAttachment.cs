@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
+
 
 public class ItemAttachment : MonoBehaviour  {
 
@@ -25,6 +23,16 @@ public class ItemAttachment : MonoBehaviour  {
 	
 	public void ItemAttach(Item iAttach)
 	{
+
+        PlayParicleFX("AttachItem FX");
+
+        if (iAttach.name == "Plus Peg" || iAttach.name == "Plus Zero")
+        {
+            PlayParicleFX("AddPeg FX");
+        
+        }
+   
+
 		ItemEquip = true;
 		// Add new data
 		AttachedItem = iAttach;
@@ -32,5 +40,17 @@ public class ItemAttachment : MonoBehaviour  {
 		AttachedItem.PegObject = this.gameObject.GetComponent<PegStateMachine>();
 		AttachedItem.Use();
 	}
+
+    void PlayParicleFX(string name)
+    {
+        GameObject obj = PoolerScript.current.GetPooledObject(name);
+
+        if (obj == null) return;
+
+        obj.transform.position = transform.position;
+        obj.transform.rotation = transform.rotation;
+        obj.SetActive(true);
+
+    }
 
 }

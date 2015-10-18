@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GooglePlay_Menu : MonoBehaviour {
 
 	public Text LoginLabel;
+    public Toggle CheckMark;
 
 	private bool isLogin = false;
 
@@ -27,7 +28,7 @@ public class GooglePlay_Menu : MonoBehaviour {
 		{
 			GoogleSignIn(); 
 		}else{
-
+       
 			LoginLabel.text = "Sign in with Google Play";
 			GoogleSignOut(); 
 		}
@@ -39,22 +40,12 @@ public class GooglePlay_Menu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-//		PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
-//			// enables saving game progress.
-//			.EnableSavedGames()
-//				// registers a callback to handle game invitations received while the game is not running.
-//				.WithInvitationDelegate(<callback method>)
-//				// registers a callback for turn based match notifications received while the
-//				// game is not running.
-//				.WithMatchDelegate(<callback method>)
-//				.Build();
-//		
-//		PlayGamesPlatform.InitializeInstance(config);
-//		// recommended for debugging:
-//		PlayGamesPlatform.DebugLogEnabled = true;
-		// Activate the Google Play Games platform
+
 		PlayGamesPlatform.Activate();
-		LoginLabel.text = "Sign in with Google Play";
+		//LoginLabel.text = "Sign in with Google Play";
+
+        // authenticate user:
+        GoogleSignIn();
 
 	}
 	
@@ -69,10 +60,13 @@ public class GooglePlay_Menu : MonoBehaviour {
 			{
 				Debug.Log("You've Succeddfully logged in");
 				LoginLabel.text = "You are signed in with Google Play";
+                CheckMark.isOn = true;
 
 			}else{
 
 				Debug.Log("Login failed");
+                LoginLabel.text = "Sign in with Google Play";
+                CheckMark.isOn = false;
 			}
 
 

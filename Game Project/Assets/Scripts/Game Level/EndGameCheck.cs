@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+
 
 //
 // Script Name: End Game  Check
@@ -20,8 +20,6 @@ public class EndGameCheck : MonoBehaviour {
 	void OnEnable () 
 	{
 		Messenger.AddListener("Check Empties", EmptyCheck);
-
-
 		Messenger.MarkAsPermanent("Check Empties");
 	
 	}
@@ -43,10 +41,6 @@ public class EndGameCheck : MonoBehaviour {
 		
 		for(int i = 0; i < board.TokenData.Count; i++)
 		{
-//			if (board.TokenData[i].PegType.blockType == PegTypeMach.BlockType.Empty && GameManger.ACTIVE == false)
-//			{
-//				board.TokenData[i].moveIn = false;
-//			}
 			
 			if (board.TokenData[i].PegType.blockType == PegTypeMach.BlockType.Empty){
 				GameManger.CURRENT_NUM_EMPTY++;
@@ -56,7 +50,7 @@ public class EndGameCheck : MonoBehaviour {
 				board.TokenData[i].posStatus.Closed = false;
 			}
 
-			board.TokenData[i].pUpdater.CheckNeighbor();
+			board.TokenData[i].pagState_pUpdater.CheckNeighbor();
 
 			// find EndPegs
 			if(board.TokenData[i].posStatus.posState == PosStatus.PosState.ReadyPeg)
@@ -76,15 +70,9 @@ public class EndGameCheck : MonoBehaviour {
 	} 
 
 
-
-	
 	void OnDisable()
 	{
-		
 		Messenger.RemoveListener("Check Empties", EmptyCheck);
-
 	}
-	
-
 
 }

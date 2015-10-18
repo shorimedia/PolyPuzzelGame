@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Advertisements;
+using System;
 
 public class SimpleAds : MonoBehaviour {
 
@@ -15,8 +16,8 @@ public class SimpleAds : MonoBehaviour {
 		//StartCoroutine (ShowAdWhenReady());
 	}
 
-	
-	public void StartAds()
+
+    public void StartAds()
 	{
 
 		if(pfManager.hasAds == true)

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+
 
 public class BlackPeg : Item {
 
@@ -10,7 +10,8 @@ public class BlackPeg : Item {
 		GameManger.ACTIVE = false;
 		PegObject.PegType.blockType = PegTypeMach.BlockType.Darkness;
 		PegObject.PegType.ChangeBlockType();
-//		PegObject.pUpdater.UpdateNeighbor();
-		Messenger.Broadcast("Check Empties");
+        PegObject.pagState_pUpdater.CheckNeighbor();
+        //Update empty peg count. Call emptycheck method in the EndGameCheck.cs
+        Messenger.Broadcast("Check Empties");
 	}
 }

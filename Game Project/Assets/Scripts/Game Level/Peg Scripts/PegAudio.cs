@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//
+// Script Name: PegAudio
+//Script by: Victor L Josey
+// Description: holds basic sound for interaction
+// (c) 2015 Shoori Studios LLC  All rights reserved.
+
 public class PegAudio : MonoBehaviour {
 
 	public string activatePegSFX,deactivatePegSFX, destroyPegSFX, movePegSFX, openPegSFX, uncapaibleSFX;
@@ -32,13 +38,5 @@ public class PegAudio : MonoBehaviour {
 		}
 
 	}
-
-
-
-
-
-
-
-
 
 }

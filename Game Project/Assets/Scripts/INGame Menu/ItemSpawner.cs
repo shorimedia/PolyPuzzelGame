@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+//
+// Script Name: Item Spawner
+//Script by: Victor L Josey
+// Description:  Random spawn items
+// (c) 2015 Shoori Studios LLC  All rights reserved.
 
 public class ItemSpawner : MonoBehaviour {
 
@@ -12,7 +17,7 @@ public class ItemSpawner : MonoBehaviour {
 	public ItemBar itemBar;
 
 	public 	bool spawn = false;
-
+    public bool testSpawn = false;
 
 	public int TestIndex = 0;
 	public string TestType = "Common";
@@ -51,8 +56,9 @@ public class ItemSpawner : MonoBehaviour {
 			itemsCommon[i] = go[i].GetComponent<Item>();
 
 		}
-
+        #if DEBUG
 		Debug.Log(commonObject.Length + " Common Items loaded");
+        #endif
 #endregion
 
 
@@ -82,8 +88,9 @@ public class ItemSpawner : MonoBehaviour {
 			
 			itemsRare[i] = go[i].GetComponent<Item>();
 		}
-		
+		   #if DEBUG
 		Debug.Log(rareObject.Length + " Rare Items loaded");
+        #endif
 		#endregion
 
 
@@ -110,10 +117,16 @@ public class ItemSpawner : MonoBehaviour {
 	{
 		if(spawn)
 		{
-			//TestItem(TestIndex, TestType);
 			SpawnItem();
 			spawn = false;
 		}
+
+        if(testSpawn)
+        {
+            TestItem(TestIndex, TestType);
+            testSpawn = false;
+        }
+
 
 	}
 
@@ -293,9 +306,9 @@ public class ItemSpawner : MonoBehaviour {
 			break;
 		}
 
-
+      #if DEBUG
 		Debug.Log ("new Item");
-	
+#endif
 	}
 	#endregion
 
