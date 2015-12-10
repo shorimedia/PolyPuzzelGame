@@ -13,9 +13,11 @@ public class PegUpdater : MonoBehaviour {
 	public PegStateMachine pegState_Update;
 	public PegTypeMach PegType;
 	public PosStatus posStatus;
+    public PegController pegControl;
 
-	//[HideInInspector]
-	public PegStateMachine[] neighborHEX = new PegStateMachine[6];
+
+    //[HideInInspector]
+    public PegStateMachine[] neighborHEX = new PegStateMachine[6];
 
 	[HideInInspector]
 	public int 	tokenIndex;      //indcate what side the sending  neighbor is on.
@@ -27,11 +29,11 @@ public class PegUpdater : MonoBehaviour {
     }
 
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
-        if(GameManger.ACTIVE == false && pegState_Update.moveIn == true)
+        if (GameManger.ACTIVE == false && pegState_Update.moveIn == true)
         {
-            
+
             pegState_Update.blockState = PegStateMachine.BlockState.Normal;
             pegState_Update.ChangeBlockState();
             pegState_Update.moveIn = false;
@@ -51,7 +53,21 @@ public class PegUpdater : MonoBehaviour {
         }
 
 
+        if (GameManger.ACTIVE == true && pegState_Update.blockState != PegStateMachine.BlockState.Active)
+        {
+            pegControl.canTouch = false;
 
+            if (GameManger.ACTIVE == true && PegType.blockType == PegTypeMach.BlockType.Empty)
+            {
+                pegControl.canTouch = true;
+            }
+
+        }
+        else
+        {
+            pegControl.canTouch = true;
+
+        }
     }
 
     public void SetNeighborPegs()

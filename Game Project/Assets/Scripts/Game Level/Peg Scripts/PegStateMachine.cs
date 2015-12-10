@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class PegStateMachine : MonoBehaviour {
-    //
+ 
     // Script Name: Peg State Mechine
     //Script by: Victor L Josey
     // Description: Peg state machine that changes peg founcton during the game.

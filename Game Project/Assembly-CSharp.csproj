@@ -212,6 +212,7 @@
      <Compile Include="Assets\Scripts\Class\Pattern.cs" />
      <Compile Include="Assets\Scripts\DataReceiver.cs" />
      <Compile Include="Assets\Scripts\DataSender.cs" />
+     <Compile Include="Assets\Scripts\DelayNextScene.cs" />
      <Compile Include="Assets\Scripts\Game Level\CameraMechinics.cs" />
      <Compile Include="Assets\Scripts\Game Level\EndGameCheck.cs" />
      <Compile Include="Assets\Scripts\Game Level\EventCycle.cs" />
@@ -454,17 +455,11 @@
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>F:/Users/HpmeStudio/Documents/GitHub/PolyPuzzelGame/Game Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="GETween">
  <HintPath>F:/Users/HpmeStudio/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/FX Quest/GUI Animator FREE/Scripts/GETween.dll</HintPath>

@@ -11,7 +11,7 @@ public class CameraMechinics : MonoBehaviour {
 	public bool canMove = true;
 	public int posIndex = 1;
     public float cameraZoomIndex;
-    private float currentCameraZoomIndex;
+ 
 
     public Text CamPos;
 
@@ -31,7 +31,7 @@ public class CameraMechinics : MonoBehaviour {
 
 	private string easeType;
 
-    private float yVelocity = 0.0F;
+  
     void Awake()
 	{
         
@@ -46,9 +46,9 @@ public class CameraMechinics : MonoBehaviour {
 
 		CamPos.text = (posIndex + 1).ToString();
 	}
-    void Start() { cameraZoomIndex = 6.5f;
+    void Start() {
+        cameraZoomIndex = 6.5f;
 
-        currentCameraZoomIndex = cameraZoomIndex;
     }
 
     bool changeView = false;
@@ -66,16 +66,16 @@ public class CameraMechinics : MonoBehaviour {
 		}
 
 
-        if (cameraZoomIndex != currentCameraZoomIndex && changeView == true)
+        if (changeView == true)
         {
-            Camera.main.orthographicSize = Mathf.SmoothDamp(currentCameraZoomIndex, cameraZoomIndex, ref yVelocity, 0.3f );
-           // yVelocity++;
+            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, cameraZoomIndex, Time.deltaTime * smooth );
+
         }
 
 
-        if (Camera.main.orthographicSize == cameraZoomIndex)
+        if (Camera.main.orthographicSize >= cameraZoomIndex - 0.1f && Camera.main.orthographicSize <= cameraZoomIndex + 0.1f)
         {
-            currentCameraZoomIndex = cameraZoomIndex;
+ 
             changeView = false;
         }
 
@@ -93,12 +93,14 @@ public class CameraMechinics : MonoBehaviour {
 			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
 			iTween.RotateTo(gameObject,iTween.Hash("x", 45,"y", 0,"z", 0,"easeType", easeType,"Time",smooth));
                 cameraZoomIndex = 6.5f;
+                changeView = true;
                 canMove = false;
 				break;
 			case 1: 
 			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
 			iTween.RotateTo(gameObject,iTween.Hash("x", 42,"y", 272,"z",0,"easeType", easeType ,"Time",smooth));
                 cameraZoomIndex = 6.5f;
+                changeView = true;
                 canMove = false;
 				break;
 			case 2: 
@@ -111,14 +113,15 @@ public class CameraMechinics : MonoBehaviour {
 			case 3: 
 			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
 			iTween.RotateTo(gameObject,iTween.Hash("x", 66,"y", 90,"z", 0,"easeType",easeType,"Time",smooth));
-
                 cameraZoomIndex = 8.8f;
+                changeView = true;
                 canMove = false;
 			break;
 			case 4: 
 			iTween.MoveTo(gameObject, iTween.Hash("x",CameraLocs[posIndex].position.x, "y",CameraLocs[posIndex].position.y,"z",CameraLocs[posIndex].position.z,"easeType", easeType, "loopType", "none","Time",smooth));
 			iTween.RotateTo(gameObject,iTween.Hash("x", 90,"y",180,"z", 0,"easeType", easeType,"Time",smooth));
-                cameraZoomIndex = 6.5f;
+                cameraZoomIndex = 7.5f;
+                changeView = true;
                 canMove = false;
 			break;
 			}

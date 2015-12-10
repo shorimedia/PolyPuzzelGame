@@ -227,17 +227,11 @@
      <None Include="Assets\JMO Assets\MatCap Shaders\_MatCap Shaders Readme.txt" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-nl\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-mn-rMN\common_strings.xml" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="GETween">
  <HintPath>F:/Users/HpmeStudio/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/FX Quest/GUI Animator FREE/Scripts/GETween.dll</HintPath>

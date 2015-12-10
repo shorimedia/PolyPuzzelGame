@@ -211,9 +211,6 @@
  <Reference Include="Assembly-UnityScript">
  <HintPath>F:/Users/HpmeStudio/Documents/GitHub/PolyPuzzelGame/Game Project/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -228,9 +225,6 @@
  </Reference>
  <Reference Include="UnityEditor.Networking">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="FX Quest">
  <HintPath>F:/Users/HpmeStudio/Documents/GitHub/PolyPuzzelGame/Game Project/Assets/FX Quest/Editor/FX Quest.dll</HintPath>

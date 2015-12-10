@@ -62,14 +62,15 @@ public class LevelBtn : MonoBehaviour {
 	public void StartGame()
 	{
 
-        fadescreen.IsOpen = true;
-
-		PlayerPrefs.SetInt("Game Level", level.levelNum);
-		PlayerPrefs.SetInt("Game Stage", level.stageNum);
-		Debug.Log("Saving Game Level and Stage");
-
         if (IsLock == false)
         {
+
+            fadescreen.IsOpen = false;
+
+            PlayerPrefs.SetInt("Game Level", level.levelNum);
+            PlayerPrefs.SetInt("Game Stage", level.stageNum);
+            Debug.Log("Saving Game Level and Stage");
+
             StartCoroutine("StartLoading");
         }
 	}
@@ -84,7 +85,9 @@ public class LevelBtn : MonoBehaviour {
 
          Handheld.StartActivityIndicator();
 
-        AsyncOperation async = Application.LoadLevelAsync(1);
+        yield return new WaitForSeconds(0.97f);
+
+        AsyncOperation async = Application.LoadLevelAsync(2);
         yield return async;
         //Debug.Log("Loading complete");
        

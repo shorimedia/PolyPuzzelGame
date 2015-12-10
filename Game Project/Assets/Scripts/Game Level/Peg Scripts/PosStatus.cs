@@ -10,7 +10,7 @@ public class PosStatus : MonoBehaviour {
 
 	public char[] side = new char[6]; 
 	
-	public byte groupIndex = 0;  
+	public byte groupIndex = 0;    
 	
 	public bool cennectedGroup = false;
 	

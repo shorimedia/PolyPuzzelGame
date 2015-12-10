@@ -393,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pegState: {fileID: 11415458}
   PegType: {fileID: 11435480}
+  canTouch: 1
 --- !u!114 &11415458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -501,6 +502,7 @@ MonoBehaviour:
   pegState_Update: {fileID: 11415458}
   PegType: {fileID: 11435480}
   posStatus: {fileID: 11479774}
+  pegControl: {fileID: 11404722}
   neighborHEX:
   - {fileID: 0}
   - {fileID: 0}
